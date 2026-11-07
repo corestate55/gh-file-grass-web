@@ -84,7 +84,11 @@ export default class GHLogStat extends GHInfoBase {
     if (!this.isModified()) {
       return ''
     }
-    return this._liStr(this._codeStr(esc(`${this.src}..${this.dst} ${this.mode}`)))
+    // src / dst は、分からないとき(例: 変更前が取得範囲の外)は '' になる。空のまま出さず '?' にする。
+    // mode も取得元によっては無い。
+    const blob = (hash: string) => (hash === '' ? '?' : hash)
+    const range = `${blob(this.src)}..${blob(this.dst)}`
+    return this._liStr(this._codeStr(esc(this.mode ? `${range} ${this.mode}` : range)))
   }
 
   _statIndicatorStr(): string {
