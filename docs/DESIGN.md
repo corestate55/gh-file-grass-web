@@ -212,8 +212,9 @@ export interface RepoRef {
   repo: string
 }
 export function parseRepoInput(input: string): RepoRef // InvalidInputError
-// 受理: owner/repo, https://github.com/o/r(.git)(/tree/…), github.com/o/r, git@github.com:o/r.git
-// owner: /^[A-Za-z0-9-]{1,39}$/  repo: /^[A-Za-z0-9._-]{1,100}$/
+// 受理: owner/repo(.git 可。ちょうど 2 セグメント), https://github.com/o/r(.git)(/tree/…), www.github.com, github.com/o/r
+// 拒否: https 以外(http / ssh:// / git@github.com:o/r)、github.com 以外のホスト、ポート・認証情報付き、'.' '..'
+// owner: /^[A-Za-z0-9-]{1,39}$/  repo: /^[A-Za-z0-9._-]{1,100}$/(大文字小文字は入力のまま保持)
 
 export interface BranchInfo {
   name: string
@@ -237,24 +238,33 @@ export interface HistoryResult {
   rateLimit: RateLimitInfo | null
 }
 
+export interface BranchList {
+  branches: BranchInfo[]
+  hasMore: boolean // 100 件を超えるブランチがある(一覧に出ていないものがある)
+}
 export interface GitHubClientOptions {
-  fetch?: typeof fetch
-  baseUrl?: string // テスト差し替え用
-  concurrency?: number // 既定 4
-  maxCount?: number // 上限 50
+  fetch?: typeof fetch // 既定 globalThis.fetch(束縛して呼ぶ)
+  baseUrl?: string // 既定 https://api.github.com
+  concurrency?: number // 既定 4(クライアント単位。呼び出しが重なっても合計で守る)
+  maxCount?: number // 既定 50、1〜100
+  now?: () => number // 時計の注入(TTL・観測時刻)
+  detailCacheSize?: number // 既定 500
+  listTtlMs?: number // 既定 5 分
 }
 export class GitHubClient {
-  fetchBranches(ref: RepoRef, opts?: { signal?: AbortSignal }): Promise<BranchInfo[]> // per_page=100, 1ページ
+  fetchBranches(ref: RepoRef, opts?: { signal?: AbortSignal }): Promise<BranchList> // per_page=100, 1ページ, TTL キャッシュ
   fetchHistory(
     ref: RepoRef,
     branch: string,
     opts?: {
-      count?: number
+      count?: number // 1〜maxCount、既定 20
       signal?: AbortSignal
       onProgress?: (p: Progress) => void
+      timeZone?: string // 取得前に検証(不正なら RangeError)
     },
   ): Promise<HistoryResult>
-  estimateCost(ref: RepoRef, shas: string[]): number // キャッシュに無い件数
+  // 一覧がキャッシュにあれば詳細の未取得件数(exact)、無ければ 1 + count(上限値)
+  estimateCost(ref: RepoRef, branch: string, count?: number): { requests: number; exact: boolean }
   get lastRateLimit(): RateLimitInfo | null
   fetchRateLimit(opts?): Promise<RateLimitInfo> // GET /rate_limit(非消費。Step 0 ⑧で確認済み)
 }
@@ -267,11 +277,15 @@ export function toGitLogData(input: {
 }): { data: GitLogData; warnings: Warning[] } // 純粋関数。件数上限なし。sha_short 衝突は ShaShortCollisionError
 ```
 
-**fetchHistory の流れ**: (1) `GET /repos/{o}/{r}/commits?sha={branch}&per_page={count}`(1 req) → (2) キャッシュに無い sha 件数を数え `lastRateLimit.remaining` と比較、不足なら詳細取得前に `RateLimitError`(needed/remaining/resetAt) → (3) 詳細を並列 4 で取得、1 件ごとに `onProgress` → (4) 最初のエラーで内部 AbortController を中断。取得済みはキャッシュに残す。
+**fetchHistory の流れ**: (0) count / branch / timeZone を**リクエスト前に**検証(予算を使い切った後に失敗しないため) → (1) `GET /repos/{o}/{r}/commits?sha={branch}&per_page={maxCount}`(1 req。count に依らず常に maxCount で取り、先頭 count 件を使う。TTL 5 分でキャッシュ) → (1.5) sha_short の衝突を詳細取得前に検出 → (2) キャッシュに無い sha 件数を数え `lastRateLimit.remaining` と比較、不足なら詳細取得前に `RateLimitError(reason:'insufficient')`(needed/remaining/resetAt)。`needed === remaining` は通す。残量が未観測または窓が終わっているときは `/rate_limit`(無料)で確認 → (3) 詳細を並列 4(クライアント単位のセマフォ)で取得、1 件ごとに `onProgress` → (4) 最初のエラーで内部 AbortController を中断し、**最初のエラー**を投げる(兄弟の中断エラーではなく)。取得済みはキャッシュに残す → (5) `toGitLogData`。
 
-**レート制限**: 全レスポンスから `X-RateLimit-Limit/Remaining/Reset` を読む(CORS で公開されているかは【要検証】。無理なら `/rate_limit`)。`403` かつ remaining=0 → `RateLimitError`。`403/429` で `Retry-After` → `SecondaryRateLimitError`。
+**HTTP**: リクエストヘッダは `Accept: application/vnd.github+json` のみ。単純ヘッダに留めてプリフライト(OPTIONS)を避ける(`X-GitHub-Api-Version` や `If-None-Match` を付けると、sha ごとに URL が違う詳細 API の全件に OPTIONS の往復が増える)。ETag の再検証はブラウザの HTTP キャッシュに任せる。自動リトライはしない(予算を消費し、secondary rate limit を悪化させる)。
 
-**エラー型**: 基底 `GitHubError` に `kind`: `invalid_input` / `not_found`(404、private 含む) / `rate_limited`(resetAt) / `secondary_rate_limited`(retryAfter) / `empty_repository`(409) / `http`(status) / `network` / `aborted`(UI は無視)。
+**キャッシュ**: `GitHubClient` インスタンス内。詳細は `owner/repo@sha`(大文字小文字を区別しない)で LRU 500 件、`patch` 本文を捨てた射影(`bin` 推定に必要な有無だけ残す。メモリ削減とキャッシュ汚染の防止)に、切り詰めフラグを添えて保持。一覧・ブランチは TTL 5 分(時計は注入可)。返す値は毎回新しいオブジェクト。
+
+**レート制限**: 全レスポンス(失敗を含む)から `X-RateLimit-Limit/Remaining/Reset` を読み、畳み込む(新しい窓なら置換、同じ窓なら remaining の小さい方、古い窓は無視)。並列では応答の到着順が送信順と一致せず、ブラウザキャッシュ由来の応答は古いヘッダを持ち得るため、単純な「最後の値」は使わない。`403/429` + `Retry-After` → `SecondaryRateLimitError`(最優先)。`403/429` かつ remaining=0 → `RateLimitError(exhausted)`。`403` で本文が "secondary rate limit"、または `429` → `SecondaryRateLimitError`(60 秒)。404 / 409 / 422 は呼んだ API で意味が変わる(一覧の 422 = 存在しないブランチ、409 = 空リポジトリ)。
+
+**エラー型**: 基底 `GitHubError` に `kind`: `invalid_input`(reason 付き) / `not_found`(resource: repository・branch_or_repository・branch・commit。404、private 含む) / `rate_limited`(reason: exhausted・insufficient、resetAt、needed) / `secondary_rate_limited`(retryAfterSec、retryAt) / `empty_repository`(409) / `http`(status) / `network`(CORS ブロックやオフライン) / `aborted`(UI は無視)。`apiMessage` は信頼できない文字列なので、UI ではテキスト補間で表示し HTML として解釈しない。
 
 **予算**: branches 1 + 一覧 1 + 詳細 N。N=20 で約 22、N=50 で約 52。60/h の枠では新規リポジトリは 1 時間に 2〜3 回程度。ブラウザ HTTP キャッシュの ETag 再検証(304 は非計上)が効く可能性【推測】。
 
@@ -345,6 +359,12 @@ export function toGitLogData(input: {
 ## 7.6 Step 5 の結果(2026-11-07 完了)
 
 `toGitLogData` は全 64 件で Ruby の出力と完全一致(正規化後)。決定事項: `removed` の src は API の `sha` から取る / 切り詰めは取得側が判定し `truncatedShas` で渡す / `unknown-src` はコミットごとに 1 件 / sha_short 衝突は例外 / files はコードポイント順 / 不正な timeZone は例外。
+
+## 7.7 Step 6 の結果(2026-11-07 完了)
+
+`parseRepoInput` / `GitHubClient` / エラー階層を実装。決定事項: 一覧は常に `per_page=maxCount` / `fetchBranches` は `{branches, hasMore}` / `estimateCost(ref, branch, count)` / default ブランチは app 側で main → master → 先頭 / 呼び出しをまたぐ in-flight 重複排除はしない / ssh・git@・http の入力は受理しない(https のみ) / 詳細キャッシュは patch 本文を捨てた射影 / リクエストヘッダは Accept のみ。
+
+**【未確認】ブラウザでの実測(Step 7 の手動確認項目)**: ①プリフライトが出ないこと(DevTools の Network で OPTIONS が無い)、②ヘッダ省略時の既定 API バージョンで必要なフィールドが揃うこと、③403/5xx 応答に CORS ヘッダが付くか(付かないと `NetworkError` に見える。直前の `lastRateLimit.remaining` が 0 ならレート制限として表示する案)、④300 ファイル超のコミットで `Link: rel="next"` が付くこと、⑤存在しないブランチが 404 と 422 のどちらになるか(どちらも not_found に分類済み)。Step 0 の録画は Node の fetch・トークン付き(limit 5000)なので、これらは fixture からは分からない。
 
 ## 8. 未決事項(状況は HANDOVER.md 参照)
 
