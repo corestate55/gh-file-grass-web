@@ -2,5 +2,23 @@
   "name": "@gh-file-grass/app",
   "version": "0.0.0",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@gh-file-grass/core": "*",
+    "@gh-file-grass/github-adapter": "*",
+    "vue": "^3.5.45"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^2.5.1",
+    "sass": "^1.108.1",
+    "vite": "^8.3.6"
+  },
+  "scripts": {
+    "predev": "npm run build:css -w @gh-file-grass/core",
+    "dev": "vite",
+    "prebuild": "npm run build:css -w @gh-file-grass/core",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc -b"
+  }
 }
