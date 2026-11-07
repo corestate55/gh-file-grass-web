@@ -82,3 +82,25 @@ export const formMessages = {
   countLabel: 'Number of commits',
   countInvalid: (min: number, max: number) => `Enter a whole number from ${min} to ${max}.`,
 } as const
+
+export const statusMessages = {
+  quotaUnknown: 'API quota: unknown',
+  quotaReset: 'API quota: has reset (updated on the next request)',
+  quota: (remaining: number, limit: number, resetAt: string, low: boolean) =>
+    `API quota: ${remaining} / ${limit} left · resets at ${resetAt}${low ? ' · low' : ''}`,
+
+  progressStarting: 'Starting…',
+  progressList: 'Listing commits…',
+  progressDetail: (done: number, total: number) => `Fetching commit details: ${done} / ${total}`,
+  announceList: 'Listing commits',
+  announceDetail: 'Fetching commit details',
+  announceStarting: 'Loading commit history',
+
+  apiMessage: 'Message from GitHub',
+  warningsLabel: 'Warnings',
+  truncated: (n: number) =>
+    `${n} ${n === 1 ? 'commit has' : 'commits have'} more than 300 changed files; only the first 300 are shown.`,
+  unknownSrc: (n: number) =>
+    `For ${n} ${n === 1 ? 'commit' : 'commits'}, the source of some changes is outside the fetched range, so some arrows are not drawn.`,
+  showCommits: (n: number) => `Show ${n === 1 ? 'commit' : 'commits'}`,
+} as const

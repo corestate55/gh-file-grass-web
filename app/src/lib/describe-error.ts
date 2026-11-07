@@ -11,6 +11,7 @@ import {
 } from '@gh-file-grass/github-adapter'
 import type { RateLimitInfo } from '@gh-file-grass/github-adapter'
 import { NoBranchesError } from './errors'
+import { formatClock } from './format'
 import { errorMessages as m } from './messages'
 import type { ErrorText } from './messages'
 
@@ -28,15 +29,12 @@ export interface DescribeContext {
   formatTime?: (d: Date) => string
 }
 
-const defaultFormatTime = (d: Date) =>
-  d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-
 /**
  * エラーを画面に出す文言にする。表示しないもの(中断)は null。
  * ここがエラー文言の唯一の分岐点なので、ブラウザでの実測結果を反映する場合もここだけを直す。
  */
 export function describeError(err: unknown, ctx: DescribeContext): DescribedError | null {
-  const time = ctx.formatTime ?? defaultFormatTime
+  const time = ctx.formatTime ?? formatClock
   const withApi = (text: ErrorText): DescribedError =>
     err instanceof GitHubError && err.apiMessage ? { ...text, apiMessage: err.apiMessage } : text
 
