@@ -67,7 +67,7 @@ The repository is an npm-workspaces monorepo, written in TypeScript:
 | `packages/core`           | The chart: a framework-independent d3 renderer (`draw(data, { container })`) and its stylesheet.                 |
 | `packages/github-adapter` | Turns GitHub REST API responses into the chart's data, and fetches them (rate-limit aware, cancellable, cached). |
 | `app`                     | The page: Vite + Vue 3.                                                                                          |
-| `docs`                    | The design (`DESIGN.md`) and notes for contributors (`HANDOVER.md`).                                             |
+| `docs`                    | The design, the decisions behind it and the operating notes (`DESIGN.md`).                                       |
 
 Development happens on `develop`. Merging into `main` publishes the page to GitHub Pages (see `.github/workflows/deploy.yml`).
 

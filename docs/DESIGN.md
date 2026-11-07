@@ -392,14 +392,47 @@ export function toGitLogData(input: {
 
 **【未確認】**: 300 ファイル超の実コミットでの警告表示(仕組みは curl で確認済み)、5xx の CORS、見た目の最終確認(利用者の目)。
 
-## 8. 未決事項(状況は HANDOVER.md 参照)
+## 8. 決定事項(旧・未決事項)
 
-1. commit 並び順 → **確定: API 順のまま**(Step 0 ②で logs.json と完全一致。ただし 1 リポジトリのみの観測)
-2. 日付の TZ → ブラウザのローカル TZ を推奨。日付は **committer.date を使う**(Step 0 ⑨で確定)
-3. 300 超ファイル → 1 ページ目のみ+警告を推奨
-4. N の既定値 → **20 で確定**(上限 50)
-5. 純粋リネームの src/dst='' → Ruby に合わせる(推奨)
-6. `_ghUri` の URL エンコード追加 → 推奨(既存挙動の小変更)
-7. app の追加機能(URL クエリ共有、ブランチ名手入力欄) → 当面入れない案
-8. スキーマ型の置き場所 → core のサブパス(推奨)
-9. Step 0 の個人トークン運用 → ローカルで一度だけ使用しコミットしない案(**ユーザー未回答**)
+設計時点で未決だった項目は、すべて次のとおり決着している。
+
+1. commit 並び順 → **API 順のまま**(Step 0 ②で logs.json と完全一致。ただし 1 リポジトリのみの観測)
+2. 日付の TZ → **committer.date を、ブラウザのローカル TZ で表示**(Step 0 ⑨)
+3. 300 超ファイル → **1 ページ目のみ + 警告**(`Link: rel="next"` で判定し、`truncated` の警告を出す)
+4. N の既定値 → **20、上限 50**
+5. 純粋リネームの src/dst → **`''`(Ruby に合わせる)**
+6. `_ghUri` の URL エンコード → **追加済み**(パスの各要素をエンコード。http(s) 以外のリンクは出さない)
+7. app の追加機能(URL クエリ共有、ブランチ名手入力欄) → **入れない**(100 件超のブランチは注記のみ)
+8. スキーマ型の置き場所 → **core のサブパス `@gh-file-grass/core/schema`**
+9. Step 0 の個人トークン → **ローカルで録画に一度だけ使用し、コミットしない**(実施済み。トークンは失効済み)
+
+## 9. 公開と運用
+
+### 9.1 ブランチ運用
+
+- 開発は `develop`、公開は `main`。`main` は空の初期コミットから始まり、`develop` はその上に積まれている(共通の祖先があるので、PR・マージが普通にできる)。
+- **`develop` を `main` にマージしたときだけ** GitHub Pages が更新される。`.github/workflows/deploy.yml` は `main` への push のみで動き、手動実行も `main` 以外では何もしない。
+- CI(`.github/workflows/ci.yml`: lint / format / typecheck / test / build)は、`main`・`develop` への push と PR で動く。
+
+### 9.2 初回の公開手順
+
+1. リポジトリの Settings → Pages → Build and deployment → Source を **GitHub Actions** にする(初回のみ)。
+2. `develop` から `main` への PR を作ってマージする。
+3. Actions の "Deploy to GitHub Pages" が成功したら、`https://corestate55.github.io/gh-file-grass-web/` を開く。
+   - `github-pages` 環境のデプロイは、既定で `main` のみ許可される。
+   - 公開パスは `BASE_PATH`(既定 `/gh-file-grass-web/`)で決まる。ワークフローは `configure-pages` の `base_path` を渡すので、リポジトリ名が違っても動く。
+
+### 9.3 開発とローカルでの動作確認
+
+- 開発サーバー: `npm run dev -w @gh-file-grass/app`(`predev` が core の CSS を生成する)。
+- 本番ビルドの確認: `npm run build && npm run preview -w @gh-file-grass/app` → `http://localhost:4173/gh-file-grass-web/`。
+- **注意**: 未認証の GitHub API は **60 回/時(IP 単位)**。動作確認を繰り返すと使い切る(リロードでキャッシュも消える)。残量は画面右上に出る。
+
+## 10. 今後の課題
+
+- **ブラウザでの確認が残っているもの**: 300 ファイル超の実コミットでの警告表示(仕組みは curl で確認済み)、5xx 応答の CORS、実際の見た目と操作感(利用者の目で)。
+- **初回デプロイ時の確認**: `configure-pages@v5` / `upload-pages-artifact@v3` / `deploy-pages@v4` は、既知の版を指定しただけで、まだ一度も実行していない。
+- **GitHub Actions の更新**: `actions/checkout@v4` と `actions/setup-node@v4` が Node 20 向けで非推奨になっている(警告のみ)。新しい版に上げる。
+- **取得データの再利用**: 現在は取得したコミット詳細をメモリだけに持つので、リロードで全件取り直す(20 件の表示で 21 リクエスト)。コミットの内容は sha で不変なので、localStorage に保存すれば消費を大きく減らせるが、「データは保存しない」という当初の方針(1 章)の変更になる。
+- **ファイル名ラベルの幅**: 長いファイル名がヒストグラムの棒に少し重なる。ラベル幅の見積もり(`maxFileNameLength * fontSize * 0.7`)が、実際のフォントより狭いため。元の実装の計算式に由来する。
+- **観測が 1 リポジトリのみのもの**: コミットの並び順(API 順 = `git log` 順)、`files` の並び順(API 順 = diff 順)。崩れても描画への影響は小さい(stats の index の並びが変わる程度)。
