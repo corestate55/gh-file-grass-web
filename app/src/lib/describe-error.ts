@@ -10,6 +10,7 @@ import {
   ShaShortCollisionError,
 } from '@gh-file-grass/github-adapter'
 import type { RateLimitInfo } from '@gh-file-grass/github-adapter'
+import { NoBranchesError } from './errors'
 import { errorMessages as m } from './messages'
 import type { ErrorText } from './messages'
 
@@ -80,6 +81,7 @@ export function describeError(err: unknown, ctx: DescribeContext): DescribedErro
     return m.network()
   }
   if (err instanceof ShaShortCollisionError) return m.shaCollision()
+  if (err instanceof NoBranchesError) return m.noBranches()
 
   return m.unexpected(err instanceof Error ? err.message : String(err))
 }

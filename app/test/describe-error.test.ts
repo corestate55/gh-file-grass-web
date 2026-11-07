@@ -12,6 +12,7 @@ import {
 import type { InvalidInputReason, RateLimitInfo } from '@gh-file-grass/github-adapter'
 import { describe, expect, test } from 'vitest'
 import { describeError } from '../src/lib/describe-error'
+import { NoBranchesError } from '../src/lib/errors'
 
 const NOW = Date.UTC(2026, 10, 7, 12, 0, 0)
 const RESET = new Date(NOW + 30 * 60_000)
@@ -147,6 +148,10 @@ describe('describeError: other GitHub errors', () => {
 describe('describeError: errors that are not GitHubError', () => {
   test('ShaShortCollisionError', () => {
     expect(describe_(new ShaShortCollisionError('abc1234'))!.title).toMatch(/same short SHA/)
+  })
+
+  test('NoBranchesError', () => {
+    expect(describe_(new NoBranchesError())!.title).toMatch(/no branches/)
   })
 
   test('unknown Error: the message is shown as detail', () => {
