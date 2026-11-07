@@ -36,7 +36,7 @@ export default class GHBarChartBuilder extends GHFileGrassBuilder {
     return this.commits.all.map((d) => ({
       index: d.index,
       sha_short: d.sha_short, // for debug
-      logLines: Math.floor(10 * Math.log10(d.stat_total.lines)),
+      logLines: d.stat_total.lines > 0 ? Math.floor(10 * Math.log10(d.stat_total.lines)) : 0,
       lines: d.stat_total.lines,
       commit: d, // refs to call toolTipHtml()
     }))
@@ -45,7 +45,7 @@ export default class GHBarChartBuilder extends GHFileGrassBuilder {
   _makeCommitLinesChart(): void {
     const commitLines = this._makeCommitLinesData()
     const yScale = scaleLinear()
-      .domain([0, Math.max(...commitLines.map((d) => d.logLines))])
+      .domain([0, Math.max(1, ...commitLines.map((d) => d.logLines))]) // avoid zero-width domain
       .range([0, this.py0 * (1 - this.cBaseRatio)])
     const classBy = (d: CommitLinesDatum) =>
       ['commit-chart', this._commitClass(d.index), this._commitLinesChartRank(d.logLines)].join(' ')
@@ -75,7 +75,7 @@ export default class GHBarChartBuilder extends GHFileGrassBuilder {
     const commitHist = this._makeCommitHistogramData()
     const basePosRatio = 0.7
     const xScale = scaleLinear()
-      .domain([0, Math.max(...commitHist.map((d) => d.hist))])
+      .domain([0, Math.max(1, ...commitHist.map((d) => d.hist))]) // avoid zero-width domain
       .range([0, (1 - basePosRatio) * this.px0])
     const classBy = (d: CommitHistDatum) => ['commit-hist', `${this._fileClass(d.index)}`].join(' ')
 

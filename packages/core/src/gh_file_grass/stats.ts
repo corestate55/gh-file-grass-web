@@ -47,9 +47,6 @@ export default class GHLogStats {
       const list = statsDist[countKey] ?? (statsDist[countKey] = [])
       list.push(d)
     })
-    Object.keys(statsDist).forEach((ck) =>
-      console.log(`log(lines)=${ck} : ${'*'.repeat(statsDist[ck]?.length ?? 0)}`),
-    )
     return statsDist
   }
 

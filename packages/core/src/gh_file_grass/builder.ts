@@ -1,6 +1,7 @@
 import { linkHorizontal } from 'd3-shape'
 import type { Link } from 'd3-shape'
 import GHFileGrassBase from './base'
+import { encodePath, safeHref } from './escape'
 import type { Pos } from './base'
 
 export interface FileLifeDatum extends Pos {
@@ -56,7 +57,7 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {
     if (result) {
       urlBase = `https://${result[1]}/${result[2]}`
     }
-    return [urlBase].concat(pathList).join('/')
+    return safeHref([urlBase].concat(pathList.map(encodePath)).join('/'))
   }
 
   _makeFileLabels(): void {

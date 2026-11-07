@@ -19,7 +19,7 @@ export default class GHLogFiles {
 
   maxFileNameLength(): number {
     const fileLengthList = this.files.map((d) => d.name.length)
-    return Math.max(...fileLengthList)
+    return Math.max(0, ...fileLengthList)
   }
 
   indexOf(fileName: string): number {

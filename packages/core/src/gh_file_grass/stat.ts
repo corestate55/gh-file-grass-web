@@ -1,5 +1,6 @@
 import type { FileChangeType, Stat, StatPath } from '../schema'
 import GHInfoBase from './info_base'
+import { escapeHtml as esc } from './escape'
 
 export default class GHLogStat extends GHInfoBase {
   path: string
@@ -67,14 +68,14 @@ export default class GHLogStat extends GHInfoBase {
     const markedStr = (mark: string, str: string) => [mark, str].join(space)
 
     if (this.type === 'new') {
-      return markedStr(this._addedMark(), this._insStr(this.path))
+      return markedStr(this._addedMark(), this._insStr(esc(this.path)))
     } else if (this.type === 'deleted') {
-      return markedStr(this._deletedMark(), this._delStr(this.path))
+      return markedStr(this._deletedMark(), this._delStr(esc(this.path)))
     } else if (this.isRenamed()) {
-      return markedStr(this._renamedMark(), this.stat_path.path)
+      return markedStr(this._renamedMark(), esc(this.stat_path.path))
     } else {
       // modified
-      const str = this.isRenamed() ? this.stat_path.path : this._modStr(this.path)
+      const str = this.isRenamed() ? esc(this.stat_path.path) : this._modStr(esc(this.path))
       return markedStr(this._modifiedMark(), str)
     }
   }
@@ -83,7 +84,7 @@ export default class GHLogStat extends GHInfoBase {
     if (!this.isModified()) {
       return ''
     }
-    return this._liStr(this._codeStr(`${this.src}..${this.dst} ${this.mode}`))
+    return this._liStr(this._codeStr(esc(`${this.src}..${this.dst} ${this.mode}`)))
   }
 
   _statIndicatorStr(): string {
@@ -99,7 +100,7 @@ export default class GHLogStat extends GHInfoBase {
   tooltipHtml(): string {
     return [
       '<ul>',
-      this._liStr(this._codeStr(this.sha_short)),
+      this._liStr(this._codeStr(esc(this.sha_short))),
       this._liStr(this._fileActionStr()),
       this._liStr(this._statIndicatorStr()),
       this._diffIndexStr(), // empty for no-diff stat
