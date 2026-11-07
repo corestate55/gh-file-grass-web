@@ -22,11 +22,13 @@
 ## 2. 元実装の分析(事実)
 
 ### 2.1 データ生成(Ruby)
+
 - `bin/log_collector.rb` → `GitLog.new(repo, count).to_data` を JSON 出力。同梱 `public/logs.json` は全履歴 64 コミット(最新 `d64a81b`=index 64、ルート `266cba1`=index 1)、stats 221 件。
 - ルート以外: `git.diff(parent.sha, sha)`(`git_log_entry.rb:10`)。parent は第一親。マージも第一親との差分。
 - ルートコミットは `git show` を `GitShowParser` で別ロジック処理し末尾に追加(`git_log.rb:18-22, 65-72`)。
 
 ### 2.2 描画側
+
 - 継承チェーン `GHFileGrassBase → Builder → BarChartBuilder → Operator → GHFileGrass`。`draw(logUrl)` が順にメソッド呼び出し(`gh_file_grass.js:4-26`)。
 - `base.js:1,31` で `d3-fetch` の `json(logUri)`。使うキーは `branch, origin, files, commits, stats` のみ(`repo` は未使用)。
 - 固定 DOM ID 依存: `#gh-file-grass`(`base.js:102`)、`div#stat-tooltip`、`document.getElementById`(`operator.js:56,66,74`)、clipPath ID(`base.js:92`)、`file1-label` 等 → 1 ページ 1 インスタンスしか置けない。
@@ -39,14 +41,14 @@
 
 ## 3. 設計方針
 
-| 項目 | 方針 |
-|---|---|
-| core 移植 | 継承チェーン・メソッド構成をそのまま TS 化し、データ注入・コンテナ指定・破棄・XSS 対策・入力複製のみ追加。リファクタは最小限 |
+| 項目       | 方針                                                                                                                            |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| core 移植  | 継承チェーン・メソッド構成をそのまま TS 化し、データ注入・コンテナ指定・破棄・XSS 対策・入力複製のみ追加。リファクタは最小限    |
 | スキーマ型 | `packages/core/src/schema.ts`(d3 を import しない)。サブパス `@gh-file-grass/core/schema` で公開、adapter は `import type` のみ |
-| adapter | (a) 純粋変換 `toGitLogData`(fetch しない)と (b) 取得クライアントに分離 |
-| 並列制御 | 自前セマフォ(既定 4) |
-| キャッシュ | commit 詳細を `owner/repo@sha` キーで保持(上限約 500)。ブランチ/commit 一覧は TTL 5 分 |
-| テスト | vitest(workspace)。core は happy-dom か jsdom |
+| adapter    | (a) 純粋変換 `toGitLogData`(fetch しない)と (b) 取得クライアントに分離                                                          |
+| 並列制御   | 自前セマフォ(既定 4)                                                                                                            |
+| キャッシュ | commit 詳細を `owner/repo@sha` キーで保持(上限約 500)。ブランチ/commit 一覧は TTL 5 分                                          |
+| テスト     | vitest(workspace)。core は happy-dom か jsdom                                                                                   |
 
 却下案: 型を独立パッケージにする(規模的に過剰、未決事項 8 参照)/ core を関数型に作り直す(差分が大きく「再利用」要件に反する)。
 
@@ -57,60 +59,87 @@
 ```ts
 // packages/core/src/schema.ts
 export type FileChangeType = 'new' | 'modified' | 'deleted'
-export interface Author { name: string; email: string }
-export interface StatTotal { insertions: number; deletions: number; lines: number; files: number }
+export interface Author {
+  name: string
+  email: string
+}
+export interface StatTotal {
+  insertions: number
+  deletions: number
+  lines: number
+  files: number
+}
 export interface Commit {
-  sha: string; sha_short: string; author: Author
-  date: string; message: string
-  index: number            // 1 = 最古, N = 最新
+  sha: string
+  sha_short: string
+  author: Author
+  date: string
+  message: string
+  index: number // 1 = 最古, N = 最新
   stat_total: StatTotal
 }
-export interface StatPath { path: string; src: string; dst: string }
-export interface Stat {
-  path: string             // リネーム時は「旧パス」
-  mode: string             // adapter では常に ''
-  type: FileChangeType | null
-  src: string; dst: string // 7桁 blob hash、'0000000'、または ''
-  bin?: boolean            // Ruby のルートコミットでは欠落。adapter は常に出力
-  stat_path: StatPath
-  insertions: number; deletions: number; lines: number
-  sha_short: string
-  index: number            // 1 = 最新コミットの先頭ファイル
+export interface StatPath {
+  path: string
+  src: string
+  dst: string
 }
-export interface FileEntry { name: string; index: number; commits: string[] /* sha_short, 新しい順 */ }
+export interface Stat {
+  path: string // リネーム時は「旧パス」
+  mode: string // adapter では常に ''
+  type: FileChangeType | null
+  src: string
+  dst: string // 7桁 blob hash、'0000000'、または ''
+  bin?: boolean // Ruby のルートコミットでは欠落。adapter は常に出力
+  stat_path: StatPath
+  insertions: number
+  deletions: number
+  lines: number
+  sha_short: string
+  index: number // 1 = 最新コミットの先頭ファイル
+}
+export interface FileEntry {
+  name: string
+  index: number
+  commits: string[] /* sha_short, 新しい順 */
+}
 export interface GitLogData {
-  repo: string; branch: string; origin: string
-  commits: Commit[]; stats: Stat[]; files: FileEntry[]
+  repo: string
+  branch: string
+  origin: string
+  commits: Commit[]
+  stats: Stat[]
+  files: FileEntry[]
 }
 ```
 
 ### 4.2 Ruby 生成規則との対応(事実)
 
-| フィールド | Ruby の規則 | adapter の規則 |
-|---|---|---|
-| `repo` | ローカル .git パス(描画未使用) | `"owner/repo"` |
-| `branch` | 現在のローカルブランチ | 選択したブランチ名 |
-| `origin` | `remote.origin.url` から `.git` 除去 | `https://github.com/{owner}/{repo}` |
-| commits 並び | 配列は新しい順、`index = length - i`(最新=N、最古=1)。描画側が index 昇順に並べ替え(`commits.js:15-17`) | 同じ。index は 1..N 連番 |
-| `sha_short` | `sha[0,7]` | 同じ |
-| `author` | `log.author.name/email` | `commit.author`(git メタデータ)。欠落時 `committer`、それも無ければ `{name:'unknown',email:''}`。GitHub ユーザーの `author`(null あり)は使わない |
-| `date` | `Time#to_s`(実行マシンのローカル TZ)例 `2022-05-02 23:21:38 +0900` | 同形式 `YYYY-MM-DD HH:MM:SS +HHMM`。author/committer どちらの日付かは Step 0 で確定(ruby-git の `date` は committer_date の別名と推測) |
-| `message` | 全文(ルートは最後の 1 行のみ=実質バグ) | 全文 |
-| `stat_total` | `diff.stats[:total]` | `{insertions: stats.additions, deletions: stats.deletions, lines: stats.total, files: files.length}`。`commit.stats` 無ければ files 合計 |
-| stats 並び | 新しいコミットから順に各コミットのファイルを diff 順で平坦化、`index = i+1`(**1=最新**)。ルートは末尾に追加して振り直し | 新しい順に処理して連番 |
-| `stats.path` | `diff_file.path`(**リネーム時は旧パス**) | `previous_filename ?? filename` |
-| `stats.type` | new/modified/deleted。**リネームは `modified`** | 4.3 の表 |
-| `mode` | `100644` 等。純粋リネームは `""` | `''` 固定(API に無い) |
-| `src/dst` | `index` 行の 7 桁 blob。新規 src=`0000000`、削除 dst=`0000000`。**純粋リネームは両方 `""`** | 4.3 で再構成 |
-| `bin` | `binary?` | 推定(4.3) |
-| `stat_path` | 通常は 3 つとも同じパス。リネーム時 path は git 短縮表記(`{bin => lib}/x.rb`、`bin/{a.rb => b.rb}`、`a.rb => bin/a.rb` の 3 形式が fixture にある)、src=旧パス、dst=新パス | git の `pprint_rename` と同規則 |
-| `insertions/deletions/lines` | numstat。バイナリは 0。`lines = ins + del` | additions/deletions、和 |
-| `files` | stats.path ごとに sha_short を stats 順で集め、**名前でソート**して `index = i+1` | 同じ。ソートは**コード単位(バイト)順**。`localeCompare` 禁止(fixture では `Gemfile/LICENSE/README.md` が `bin/…` より前) |
-| リネーム先ファイル行 | stats.path が旧パスなので、新パス行に**リネームしたコミットは含まれない**(例 `lib/git_show_parser.rb` に `dd63220` 無し) | 同挙動を再現 |
+| フィールド                   | Ruby の規則                                                                                                                                                                | adapter の規則                                                                                                                                   |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `repo`                       | ローカル .git パス(描画未使用)                                                                                                                                             | `"owner/repo"`                                                                                                                                   |
+| `branch`                     | 現在のローカルブランチ                                                                                                                                                     | 選択したブランチ名                                                                                                                               |
+| `origin`                     | `remote.origin.url` から `.git` 除去                                                                                                                                       | `https://github.com/{owner}/{repo}`                                                                                                              |
+| commits 並び                 | 配列は新しい順、`index = length - i`(最新=N、最古=1)。描画側が index 昇順に並べ替え(`commits.js:15-17`)                                                                    | 同じ。index は 1..N 連番                                                                                                                         |
+| `sha_short`                  | `sha[0,7]`                                                                                                                                                                 | 同じ                                                                                                                                             |
+| `author`                     | `log.author.name/email`                                                                                                                                                    | `commit.author`(git メタデータ)。欠落時 `committer`、それも無ければ `{name:'unknown',email:''}`。GitHub ユーザーの `author`(null あり)は使わない |
+| `date`                       | `Time#to_s`(実行マシンのローカル TZ)例 `2022-05-02 23:21:38 +0900`                                                                                                         | 同形式 `YYYY-MM-DD HH:MM:SS +HHMM`。author/committer どちらの日付かは Step 0 で確定(ruby-git の `date` は committer_date の別名と推測)           |
+| `message`                    | 全文(ルートは最後の 1 行のみ=実質バグ)                                                                                                                                     | 全文                                                                                                                                             |
+| `stat_total`                 | `diff.stats[:total]`                                                                                                                                                       | `{insertions: stats.additions, deletions: stats.deletions, lines: stats.total, files: files.length}`。`commit.stats` 無ければ files 合計         |
+| stats 並び                   | 新しいコミットから順に各コミットのファイルを diff 順で平坦化、`index = i+1`(**1=最新**)。ルートは末尾に追加して振り直し                                                    | 新しい順に処理して連番                                                                                                                           |
+| `stats.path`                 | `diff_file.path`(**リネーム時は旧パス**)                                                                                                                                   | `previous_filename ?? filename`                                                                                                                  |
+| `stats.type`                 | new/modified/deleted。**リネームは `modified`**                                                                                                                            | 4.3 の表                                                                                                                                         |
+| `mode`                       | `100644` 等。純粋リネームは `""`                                                                                                                                           | `''` 固定(API に無い)                                                                                                                            |
+| `src/dst`                    | `index` 行の 7 桁 blob。新規 src=`0000000`、削除 dst=`0000000`。**純粋リネームは両方 `""`**                                                                                | 4.3 で再構成                                                                                                                                     |
+| `bin`                        | `binary?`                                                                                                                                                                  | 推定(4.3)                                                                                                                                        |
+| `stat_path`                  | 通常は 3 つとも同じパス。リネーム時 path は git 短縮表記(`{bin => lib}/x.rb`、`bin/{a.rb => b.rb}`、`a.rb => bin/a.rb` の 3 形式が fixture にある)、src=旧パス、dst=新パス | git の `pprint_rename` と同規則                                                                                                                  |
+| `insertions/deletions/lines` | numstat。バイナリは 0。`lines = ins + del`                                                                                                                                 | additions/deletions、和                                                                                                                          |
+| `files`                      | stats.path ごとに sha_short を stats 順で集め、**名前でソート**して `index = i+1`                                                                                          | 同じ。ソートは**コード単位(バイト)順**。`localeCompare` 禁止(fixture では `Gemfile/LICENSE/README.md` が `bin/…` より前)                         |
+| リネーム先ファイル行         | stats.path が旧パスなので、新パス行に**リネームしたコミットは含まれない**(例 `lib/git_show_parser.rb` に `dd63220` 無し)                                                   | 同挙動を再現                                                                                                                                     |
 
 **描画側が付与する項目(adapter は出力禁止)**: stats の `fileIndex/commitIndex/modifiedClass/px/py`、commits/files の `px/py`、`GHLogCommit/GHLogStat` ラッパー、`logLines/hist`、矢印データ `sourceIndex/targetIndex/source/target`。
 
 **adapter の不変条件**
+
 1. commit の index は 1..N 連番(`commits.indexOf` が位置=index を前提、`commits.js:19-21`)
 2. `sha_short` は範囲内で一意(commits/stats/files の結合キー)
 3. stats の index は最新コミットから 1..M 連番
@@ -120,17 +149,18 @@ export interface GitLogData {
 
 **status マッピング**(status 値自体は【要検証】)
 
-| GitHub status | type | stats.path | stat_path |
-|---|---|---|---|
-| `added` | `new` | filename | 3 つとも filename |
-| `removed` | `deleted` | filename | 同上 |
-| `modified`/`changed`/`unchanged` | `modified` | filename | 同上 |
-| `renamed` | `modified` | `previous_filename` | path=短縮表記、src=旧、dst=新 |
-| `copied` | `new` | filename | 同上(コピー元は無視) |
+| GitHub status                    | type       | stats.path          | stat_path                     |
+| -------------------------------- | ---------- | ------------------- | ----------------------------- |
+| `added`                          | `new`      | filename            | 3 つとも filename             |
+| `removed`                        | `deleted`  | filename            | 同上                          |
+| `modified`/`changed`/`unchanged` | `modified` | filename            | 同上                          |
+| `renamed`                        | `modified` | `previous_filename` | path=短縮表記、src=旧、dst=新 |
+| `copied`                         | `new`      | filename            | 同上(コピー元は無視)          |
 
 **リネーム短縮表記**: 共通の先頭・末尾を `/` 境界で切り出し `{旧 => 新}`。共通部が無ければ `旧 => 新`。fixture の 3 形式を単体テストにする。
 
 **src/dst 再構成**(矢印に直結する最重要部)
+
 - 矢印は `findAllDstOf`(`d.src === stat.dst` かつ dst が `''`/`0000000` でない、`stats.js:24-29`)で作られる【事実】。
 - API の files[] の blob は `sha` のみ。`removed` の `sha` は**削除前の blob**(Step 0 ④で確認)。それ以外は変更後の blob。
   1. `dst`: `removed` なら `0000000`、他は `sha.slice(0,7)`。内部の `blobAfter` は、`removed` では「存在しない」(null)として扱い、`sha` を入れない(後続コミットの src に誤って使われるため)。
@@ -162,45 +192,78 @@ export interface GitLogData {
 9. **SCSS**: `.gh-file-grass` 配下にスコープ化。全体セレクタ廃止。`@gh-file-grass/core/style.css` として配布。
 
 ```ts
-export interface DrawOptions { container: HTMLElement }
-export interface FileGrassHandle { destroy(): void }
+export interface DrawOptions {
+  container: HTMLElement
+}
+export interface FileGrassHandle {
+  destroy(): void
+}
 export function draw(data: GitLogData, options: DrawOptions): FileGrassHandle
 export type * from './schema'
 ```
+
 再描画は呼び出し側が `destroy()` → `draw()`。
 
 ### 4.5 adapter のインタフェース
 
 ```ts
-export interface RepoRef { owner: string; repo: string }
+export interface RepoRef {
+  owner: string
+  repo: string
+}
 export function parseRepoInput(input: string): RepoRef // InvalidInputError
 // 受理: owner/repo, https://github.com/o/r(.git)(/tree/…), github.com/o/r, git@github.com:o/r.git
 // owner: /^[A-Za-z0-9-]{1,39}$/  repo: /^[A-Za-z0-9._-]{1,100}$/
 
-export interface BranchInfo { name: string; headSha: string }
-export interface RateLimitInfo { limit: number; remaining: number; resetAt: Date; observedAt: Date }
+export interface BranchInfo {
+  name: string
+  headSha: string
+}
+export interface RateLimitInfo {
+  limit: number
+  remaining: number
+  resetAt: Date
+  observedAt: Date
+}
 export type Progress = { phase: 'list' | 'detail'; done: number; total: number }
-export interface Warning { kind: 'truncated' | 'unknown-src'; sha?: string; detail?: string }
-export interface HistoryResult { data: GitLogData; warnings: Warning[]; rateLimit: RateLimitInfo | null }
+export interface Warning {
+  kind: 'truncated' | 'unknown-src'
+  sha?: string
+  detail?: string
+}
+export interface HistoryResult {
+  data: GitLogData
+  warnings: Warning[]
+  rateLimit: RateLimitInfo | null
+}
 
 export interface GitHubClientOptions {
-  fetch?: typeof fetch; baseUrl?: string   // テスト差し替え用
-  concurrency?: number                     // 既定 4
-  maxCount?: number                        // 上限 50
+  fetch?: typeof fetch
+  baseUrl?: string // テスト差し替え用
+  concurrency?: number // 既定 4
+  maxCount?: number // 上限 50
 }
 export class GitHubClient {
-  fetchBranches(ref: RepoRef, opts?: { signal?: AbortSignal }): Promise<BranchInfo[]>  // per_page=100, 1ページ
-  fetchHistory(ref: RepoRef, branch: string, opts?: {
-    count?: number; signal?: AbortSignal; onProgress?: (p: Progress) => void
-  }): Promise<HistoryResult>
-  estimateCost(ref: RepoRef, shas: string[]): number   // キャッシュに無い件数
+  fetchBranches(ref: RepoRef, opts?: { signal?: AbortSignal }): Promise<BranchInfo[]> // per_page=100, 1ページ
+  fetchHistory(
+    ref: RepoRef,
+    branch: string,
+    opts?: {
+      count?: number
+      signal?: AbortSignal
+      onProgress?: (p: Progress) => void
+    },
+  ): Promise<HistoryResult>
+  estimateCost(ref: RepoRef, shas: string[]): number // キャッシュに無い件数
   get lastRateLimit(): RateLimitInfo | null
-  fetchRateLimit(opts?): Promise<RateLimitInfo>        // GET /rate_limit(非消費は【要検証】)
+  fetchRateLimit(opts?): Promise<RateLimitInfo> // GET /rate_limit(非消費は【要検証】)
 }
 export function toGitLogData(input: {
-  ref: RepoRef; branch: string; commits: GhCommitDetail[]  // 新しい順, parents 含む
+  ref: RepoRef
+  branch: string
+  commits: GhCommitDetail[] // 新しい順, parents 含む
   timeZone?: string
-}): { data: GitLogData; warnings: Warning[] }              // 純粋関数。件数上限なし
+}): { data: GitLogData; warnings: Warning[] } // 純粋関数。件数上限なし
 ```
 
 **fetchHistory の流れ**: (1) `GET /repos/{o}/{r}/commits?sha={branch}&per_page={count}`(1 req) → (2) キャッシュに無い sha 件数を数え `lastRateLimit.remaining` と比較、不足なら詳細取得前に `RateLimitError`(needed/remaining/resetAt) → (3) 詳細を並列 4 で取得、1 件ごとに `onProgress` → (4) 最初のエラーで内部 AbortController を中断。取得済みはキャッシュに残す。
@@ -212,6 +275,7 @@ export function toGitLogData(input: {
 **予算**: branches 1 + 一覧 1 + 詳細 N。N=20 で約 22、N=50 で約 52。60/h の枠では新規リポジトリは 1 時間に 2〜3 回程度。ブラウザ HTTP キャッシュの ETag 再検証(304 は非計上)が効く可能性【推測】。
 
 ### 4.6 app
+
 - コンポーネント: `RepoForm`, `BranchSelect`, `CountInput`(1〜50、既定 20), `ProgressBar`, `RateLimitBadge`(残り回数/リセット時刻), `ErrorBanner`, `FileGrassView`。
 - `FileGrassView`: `onMounted` と `watch(data)` で `destroy → draw`、`onBeforeUnmount` で `destroy`。
 - 状態: composable `useHistoryLoader`(AbortController 保持、入力変更で前の取得を中断)。Pinia 不使用。
@@ -222,6 +286,7 @@ export function toGitLogData(input: {
 依存: 1→2→3 は順次。4 と 5 は 3 の後に並行可。6 は 2 と 5 の後。7→8 は 6 の後。
 
 **Step 0: 調査スパイク(API 挙動確認 + フィクスチャ録画)**
+
 - `scripts/record-fixtures.ts`(開発専用、`GITHUB_TOKEN` 使用、成果物に含めない)。`corestate55/gh-file-grass` の `commits?sha=<d64a81b…>&per_page=100`、64 件分の `commits/{sha}`、`branches`、レスポンスヘッダ(CORS/Rate 系)を保存。
 - 検証項目: ①リモートに `d64a81b` があるか ②一覧の並び順 ③マージの files が第一親差分か ④`removed` の sha の意味 ⑤純粋リネームの `changes` ⑥バイナリ判別手がかり ⑦`Access-Control-Expose-Headers` ⑧`/rate_limit` が非消費か ⑨date は author/committer どちらか
 - 完了条件: `packages/github-adapter/test/fixtures/` に保存、検証メモ(PR 本文)で未決事項の材料が揃う。
@@ -245,6 +310,7 @@ export function toGitLogData(input: {
 ## 6. テスト方針
 
 **ゴールデン比較**(`logs.json` vs フィクスチャ変換結果)。`TZ=Asia/Tokyo` 固定(Ruby がローカル TZ で書式化)。
+
 - 厳密一致: commits の sha/sha_short/author/stat_total/sha 集合、index(並び順方針確定後)、files の name/index/commits、コミットごとの stats 集合(path ソート): path/type/stat_path/insertions/deletions/lines/dst
 - 導出結果比較: `_makeStatArrowsData` 相当の (source, target) 組集合、`_lifeStartIndex/_lifeEndIndex` による各ファイル寿命範囲
 - 正規化して除外: `repo`、`mode`、ルートの message/date/bin/type null、範囲端で src 不明なもの。date は時刻値として比較
@@ -253,20 +319,20 @@ export function toGitLogData(input: {
 
 ## 7. リスク
 
-| リスク | 影響 | 対策 |
-|---|---|---|
-| 一覧順が git log と違う【要検証】 | index 全ずれ | Step 0 で確認、必要なら parents でトポロジカル順+日付で並べ替え |
-| マージの files が第一親差分でない【要検証】 | stats 膨張 | `compare/{p0}...{sha}` に切替 |
-| src が API から取れない | 範囲端で矢印欠落 | 第一親チェーンで再構成、差異は仕様として許容 |
-| mode が取れない | ツールチップ mode 欄が空 | 受容 |
-| bin が推定 | BIN/行数表示がぶれる | ルールをテストで固定 |
-| レート制限 60/h | 1 時間に取れる回数が少ない | 事前残量チェック、sha キャッシュ、残量表示、N 既定 20 |
-| CORS でレート制限ヘッダ不可【要検証】 | 事前チェック不可 | `/rate_limit` で代替 |
-| XSS【事実】 | 任意リポジトリ経由でスクリプト実行 | Step 4 で必ずエスケープ |
-| 巨大リポジトリ(300 ファイル超/長いパス) | 描画が重い/切り詰め | warnings 表示、N 上限 50 |
-| 範囲内で sha_short 衝突 | 結合キー破壊 | 検出したらエラー |
-| ブランチ 100 超 | 一覧に出ない | 手入力欄を用意するか(未決 7) |
-| Ruby 固有の癖 | 完全互換にならない | 再現しない方針を明記 |
+| リスク                                      | 影響                               | 対策                                                            |
+| ------------------------------------------- | ---------------------------------- | --------------------------------------------------------------- |
+| 一覧順が git log と違う【要検証】           | index 全ずれ                       | Step 0 で確認、必要なら parents でトポロジカル順+日付で並べ替え |
+| マージの files が第一親差分でない【要検証】 | stats 膨張                         | `compare/{p0}...{sha}` に切替                                   |
+| src が API から取れない                     | 範囲端で矢印欠落                   | 第一親チェーンで再構成、差異は仕様として許容                    |
+| mode が取れない                             | ツールチップ mode 欄が空           | 受容                                                            |
+| bin が推定                                  | BIN/行数表示がぶれる               | ルールをテストで固定                                            |
+| レート制限 60/h                             | 1 時間に取れる回数が少ない         | 事前残量チェック、sha キャッシュ、残量表示、N 既定 20           |
+| CORS でレート制限ヘッダ不可【要検証】       | 事前チェック不可                   | `/rate_limit` で代替                                            |
+| XSS【事実】                                 | 任意リポジトリ経由でスクリプト実行 | Step 4 で必ずエスケープ                                         |
+| 巨大リポジトリ(300 ファイル超/長いパス)     | 描画が重い/切り詰め                | warnings 表示、N 上限 50                                        |
+| 範囲内で sha_short 衝突                     | 結合キー破壊                       | 検出したらエラー                                                |
+| ブランチ 100 超                             | 一覧に出ない                       | 手入力欄を用意するか(未決 7)                                    |
+| Ruby 固有の癖                               | 完全互換にならない                 | 再現しない方針を明記                                            |
 
 切り戻し: core と adapter は独立パッケージなので問題のあるものだけ戻せる。
 

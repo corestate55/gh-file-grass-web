@@ -86,9 +86,7 @@ async function probe() {
   console.log(`① head commit: status=${headRec.status}`)
 
   // ② 一覧の並び順
-  const list = await get(
-    `/repos/${OWNER}/${REPO}/commits?sha=${head.sha}&per_page=100`,
-  )
+  const list = await get(`/repos/${OWNER}/${REPO}/commits?sha=${head.sha}&per_page=100`)
   await save('commits-list.json', list)
   const listed = (list.body as { sha: string }[]).map((c) => c.sha)
   console.log(`② list: status=${list.status}, count=${listed.length}`)
@@ -110,7 +108,9 @@ async function probe() {
     const sameSet = listed.slice(0, n).every((s) => exp.has(s))
     console.log(`   先頭 ${n} 件の集合は一致: ${sameSet}`)
   }
-  console.log(`   root(${expected[n - 1].sha_short}) が一覧に含まれる: ${listed.includes(expected[n - 1].sha)}`)
+  console.log(
+    `   root(${expected[n - 1].sha_short}) が一覧に含まれる: ${listed.includes(expected[n - 1].sha)}`,
+  )
 
   // ⑦ CORS 公開ヘッダ
   console.log(`⑦ access-control-allow-origin: ${list.headers['access-control-allow-origin']}`)
