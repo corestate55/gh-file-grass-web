@@ -1,0 +1,140 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/db1c30245455c9ec0fb13897590493354475c7d9",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"9ca8f57719372a1f4b668b42d72749db5e872074041ca94e365181c14c6d1c5b\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4929",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "71",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "db1c30245455c9ec0fb13897590493354475c7d9",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmRiMWMzMDI0NTQ1NWM5ZWMwZmIxMzg5NzU5MDQ5MzM1NDQ3NWM3ZDk=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-11-29T04:41:14Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-11-29T04:41:14Z"
+      },
+      "message": "Add drag for each commits/files/stats",
+      "tree": {
+        "sha": "4f4fb310979abd61c01f00722bb0c1305acb7f76",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/4f4fb310979abd61c01f00722bb0c1305acb7f76"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/db1c30245455c9ec0fb13897590493354475c7d9",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/db1c30245455c9ec0fb13897590493354475c7d9",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/db1c30245455c9ec0fb13897590493354475c7d9",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/db1c30245455c9ec0fb13897590493354475c7d9/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6c8b9fa8c529740ae5b1b7f92bf53b2f83b2548c",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/6c8b9fa8c529740ae5b1b7f92bf53b2f83b2548c",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/6c8b9fa8c529740ae5b1b7f92bf53b2f83b2548c"
+      }
+    ],
+    "stats": {
+      "total": 162,
+      "additions": 132,
+      "deletions": 30
+    },
+    "files": [
+      {
+        "sha": "5597e63b81bf050c2ebb9b5563121b6cdc947114",
+        "filename": "package-lock.json",
+        "status": "modified",
+        "additions": 14,
+        "deletions": 0,
+        "changes": 14,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/db1c30245455c9ec0fb13897590493354475c7d9/package-lock.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/db1c30245455c9ec0fb13897590493354475c7d9/package-lock.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package-lock.json?ref=db1c30245455c9ec0fb13897590493354475c7d9",
+        "patch": "@@ -3566,6 +3566,20 @@\n       \"integrity\": \"sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=\",\n       \"dev\": true\n     },\n+    \"d3-dispatch\": {\n+      \"version\": \"1.0.6\",\n+      \"resolved\": \"https://registry.npmjs.org/d3-dispatch/-/d3-dispatch-1.0.6.tgz\",\n+      \"integrity\": \"sha512-fVjoElzjhCEy+Hbn8KygnmMS7Or0a9sI2UzGwoB7cCtvI1XpVN9GpoYlnb3xt2YV66oXYb1fLJ8GMvP4hdU1RA==\"\n+    },\n+    \"d3-drag\": {\n+      \"version\": \"1.2.5\",\n+      \"resolved\": \"https://registry.npmjs.org/d3-drag/-/d3-drag-1.2.5.tgz\",\n+      \"integrity\": \"sha512-rD1ohlkKQwMZYkQlYVCrSFxsWPzI97+W+PaEIBNTMxRuxz9RF0Hi5nJWHGVJ3Om9d2fRTe1yOBINJyy/ahV95w==\",\n+      \"requires\": {\n+        \"d3-dispatch\": \"1\",\n+        \"d3-selection\": \"1\"\n+      }\n+    },\n     \"d3-dsv\": {\n       \"version\": \"1.2.0\",\n       \"resolved\": \"https://registry.npmjs.org/d3-dsv/-/d3-dsv-1.2.0.tgz\","
+      },
+      {
+        "sha": "ff31e77337e493d93161a33847b0865dd6df9d28",
+        "filename": "package.json",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 0,
+        "changes": 1,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/db1c30245455c9ec0fb13897590493354475c7d9/package.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/db1c30245455c9ec0fb13897590493354475c7d9/package.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package.json?ref=db1c30245455c9ec0fb13897590493354475c7d9",
+        "patch": "@@ -9,6 +9,7 @@\n   },\n   \"dependencies\": {\n     \"core-js\": \"^3.3.2\",\n+    \"d3-drag\": \"^1.2.5\",\n     \"d3-fetch\": \"^1.1.2\",\n     \"d3-selection\": \"^1.4.1\",\n     \"vue\": \"^2.6.10\""
+      },
+      {
+        "sha": "cea10535beacb71c713cfc3f335fb1e6310072f5",
+        "filename": "src/js/gh_file_grass.js",
+        "status": "modified",
+        "additions": 117,
+        "deletions": 30,
+        "changes": 147,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/db1c30245455c9ec0fb13897590493354475c7d9/src%2Fjs%2Fgh_file_grass.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/db1c30245455c9ec0fb13897590493354475c7d9/src%2Fjs%2Fgh_file_grass.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass.js?ref=db1c30245455c9ec0fb13897590493354475c7d9",
+        "patch": "@@ -1,5 +1,6 @@\n-import { select } from 'd3-selection'\n+import { select, event } from 'd3-selection'\n import { json } from 'd3-fetch'\n+import { drag } from 'd3-drag'\n \n export default class GHFileGrass {\n   constructor(logUri) {\n@@ -10,55 +11,128 @@ export default class GHFileGrass {\n     this.logUri = logUri\n   }\n \n+  _makeCommitsGroup() {\n+    // Commits : X-Axis\n+    this.commitsGroup = this.svg\n+      .append('g')\n+      .attr('id', 'commits-group')\n+      .attr('transform', `translate(${this.px0},${this.py0})`)\n+    this.commitsGroup\n+      .append('defs')\n+      .append('SVG:clipPath')\n+      .attr('id', 'commits-clip')\n+      .append('rect')\n+      .attr('x', 0)\n+      .attr('y', -this.py0)\n+      .attr('width', this.width1)\n+      .attr('height', this.py0)\n+    this.clippedCommitsGroup = this.commitsGroup\n+      .append('g')\n+      .attr('clip-path', 'url(#commits-clip)')\n+  }\n+\n+  _makeFilesGroup() {\n+    // Files : Y-Axis\n+    this.filesGroup = this.svg\n+      .append('g')\n+      .attr('id', 'files-group')\n+      .attr('transform', `translate(${this.px0},${this.py0})`)\n+    this.filesGroup\n+      .append('defs')\n+      .append('SVG:clipPath')\n+      .attr('id', 'files-clip')\n+      .append('rect')\n+      .attr('x', -this.px0)\n+      .attr('y', 0)\n+      .attr('width', this.px0)\n+      .attr('height', this.height1)\n+    this.clippedFilesGroup = this.filesGroup\n+      .append('g')\n+      .attr('clip-path', 'url(#files-clip)')\n+  }\n+\n+  _makeStatsGroup() {\n+    // Stats : contents\n+    this.statsGroup = this.svg\n+      .append('g')\n+      .attr('id', 'stats-group')\n+      .attr('transform', `translate(${this.px0},${this.py0})`)\n+    this.statsGroup\n+      .append('defs')\n+      .append('SVG:clipPath')\n+      .attr('id', 'stats-clip')\n+      .append('rect')\n+      .attr('width', this.width1)\n+      .attr('height', this.height1)\n+    this.clippedStatsGroup = this.statsGroup\n+      .append('g')\n+      .attr('clip-path', 'url(#stats-clip)')\n+  }\n+\n   _makeSVGCanvas() {\n     this.svg = select('#gh-file-grass')\n       .append('svg')\n       .attr('id', 'gh-file-grass-canvas')\n       .attr('width', this.width0)\n       .attr('height', this.height0)\n-    this.gStats = this.svg\n-      .append('g')\n-      .attr('id', 'stats-group')\n-      .attr('transform', `translate(${this.px0},${this.py0})`)\n-    this.gFiles = this.gStats\n-      .append('g')\n-      .attr('id', 'files-group')\n-    this.gCommits = this.gStats\n-      .append('g')\n-      .attr('id', 'commits-group')\n+    this._makeCommitsGroup()\n+    this._makeFilesGroup()\n+    this._makeStatsGroup()\n+  }\n+\n+  _addDragToGroups() {\n+    this.statsGroup\n+      .append('rect')\n+      .attr('id', 'pointer-event-handler')\n+      .attr('width', this.width1)\n+      .attr('height', this.height1)\n+      .style('fill', 'none')\n+      .style('pointer-events', 'all')\n+      .call(drag()\n+        .on('drag', () => {\n+          this.clippedCommitsGroup.selectAll('text')\n+            .attr('x', d => d.px += event.dx)\n+            .attr('transform', d => `rotate(-60,${d.px},${d.py})`)\n+          this.clippedFilesGroup.selectAll('text')\n+            .attr('y', d => d.py += event.dy)\n+          this.clippedStatsGroup.selectAll('rect')\n+            .attr('x', d => d.px += event.dx)\n+            .attr('y', d => d.py += event.dy)\n+        })\n+      )\n   }\n \n   _makeFileLabels() {\n-    this.gFiles\n+    this.clippedFilesGroup\n       .selectAll('text.gh-file-label')\n       .data(this.files)\n       .enter()\n       .append('text')\n       .attr('id', d => d.name)\n       .attr('class', 'gh-file-label')\n-      .attr('x', 0)\n-      .attr('y', d => this._py(d.index))\n+      .attr('x', d => this._px(0, d))\n+      .attr('y', d => this._py(d.index, d))\n       .attr('dy', this.fontSize)\n       .text(d => d.name)\n   }\n \n   _makeCommitLabels() {\n-    this.gCommits\n+    this.clippedCommitsGroup\n       .selectAll('text.gh-commit-label')\n       .data(this.commits)\n       .enter()\n       .append('text')\n       .attr('id', d => d.sha_short)\n       .attr('class', 'gh-commit-label')\n-      .attr('x', d => this._px(d.index))\n-      .attr('y', 0)\n+      .attr('x', d => this._px(d.index, d))\n+      .attr('y', d => this._py(0, d))\n       .attr('dx', this.fontSize)\n-      .attr('transform', d => `rotate(-60,${this._px(d.index)},${this._py(0)})`)\n+      .attr('transform', d => `rotate(-60,${d.px},${d.py})`)\n       .text(d => d.sha_short)\n   }\n \n   _makeStatsRect() {\n-    this.gStats\n+    this.clippedStatsGroup\n       .selectAll('rect.gh-stats')\n       .data(this.stats)\n       .enter()\n@@ -71,11 +145,11 @@ export default class GHFileGrass {\n   }\n \n   _rectX(stat) {\n-    return this._px(this._indexOfCommit(stat.sha_short))\n+    return this._px(this._indexOfCommit(stat.sha_short), stat)\n   }\n \n   _rectY(stat) {\n-    return this._py(this._indexOfFile(stat.path))\n+    return this._py(this._indexOfFile(stat.path), stat)\n   }\n \n   _indexOfCommit(key) {\n@@ -86,12 +160,24 @@ export default class GHFileGrass {\n     return this.files.map(d => d.name).indexOf(key) + 1\n   }\n \n-  _px(i) {\n-    return i * (this.lc + this.dc)\n+  // Function `_px()` and `_py()` are used to calculate initial position\n+  // for each data (svg object), and they keep its position in data as [px,py].\n+  // In event handler, use `px`/`py` to calculate position of svg-object.\n+  _px(index, data) {\n+    const d = data || {}\n+    d.px = index * (this.lc + this.dc) // save current position\n+    return d.px\n+  }\n+\n+  _py(index, data) {\n+    const d = data || {}\n+    d.py = index * (this.lc + this.dc) // save current position\n+    return d.py\n   }\n \n-  _py(i) {\n-    return i * (this.lc + this.dc)\n+  _maxFileLength() {\n+    const fileLengthList = this.files.map(d => d.name.length)\n+    return Math.max(...fileLengthList)\n   }\n \n   async draw() {\n@@ -100,15 +186,16 @@ export default class GHFileGrass {\n     this.commits = data.commits.reverse()\n     this.stats = data.stats\n \n-    this.px0 = Math.max(...this.files.map(d => d.name.length)) * this.fontSize * 0.7\n-    this.width0 = this._px(this.commits.length) * 1.3\n-    this.height0 = this._py(this.files.length)\n-    // this.width1 = this.width0 - this.px0\n-    // this.height1 = this.height0 - this.py0\n+    this.px0 = this._maxFileLength() * this.fontSize * 0.7\n+    this.width0 = this.px0 + this._px(this.commits.length) * 1.2\n+    this.height0 = this.py0 + this._py(this.files.length)\n+    this.width1 = this.width0 - this.px0\n+    this.height1 = this.height0 - this.py0\n \n     this._makeSVGCanvas()\n     this._makeFileLabels()\n     this._makeCommitLabels()\n     this._makeStatsRect()\n+    this._addDragToGroups()\n   }\n }"
+      }
+    ]
+  }
+}

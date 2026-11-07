@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "node_modules/.tmp/tsc",
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "types": ["vite/client"]
+  },
+  "include": ["src", "src/**/*.vue", "test", "test/**/*.vue"],
+  "references": [{ "path": "../packages/core" }, { "path": "../packages/github-adapter" }]
+}

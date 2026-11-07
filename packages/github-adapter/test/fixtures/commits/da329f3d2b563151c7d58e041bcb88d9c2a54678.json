@@ -1,0 +1,128 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/da329f3d2b563151c7d58e041bcb88d9c2a54678",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"75737c45289d59f88fa42ebda2087f34d9a7c2759d9f61e82340f80db174ce37\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4953",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "47",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "da329f3d2b563151c7d58e041bcb88d9c2a54678",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmRhMzI5ZjNkMmI1NjMxNTFjN2Q1OGUwNDFiY2I4OGQ5YzJhNTQ2Nzg=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-06T11:20:02Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-06T11:20:02Z"
+      },
+      "message": "Change stats classify method.",
+      "tree": {
+        "sha": "2ca2f655781ea200eebeff8778b2716d3136cb15",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/2ca2f655781ea200eebeff8778b2716d3136cb15"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/da329f3d2b563151c7d58e041bcb88d9c2a54678",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/da329f3d2b563151c7d58e041bcb88d9c2a54678",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/da329f3d2b563151c7d58e041bcb88d9c2a54678",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/da329f3d2b563151c7d58e041bcb88d9c2a54678/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "54c7fff0d9c9e6b7181e756f2e9ebbabb7f2de69",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/54c7fff0d9c9e6b7181e756f2e9ebbabb7f2de69",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/54c7fff0d9c9e6b7181e756f2e9ebbabb7f2de69"
+      }
+    ],
+    "stats": {
+      "total": 52,
+      "additions": 44,
+      "deletions": 8
+    },
+    "files": [
+      {
+        "sha": "aee8855870f0638698a1cb8fcff68cb224377c4a",
+        "filename": "src/css/file_grass.scss",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 1,
+        "changes": 2,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/da329f3d2b563151c7d58e041bcb88d9c2a54678/src%2Fcss%2Ffile_grass.scss",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/da329f3d2b563151c7d58e041bcb88d9c2a54678/src%2Fcss%2Ffile_grass.scss",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fcss%2Ffile_grass.scss?ref=da329f3d2b563151c7d58e041bcb88d9c2a54678",
+        "patch": "@@ -1,4 +1,4 @@\n-$base-color: #53c653;\n+$base-color: #7ab89e;\n $strong-stroke-color: #ec939a;\n \n %selected-label {"
+      },
+      {
+        "sha": "5f57e4c551d400726c2773cffe55bf635f2a4c50",
+        "filename": "src/js/gh_file_grass/stats.js",
+        "status": "modified",
+        "additions": 43,
+        "deletions": 7,
+        "changes": 50,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/da329f3d2b563151c7d58e041bcb88d9c2a54678/src%2Fjs%2Fgh_file_grass%2Fstats.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/da329f3d2b563151c7d58e041bcb88d9c2a54678/src%2Fjs%2Fgh_file_grass%2Fstats.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fstats.js?ref=da329f3d2b563151c7d58e041bcb88d9c2a54678",
+        "patch": "@@ -117,7 +117,7 @@ class GHLogStat {\n     const ins = '+' + this.insertions\n     const del = '-' + this.deletions\n     const bar = this._statBarStr(this.insertions, this.deletions)\n-    return `${this._insStr(ins)}, ${this._delStr(del)}&nbsp;${bar}`\n+    return `${this._insStr(ins)}, ${this._delStr(del)} ${bar} (${this.lines})`\n   }\n \n   tooltipHtml() {\n@@ -136,7 +136,8 @@ export default class GHLogStats {\n   constructor(stats) {\n     this.stats = stats.map(d => new GHLogStat(d))\n     this.length = this.stats.length\n-    this._classifyByModifiedLines()\n+    // this._classifyByModifiedLines()\n+    this._classifyByLog10ModifiedLines()\n   }\n \n   isSamePathDstStat(stat) {\n@@ -178,17 +179,52 @@ export default class GHLogStats {\n     this.stats.sort((a, b) => a.lines - b.lines)\n   }\n \n+  _statsDistByLog10Line() {\n+    const statsDist = {}\n+    this.stats.forEach(d => {\n+      const countKey = d.lines > 0 ? Math.floor(10 * Math.log10(d.lines)) : 0\n+      if (!statsDist[countKey]) {\n+        statsDist[countKey] = []\n+      }\n+      statsDist[countKey].push(d)\n+    })\n+    Object.keys(statsDist).forEach(ck =>\n+      console.log(`log(lines)=${ck} : ${'*'.repeat(statsDist[ck].length)}`)\n+    )\n+    return statsDist\n+  }\n+\n+  _classifyByLog10ModifiedLines() {\n+    this.sortByLines()\n+    const statsDist = this._statsDistByLog10Line()\n+    const stepDiv = Object.keys(statsDist).length / 4\n+    let modClass = 1\n+    let step = stepDiv\n+    Object.keys(statsDist)\n+      .sort((a, b) => a - b)\n+      .forEach((countKey, i) => {\n+        if (i > step) {\n+          modClass += 1\n+          step = stepDiv * modClass\n+        }\n+        statsDist[countKey].forEach(d => {\n+          d.modifiedClass = modClass\n+        })\n+      })\n+    this.sortByIndex()\n+  }\n+\n   _classifyByModifiedLines() {\n+    this.sortByLines()\n     const stepDiv = this.stats.length / 4\n-    let count = 1\n+    let modClass = 1\n     let step = stepDiv\n-    this.sortByLines()\n     this.stats.forEach((d, i) => {\n       if (i > step) {\n-        count++\n-        step = stepDiv * count\n+        modClass += 1\n+        step = stepDiv * modClass\n       }\n-      d.modifiedClass = count\n+      d.modifiedClass = modClass\n     })\n     this.sortByIndex()\n   }"
+      }
+    ]
+  }
+}

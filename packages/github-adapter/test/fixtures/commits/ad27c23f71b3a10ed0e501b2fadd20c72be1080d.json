@@ -1,0 +1,116 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/ad27c23f71b3a10ed0e501b2fadd20c72be1080d",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"02bda8e6ad29343897778d34400e2394bb525999cadee5fbfefa3f3e61a39cd2\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4973",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "27",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "ad27c23f71b3a10ed0e501b2fadd20c72be1080d",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmFkMjdjMjNmNzFiM2ExMGVkMGU1MDFiMmZhZGQyMGM3MmJlMTA4MGQ=",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2020-11-25T02:17:47Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2020-11-25T02:17:47Z"
+      },
+      "message": "Bump highlight.js from 9.16.2 to 9.18.5\n\nBumps [highlight.js](https://github.com/highlightjs/highlight.js) from 9.16.2 to 9.18.5.\n- [Release notes](https://github.com/highlightjs/highlight.js/releases)\n- [Changelog](https://github.com/highlightjs/highlight.js/blob/9.18.5/CHANGES.md)\n- [Commits](https://github.com/highlightjs/highlight.js/compare/9.16.2...9.18.5)\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+      "tree": {
+        "sha": "b97191dde329974acd864ac881e948472a582788",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/b97191dde329974acd864ac881e948472a582788"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/ad27c23f71b3a10ed0e501b2fadd20c72be1080d",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJfvb7LCRBK7hj4Ov3rIwAAdHIIAC0bu33KRpGor30iH3CY40IP\n3jcN2oYWyaJ5z9Ihbh2rttlEd4iwL3xaMnINZXrBKbmke1KTTgSOQo46V6FeMFsf\naUxYwtcSnIk1wj/Wd1TAqvEZWZrITXYQgw9fnjC34P9idJdW+kp3dfRSvMnsnMzS\njBJAeoyVcfiwk9mTLPeqbevBqqwfC3NJsUeI/m1Qf+rNQL0TVpV3hxFtEsVNBmu4\nh3O5tultZ6tO++EQUcowcIwBg49048Sx2zue63hWZMUbCTSdiZ33X5rVuXqemAAh\nANhKUO9mEyD5uaWVkLX+jO5SmFZhN7WnbQPHP4JH70mzly8wKYLoYkUohCVkwUg=\n=7jNE\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree b97191dde329974acd864ac881e948472a582788\nparent 24e2bcf13c8ffcfe0768bc4258847055e65721b2\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1606270667 +0000\ncommitter GitHub <noreply@github.com> 1606270667 +0000\n\nBump highlight.js from 9.16.2 to 9.18.5\n\nBumps [highlight.js](https://github.com/highlightjs/highlight.js) from 9.16.2 to 9.18.5.\n- [Release notes](https://github.com/highlightjs/highlight.js/releases)\n- [Changelog](https://github.com/highlightjs/highlight.js/blob/9.18.5/CHANGES.md)\n- [Commits](https://github.com/highlightjs/highlight.js/compare/9.16.2...9.18.5)\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "verified_at": "2024-01-16T19:59:59Z"
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/ad27c23f71b3a10ed0e501b2fadd20c72be1080d",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/ad27c23f71b3a10ed0e501b2fadd20c72be1080d",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/ad27c23f71b3a10ed0e501b2fadd20c72be1080d/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "24e2bcf13c8ffcfe0768bc4258847055e65721b2",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/24e2bcf13c8ffcfe0768bc4258847055e65721b2",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/24e2bcf13c8ffcfe0768bc4258847055e65721b2"
+      }
+    ],
+    "stats": {
+      "total": 6,
+      "additions": 3,
+      "deletions": 3
+    },
+    "files": [
+      {
+        "sha": "89d320b9d735cd2def66e8ea471b89c021740971",
+        "filename": "package-lock.json",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 3,
+        "changes": 6,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/ad27c23f71b3a10ed0e501b2fadd20c72be1080d/package-lock.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/ad27c23f71b3a10ed0e501b2fadd20c72be1080d/package-lock.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package-lock.json?ref=ad27c23f71b3a10ed0e501b2fadd20c72be1080d",
+        "patch": "@@ -6080,9 +6080,9 @@\n       \"dev\": true\n     },\n     \"highlight.js\": {\n-      \"version\": \"9.16.2\",\n-      \"resolved\": \"https://registry.npmjs.org/highlight.js/-/highlight.js-9.16.2.tgz\",\n-      \"integrity\": \"sha512-feMUrVLZvjy0oC7FVJQcSQRqbBq9kwqnYE4+Kj9ZjbHh3g+BisiPgF49NyQbVLNdrL/qqZr3Ca9yOKwgn2i/tw==\",\n+      \"version\": \"9.18.5\",\n+      \"resolved\": \"https://registry.npmjs.org/highlight.js/-/highlight.js-9.18.5.tgz\",\n+      \"integrity\": \"sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==\",\n       \"dev\": true\n     },\n     \"hmac-drbg\": {"
+      }
+    ]
+  }
+}

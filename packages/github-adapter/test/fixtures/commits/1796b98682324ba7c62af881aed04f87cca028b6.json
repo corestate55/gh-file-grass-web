@@ -1,0 +1,116 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/1796b98682324ba7c62af881aed04f87cca028b6",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"f6a2e77b8f970d00aff8ce9505b8e023ed4ddec248ae25feeadc54a1e39a1851\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4947",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "53",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "1796b98682324ba7c62af881aed04f87cca028b6",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OjE3OTZiOTg2ODIzMjRiYTdjNjJhZjg4MWFlZDA0Zjg3Y2NhMDI4YjY=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-05T12:00:45Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-05T12:00:45Z"
+      },
+      "message": "Fix arrows and file-life when multiple dstStat exists.",
+      "tree": {
+        "sha": "d004aa4a4631f3c20cd7a36fd8593891c9218633",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/d004aa4a4631f3c20cd7a36fd8593891c9218633"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/1796b98682324ba7c62af881aed04f87cca028b6",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/1796b98682324ba7c62af881aed04f87cca028b6",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/1796b98682324ba7c62af881aed04f87cca028b6",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/1796b98682324ba7c62af881aed04f87cca028b6/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "fd501e655788d75dd397fd89b46e989b7b6b98c4",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/fd501e655788d75dd397fd89b46e989b7b6b98c4",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/fd501e655788d75dd397fd89b46e989b7b6b98c4"
+      }
+    ],
+    "stats": {
+      "total": 40,
+      "additions": 24,
+      "deletions": 16
+    },
+    "files": [
+      {
+        "sha": "468656d5a1c4a99187566be1c20462bbb36ba309",
+        "filename": "src/js/gh_file_grass/builder.js",
+        "status": "modified",
+        "additions": 24,
+        "deletions": 16,
+        "changes": 40,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/1796b98682324ba7c62af881aed04f87cca028b6/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/1796b98682324ba7c62af881aed04f87cca028b6/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fbuilder.js?ref=1796b98682324ba7c62af881aed04f87cca028b6",
+        "patch": "@@ -68,12 +68,18 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n     return 1\n   }\n \n-  _isDstStatRenamed(stat) {\n-    const dstStat = this._findDstStat(stat)\n-    if (dstStat) {\n-      return this._isRenamedStat(dstStat) || stat.path !== dstStat.path\n+  _areRenamedDstStatsOf(stat) {\n+    const dstStats = this._findAllDstStats(stat)\n+    if (dstStats.length < 1) {\n+      return false\n     }\n-    return false\n+    const results = dstStats.map(\n+      dstStat => {\n+        return this._isRenamedStat(dstStat) || stat.path !== dstStat.path\n+      }\n+    )\n+    // if exists false in results: stat has NOT-RENAMED destination in dstStats.\n+    return results.reduce((acc, curr) => acc && curr, true)\n   }\n \n   _lifeEndIndex(file) {\n@@ -82,7 +88,7 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n       // console.log('- end-1: ', stat1)\n       return this._indexOfCommit(stat1.sha_short)\n     }\n-    const stat2 = this._findStatsByFile(file.name).find(d => this._isDstStatRenamed(d))\n+    const stat2 = this._findStatsByFile(file.name).find(d => this._areRenamedDstStatsOf(d))\n     if (stat2) {\n       // console.log('- end-2: ', stat2)\n       return this._indexOfCommit(stat2.sha_short)\n@@ -181,26 +187,28 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n     return this.files.map(d => d.name).indexOf(key) + 1\n   }\n \n-  _findDstStat(stat) {\n+  _findAllDstStats(stat) {\n     if (stat.dst === '0000000' || stat.dst === '') {\n-      return undefined\n+      return []\n     }\n-    return this.stats.find(d => d.src === stat.dst)\n+    return this.stats.filter(d => d.src === stat.dst)\n   }\n \n   _makeStatsArrow() {\n     const arrows = []\n     const dxy = this.lc / 2\n     for (const stat of this.stats) {\n-      const dstStat = this._findDstStat(stat)\n-      if (!dstStat) {\n+      const dstStats = this._findAllDstStats(stat)\n+      if (dstStats.length < 1) {\n         continue\n       }\n-      arrows.push({\n-        sourceIndex: stat.index,\n-        targetIndex: dstStat.index,\n-        source: [stat.px + dxy, stat.py + dxy],\n-        target: [dstStat.px + dxy, dstStat.py + dxy]\n+      dstStats.forEach(dstStat => {\n+        arrows.push({\n+          sourceIndex: stat.index,\n+          targetIndex: dstStat.index,\n+          source: [stat.px + dxy, stat.py + dxy],\n+          target: [dstStat.px + dxy, dstStat.py + dxy]\n+        })\n       })\n     }\n     const classBy = d => ["
+      }
+    ]
+  }
+}

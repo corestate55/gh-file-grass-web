@@ -1,0 +1,164 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/acd29535b6555c810c181f1890fa36ce2bd41d2d",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"d35f84a2062dde188419c55b1dc9f52c25088031d4a6a11e68c164dbdb2b3d94\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4950",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "50",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "acd29535b6555c810c181f1890fa36ce2bd41d2d",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmFjZDI5NTM1YjY1NTVjODEwYzE4MWYxODkwZmEzNmNlMmJkNDFkMmQ=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-05T23:39:23Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-06T04:57:46Z"
+      },
+      "message": "Add files/commits/stats class.",
+      "tree": {
+        "sha": "120635a8380f9bd0387e7e8a9a3b6eafea16bcd3",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/120635a8380f9bd0387e7e8a9a3b6eafea16bcd3"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/acd29535b6555c810c181f1890fa36ce2bd41d2d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/acd29535b6555c810c181f1890fa36ce2bd41d2d",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/acd29535b6555c810c181f1890fa36ce2bd41d2d",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/acd29535b6555c810c181f1890fa36ce2bd41d2d/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/40bc0872ef4fbf9607efafffa44f53f24c43ac93"
+      }
+    ],
+    "stats": {
+      "total": 227,
+      "additions": 148,
+      "deletions": 79
+    },
+    "files": [
+      {
+        "sha": "46717bb60d1b6df27b5786fdd7e83f447c0e66f5",
+        "filename": "src/js/gh_file_grass/base.js",
+        "status": "modified",
+        "additions": 7,
+        "deletions": 9,
+        "changes": 16,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/acd29535b6555c810c181f1890fa36ce2bd41d2d/src%2Fjs%2Fgh_file_grass%2Fbase.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/acd29535b6555c810c181f1890fa36ce2bd41d2d/src%2Fjs%2Fgh_file_grass%2Fbase.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fbase.js?ref=acd29535b6555c810c181f1890fa36ce2bd41d2d",
+        "patch": "@@ -1,5 +1,8 @@\n import { json } from 'd3-fetch'\n import { select } from 'd3-selection'\n+import GHLogFiles from './files'\n+import GHLogCommits from './commits'\n+import GHLogStats from './stats'\n \n export default class GHFileGrassBase {\n   constructor() {\n@@ -9,11 +12,6 @@ export default class GHFileGrassBase {\n     this.dc = this.fontSize * 0.4\n   }\n \n-  _maxFileLength() {\n-    const fileLengthList = this.files.map(d => d.name.length)\n-    return Math.max(...fileLengthList)\n-  }\n-\n   // Function `_px()` and `_py()` are used to calculate initial position\n   // for each data (svg object), and they keep its position in data as [px,py].\n   // In event handler, use `px`/`py` to calculate position of svg-object.\n@@ -33,11 +31,11 @@ export default class GHFileGrassBase {\n     const data = await json(logUri)\n     this.branch = data.branch\n     this.origin = data.origin\n-    this.files = data.files\n-    this.commits = data.commits.reverse()\n-    this.stats = data.stats\n+    this.files = new GHLogFiles(data.files)\n+    this.commits = new GHLogCommits(data.commits)\n+    this.stats = new GHLogStats(data.stats)\n \n-    this.px0 = this._maxFileLength() * this.fontSize * 0.7\n+    this.px0 = this.files.maxFileNameLength() * this.fontSize * 0.7\n     this.width0 = this.px0 + this._px(this.commits.length) + 50\n     this.height0 = this.py0 + this._py(this.files.length) + 50\n     this.width1 = this.width0 - this.px0"
+      },
+      {
+        "sha": "6eca4d14a143105ddce3d582a0e4092c37c1c7fa",
+        "filename": "src/js/gh_file_grass/builder.js",
+        "status": "modified",
+        "additions": 21,
+        "deletions": 70,
+        "changes": 91,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/acd29535b6555c810c181f1890fa36ce2bd41d2d/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/acd29535b6555c810c181f1890fa36ce2bd41d2d/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fbuilder.js?ref=acd29535b6555c810c181f1890fa36ce2bd41d2d",
+        "patch": "@@ -6,7 +6,7 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n   _makeFileLabels() {\n     this._selectClippedGroup('files')\n       .selectAll('text.file-label')\n-      .data(this.files)\n+      .data(this.files.files)\n       .enter()\n       .append('a')\n       .attr('xlink:href', d => `${this.origin}/blob/${this.branch}/${d.name}`)\n@@ -23,7 +23,7 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n   _makeCommitLabels() {\n     this._selectClippedGroup('commits')\n       .selectAll('text.commit-label')\n-      .data(this.commits)\n+      .data(this.commits.commits)\n       .enter()\n       .append('a')\n       .attr('xlink:href', d => `${this.origin}/commit/${d.sha}`)\n@@ -38,66 +38,50 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n       .text(d => d.sha_short)\n   }\n \n-  _findStatsByFile(file) {\n-    return this.stats.filter(d => d.path === file)\n-  }\n-\n-  _findStatByFileAndType(file, type) {\n-    return this.stats.find(d => d.path === file && d.type === type)\n-  }\n-\n-  _isRenamedStat(stat) {\n-    return stat.stat_path.src !== stat.stat_path.dst\n-  }\n-\n-  _findStatByFileAndRenamed(file) {\n-    return this.stats.find(d => d.path === file && this._isRenamedStat(d))\n-  }\n-\n   _lifeStartIndex(file) {\n-    const stat1 = this._findStatByFileAndType(file.name, 'new')\n+    const stat1 = this.stats.findByFileAndType(file.name, 'new')\n     if (stat1) {\n       // console.log(`- start-1: `, stat1)\n-      return this._indexOfCommit(stat1.sha_short)\n+      return this.commits.indexOf(stat1.sha_short)\n     }\n-    const stat2 = this._findStatByFileAndRenamed(file.name)\n+    const stat2 = this.stats.findByFileAndRenamed(file.name)\n     if (stat2) {\n       // console.log('- start-2: ', stat2)\n-      return this._indexOfCommit(stat2.sha_short)\n+      return this.commits.indexOf(stat2.sha_short)\n     }\n     return 1\n   }\n \n   _areRenamedDstStatsOf(stat) {\n-    const dstStats = this._findAllDstStats(stat)\n+    const dstStats = this.stats.findAllDstOf(stat)\n     if (dstStats.length < 1) {\n       return false\n     }\n     const results = dstStats.map(dstStat => {\n-      return this._isRenamedStat(dstStat) || stat.path !== dstStat.path\n+      return dstStat.isRenamedStat() || stat.path !== dstStat.path\n     })\n     // if exists false in results: stat has NOT-RENAMED destination in dstStats.\n     return results.reduce((acc, curr) => acc && curr, true)\n   }\n \n   _lifeEndIndex(file) {\n-    const stat1 = this._findStatByFileAndType(file.name, 'deleted')\n+    const stat1 = this.stats.findByFileAndType(file.name, 'deleted')\n     if (stat1) {\n       // console.log('- end-1: ', stat1)\n-      return this._indexOfCommit(stat1.sha_short)\n+      return this.commits.indexOf(stat1.sha_short)\n     }\n-    const stat2 = this._findStatsByFile(file.name).find(d =>\n+    const stat2 = this.stats.findByFile(file.name).find(d =>\n       this._areRenamedDstStatsOf(d)\n     )\n     if (stat2) {\n       // console.log('- end-2: ', stat2)\n-      return this._indexOfCommit(stat2.sha_short)\n+      return this.commits.indexOf(stat2.sha_short)\n     }\n     return this.commits.length\n   }\n \n   _makeFileLifeStatsRect() {\n-    for (const file of this.files) {\n+    for (const file of this.files.files) {\n       // console.log(`file: ${file.name}`)\n       const startIndex = this._lifeStartIndex(file)\n       const endIndex = this._lifeEndIndex(file)\n@@ -127,28 +111,10 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n     }\n   }\n \n-  _classifyStatsByModifiedLines() {\n-    const stepDiv = this.stats.length / 4\n-    let count = 1\n-    let step = stepDiv\n-    this.stats\n-      .sort((a, b) => a.lines - b.lines)\n-      .forEach((d, i) => {\n-        if (i > step) {\n-          count++\n-          step = stepDiv * count\n-        }\n-        d.modifiedClass = count\n-      })\n-    this.stats.sort((a, b) => a.index - b.index)\n-  }\n-\n   _makeStatsRect() {\n-    this._classifyStatsByModifiedLines()\n-\n     const classBy = d => {\n-      d.fileIndex = this._indexOfFile(d.path)\n-      d.commitIndex = this._indexOfCommit(d.sha_short)\n+      d.fileIndex = this.files.indexOf(d.path)\n+      d.commitIndex = this.commits.indexOf(d.sha_short)\n       return [\n         'stats',\n         `stat-${d.index}`,\n@@ -160,7 +126,7 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n \n     this._selectClippedGroup('stats')\n       .selectAll('rect.stats')\n-      .data(this.stats)\n+      .data(this.stats.stats)\n       .enter()\n       .append('rect')\n       .attr('class', classBy)\n@@ -171,33 +137,18 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n   }\n \n   _rectX(stat) {\n-    return this._px(this._indexOfCommit(stat.sha_short), stat)\n+    return this._px(this.commits.indexOf(stat.sha_short), stat)\n   }\n \n   _rectY(stat) {\n-    return this._py(this._indexOfFile(stat.path), stat)\n-  }\n-\n-  _indexOfCommit(sha_short) {\n-    return this.commits.map(d => d.sha_short).indexOf(sha_short) + 1\n-  }\n-\n-  _indexOfFile(key) {\n-    return this.files.map(d => d.name).indexOf(key) + 1\n-  }\n-\n-  _findAllDstStats(stat) {\n-    if (stat.dst === '0000000' || stat.dst === '') {\n-      return []\n-    }\n-    return this.stats.filter(d => d.src === stat.dst)\n+    return this._py(this.files.indexOf(stat.path), stat)\n   }\n \n   _makeStatsArrow() {\n     const arrows = []\n     const dxy = this.lc / 2\n-    for (const stat of this.stats) {\n-      const dstStats = this._findAllDstStats(stat)\n+    for (const stat of this.stats.stats) {\n+      const dstStats = this.stats.findAllDstOf(stat)\n       if (dstStats.length < 1) {\n         continue\n       }\n@@ -224,7 +175,7 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n   }\n \n   _makeCommitHistogram() {\n-    const commitHist = this.files.map(d => ({\n+    const commitHist = this.files.files.map(d => ({\n       index: d.index,\n       name: d.name, // for debug\n       hist: d.commits.length"
+      },
+      {
+        "sha": "6ebac95b4a0f0605f308a9928c4eec29d8995f3f",
+        "filename": "src/js/gh_file_grass/commits.js",
+        "status": "added",
+        "additions": 27,
+        "deletions": 0,
+        "changes": 27,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/acd29535b6555c810c181f1890fa36ce2bd41d2d/src%2Fjs%2Fgh_file_grass%2Fcommits.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/acd29535b6555c810c181f1890fa36ce2bd41d2d/src%2Fjs%2Fgh_file_grass%2Fcommits.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fcommits.js?ref=acd29535b6555c810c181f1890fa36ce2bd41d2d",
+        "patch": "@@ -0,0 +1,27 @@\n+class GHLogCommit {\n+  constructor(commit) {\n+    this.sha = commit.sha\n+    this.sha_short = commit.sha_short\n+    this.author = commit.author\n+    this.date = commit.date\n+    this.message = commit.message\n+    this.index = commit.index\n+    this.stat_total = commit.stat_total\n+  }\n+}\n+\n+export default class GHLogCommits {\n+  constructor(commits) {\n+    this.commits = commits.map(d => new GHLogCommit(d))\n+    this.length = commits.length\n+    this.sort()\n+  }\n+\n+  sort() {\n+    this.commits.sort((a, b) => a.index - b.index)\n+  }\n+\n+  indexOf(shaShort) {\n+    return this.commits.map(d => d.sha_short).indexOf(shaShort) + 1\n+  }\n+}"
+      },
+      {
+        "sha": "12e9df9c7dd73302c76357b30209554a8f2a83fe",
+        "filename": "src/js/gh_file_grass/files.js",
+        "status": "added",
+        "additions": 24,
+        "deletions": 0,
+        "changes": 24,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/acd29535b6555c810c181f1890fa36ce2bd41d2d/src%2Fjs%2Fgh_file_grass%2Ffiles.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/acd29535b6555c810c181f1890fa36ce2bd41d2d/src%2Fjs%2Fgh_file_grass%2Ffiles.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Ffiles.js?ref=acd29535b6555c810c181f1890fa36ce2bd41d2d",
+        "patch": "@@ -0,0 +1,24 @@\n+class GHLogFile {\n+  constructor(file) {\n+    this.name = file.name\n+    this.index = file.index\n+    this.commits = file.commits\n+  }\n+}\n+\n+export default class GHLogFiles {\n+  constructor(files) {\n+    this.files = files.map(d => new GHLogFile(d))\n+    this.length = this.files.length\n+  }\n+\n+  maxFileNameLength() {\n+    const fileLengthList = this.files.map(d => d.name.length)\n+    return Math.max(...fileLengthList)\n+  }\n+\n+  indexOf(fileName) {\n+    return this.files.map(d => d.name).indexOf(fileName) + 1\n+  }\n+\n+}"
+      },
+      {
+        "sha": "50d27c9a313c01a6f45b2a2c2a7c04cf5b547849",
+        "filename": "src/js/gh_file_grass/stats.js",
+        "status": "added",
+        "additions": 69,
+        "deletions": 0,
+        "changes": 69,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/acd29535b6555c810c181f1890fa36ce2bd41d2d/src%2Fjs%2Fgh_file_grass%2Fstats.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/acd29535b6555c810c181f1890fa36ce2bd41d2d/src%2Fjs%2Fgh_file_grass%2Fstats.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fstats.js?ref=acd29535b6555c810c181f1890fa36ce2bd41d2d",
+        "patch": "@@ -0,0 +1,69 @@\n+class GHLogStat {\n+  constructor(stat) {\n+    this.path = stat.path\n+    this.mode = stat.mode\n+    this.type = stat.type\n+    this.src = stat.src\n+    this.dst = stat.dst\n+    this.stat_path = stat.stat_path\n+    this.insertions = stat.insertions\n+    this.deletions = stat.deletions\n+    this.lines = stat.lines\n+    this.sha_short = stat.sha_short\n+    this.index = stat.index\n+  }\n+\n+  isRenamedStat() {\n+    return this.stat_path.src !== this.stat_path.dst\n+  }\n+}\n+\n+export default class GHLogStats {\n+  constructor(stats) {\n+    this.stats = stats.map(d => new GHLogStat(d))\n+    this.length = this.stats.length\n+    this._classifyByModifiedLines()\n+  }\n+\n+  findByFile(file) {\n+    return this.stats.filter(d => d.path === file)\n+  }\n+\n+  findByFileAndType(file, type) {\n+    return this.stats.find(d => d.path === file && d.type === type)\n+  }\n+\n+  findByFileAndRenamed(file) {\n+    return this.stats.find(d => d.path === file && d.isRenamedStat())\n+  }\n+\n+  findAllDstOf(stat) {\n+    if (stat.dst === '0000000' || stat.dst === '') {\n+      return []\n+    }\n+    return this.stats.filter(d => d.src === stat.dst)\n+  }\n+\n+  sortByIndex() {\n+    this.stats.sort((a, b) => a.index - b.index)\n+  }\n+\n+  sortByLines() {\n+    this.stats.sort((a, b) => a.lines - b.lines)\n+  }\n+\n+  _classifyByModifiedLines() {\n+    const stepDiv = this.stats.length / 4\n+    let count = 1\n+    let step = stepDiv\n+    this.sortByLines()\n+    this.stats.forEach((d, i) => {\n+      if (i > step) {\n+        count++\n+        step = stepDiv * count\n+      }\n+      d.modifiedClass = count\n+    })\n+    this.sortByIndex()\n+  }\n+}"
+      }
+    ]
+  }
+}

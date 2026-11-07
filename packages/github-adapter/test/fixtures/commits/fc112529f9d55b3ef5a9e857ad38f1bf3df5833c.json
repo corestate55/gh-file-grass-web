@@ -1,0 +1,116 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/fc112529f9d55b3ef5a9e857ad38f1bf3df5833c",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"b3c433748bc40681691ec8c022b40a94e904892cc8c258ca39f806168fe55e9f\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4945",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "55",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "fc112529f9d55b3ef5a9e857ad38f1bf3df5833c",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmZjMTEyNTI5ZjlkNTViM2VmNWE5ZTg1N2FkMzhmMWJmM2RmNTgzM2M=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-03T14:13:42Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-03T14:13:42Z"
+      },
+      "message": "Fix a bug.",
+      "tree": {
+        "sha": "0b362ba5d41e44cdc1e17ea2190fe9f960047083",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/0b362ba5d41e44cdc1e17ea2190fe9f960047083"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/fc112529f9d55b3ef5a9e857ad38f1bf3df5833c",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/fc112529f9d55b3ef5a9e857ad38f1bf3df5833c",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/fc112529f9d55b3ef5a9e857ad38f1bf3df5833c",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/fc112529f9d55b3ef5a9e857ad38f1bf3df5833c/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "58df253371c92d0d0722ca02c91e0650120e7fc2",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/58df253371c92d0d0722ca02c91e0650120e7fc2",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/58df253371c92d0d0722ca02c91e0650120e7fc2"
+      }
+    ],
+    "stats": {
+      "total": 5,
+      "additions": 2,
+      "deletions": 3
+    },
+    "files": [
+      {
+        "sha": "69a49cd3d17158d20ebcd5592c90cceff7b711ed",
+        "filename": "lib/git_log.rb",
+        "status": "modified",
+        "additions": 2,
+        "deletions": 3,
+        "changes": 5,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/fc112529f9d55b3ef5a9e857ad38f1bf3df5833c/lib%2Fgit_log.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/fc112529f9d55b3ef5a9e857ad38f1bf3df5833c/lib%2Fgit_log.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_log.rb?ref=fc112529f9d55b3ef5a9e857ad38f1bf3df5833c",
+        "patch": "@@ -82,13 +82,12 @@ def make_commits\n \n   def make_stats\n     stats = @commits.map do |commit|\n-      commit[:stat][:files].map.with_index do |stat_file, i|\n+      commit[:stat][:files].map do |stat_file|\n         stat_file[:sha_short] = commit[:sha_short]\n-        stat_file[:index] = i + 1\n         stat_file\n       end\n     end\n-    stats.flatten\n+    stats.flatten.each_with_index { |stat, i| stat[:index] = i + 1 }\n   end\n \n   def make_file_table_from_stats"
+      }
+    ]
+  }
+}

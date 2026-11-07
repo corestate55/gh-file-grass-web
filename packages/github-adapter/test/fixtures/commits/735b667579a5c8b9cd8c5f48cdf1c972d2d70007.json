@@ -1,0 +1,164 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/735b667579a5c8b9cd8c5f48cdf1c972d2d70007",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"663749e20c74566fe842151840597527fe257fba1c2db862616b5d4313b221e9\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4942",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "58",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "735b667579a5c8b9cd8c5f48cdf1c972d2d70007",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OjczNWI2Njc1NzlhNWM4YjljZDhjNWY0OGNkZjFjOTcyZDJkNzAwMDc=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-02T11:29:05Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-02T11:29:05Z"
+      },
+      "message": "Add mouse-over/out handler for stats-arrow.",
+      "tree": {
+        "sha": "15b75bb0e4d56970f49af092063e09e8a2d8a5f8",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/15b75bb0e4d56970f49af092063e09e8a2d8a5f8"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/735b667579a5c8b9cd8c5f48cdf1c972d2d70007",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/735b667579a5c8b9cd8c5f48cdf1c972d2d70007",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/735b667579a5c8b9cd8c5f48cdf1c972d2d70007",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/735b667579a5c8b9cd8c5f48cdf1c972d2d70007/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "15733c3d61735a148abbabd47d1a93786add8ec4",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/15733c3d61735a148abbabd47d1a93786add8ec4",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/15733c3d61735a148abbabd47d1a93786add8ec4"
+      }
+    ],
+    "stats": {
+      "total": 76,
+      "additions": 59,
+      "deletions": 17
+    },
+    "files": [
+      {
+        "sha": "73174ffcc45d29a145d65c71a7723f207e927ac7",
+        "filename": "lib/git_log.rb",
+        "status": "modified",
+        "additions": 7,
+        "deletions": 5,
+        "changes": 12,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/735b667579a5c8b9cd8c5f48cdf1c972d2d70007/lib%2Fgit_log.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/735b667579a5c8b9cd8c5f48cdf1c972d2d70007/lib%2Fgit_log.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_log.rb?ref=735b667579a5c8b9cd8c5f48cdf1c972d2d70007",
+        "patch": "@@ -34,21 +34,22 @@ def to_data_without_init_commit\n   end\n \n   def merge_commits_data(data, merger)\n-    data[:commits].concat(merger[:commits]) # append at last\n+    data[:commits].concat(merger[:commits])\n     data[:commits].each_with_index do |c, i|\n       c[:index] = data[:commits].length - i\n     end\n   end\n \n   def merge_stats_data(data, merger)\n-    data[:stats].concat(merger[:stats]) # append at last\n+    data[:stats].concat(merger[:stats])\n+    data[:stats].each_with_index { |s, i| s[:index] = i + 1 }\n   end\n \n   def merge_files_data(data, merger)\n     merger[:files].each do |tf|\n       f2merge = data[:files].find { |f| f[:name] == tf[:name] }\n       if f2merge\n-        f2merge[:commits].concat(tf[:commits]) # append at last\n+        f2merge[:commits].concat(tf[:commits])\n       else\n         data[:files].push(tf)\n       end\n@@ -62,8 +63,8 @@ def merge_data(data, init_log)\n     log_parser = GitShowParser.new(init_log.sha)\n     merger = log_parser.to_data\n     merge_commits_data(data, merger)\n-    merge_stats_data(data, merger)\n     merge_files_data(data, merger)\n+    merge_stats_data(data, merger)\n     data\n   end\n \n@@ -81,8 +82,9 @@ def make_commits\n \n   def make_stats\n     stats = @commits.map do |commit|\n-      commit[:stat][:files].map do |stat_file|\n+      commit[:stat][:files].map.with_index do |stat_file, i|\n         stat_file[:sha_short] = commit[:sha_short]\n+        stat_file[:index] = i + 1\n         stat_file\n       end\n     end"
+      },
+      {
+        "sha": "7f70dee6c941022bada984de028e1548b0ccaf4f",
+        "filename": "src/css/file_grass.scss",
+        "status": "modified",
+        "additions": 7,
+        "deletions": 1,
+        "changes": 8,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/735b667579a5c8b9cd8c5f48cdf1c972d2d70007/src%2Fcss%2Ffile_grass.scss",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/735b667579a5c8b9cd8c5f48cdf1c972d2d70007/src%2Fcss%2Ffile_grass.scss",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fcss%2Ffile_grass.scss?ref=735b667579a5c8b9cd8c5f48cdf1c972d2d70007",
+        "patch": "@@ -45,9 +45,15 @@ rect {\n   }\n }\n \n-path {\n+path.stat-arrow {\n+  transition: stroke .1s ease-in-out, stroke-opacity .1s ease-in-out;\n+\n   stroke: limegreen;\n   stroke-width: 2pt;\n   stroke-opacity: 0.5;\n   fill: none;\n+  &.selected {\n+    stroke-width: 4pt;\n+    stroke-opacity: 0.8;\n+  }\n }"
+      },
+      {
+        "sha": "5d8516fade4f4804526f0b735dcf39ce149eaa3b",
+        "filename": "src/js/gh_file_grass.js",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 0,
+        "changes": 1,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/735b667579a5c8b9cd8c5f48cdf1c972d2d70007/src%2Fjs%2Fgh_file_grass.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/735b667579a5c8b9cd8c5f48cdf1c972d2d70007/src%2Fjs%2Fgh_file_grass.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass.js?ref=735b667579a5c8b9cd8c5f48cdf1c972d2d70007",
+        "patch": "@@ -17,6 +17,7 @@ export default class GHFileGrass extends GHFileGrassOperator {\n     this._addFilesHandler()\n     this._addCommitsHandler()\n     this._addStatsHandler()\n+    this._addStatsArrowHandler()\n     this._addDragToGroups()\n   }\n }"
+      },
+      {
+        "sha": "7e136b39b6c990c41835aa2eca648c7d8bea5f37",
+        "filename": "src/js/gh_file_grass/builder.js",
+        "status": "modified",
+        "additions": 18,
+        "deletions": 11,
+        "changes": 29,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/735b667579a5c8b9cd8c5f48cdf1c972d2d70007/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/735b667579a5c8b9cd8c5f48cdf1c972d2d70007/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fbuilder.js?ref=735b667579a5c8b9cd8c5f48cdf1c972d2d70007",
+        "patch": "@@ -97,13 +97,12 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n           commitIndex: i + startIndex\n         })\n       )\n-      const classBy = d => {\n-        return [\n-          'file-life',\n-          'file-' + d.fileIndex,\n-          'commit-' + d.commitIndex\n-        ].join(' ')\n-      }\n+      const classBy = d => [\n+        'file-life',\n+        `file-${d.fileIndex}`,\n+        `commit-${d.commitIndex}`\n+      ].join(' ')\n+\n       this._selectClippedGroup('stats')\n         .selectAll(`rect.file-${file.index}`)\n         .data(range)\n@@ -123,8 +122,9 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n       d.commitIndex = this._indexOfCommit(d.sha_short)\n       return [\n         'stats',\n-        'file-' + d.fileIndex,\n-        'commit-' + d.commitIndex\n+        `stat-${d.index}`,\n+        `file-${d.fileIndex}`,\n+        `commit-${d.commitIndex}`\n       ].join(' ')\n     }\n     this._selectClippedGroup('stats')\n@@ -171,16 +171,23 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n         continue\n       }\n       arrows.push({\n+        sourceIndex: stat.index,\n+        targetIndex: dstStat.index,\n         source: [stat.px + dxy, stat.py + dxy],\n         target: [dstStat.px + dxy, dstStat.py + dxy]\n       })\n     }\n-    this.statsLink = linkHorizontal()\n+    const classBy = d => [\n+      'stat-arrow', `stat-${d.sourceIndex}`, `stat-${d.targetIndex}`\n+    ].join(' ')\n+\n+    this.statsLink = linkHorizontal() // link generator\n     this._selectClippedGroup('stats')\n-      .selectAll('line')\n+      .selectAll('path.stat-arrow')\n       .data(arrows)\n       .enter()\n       .append('path')\n+      .attr('class', classBy)\n       .attr('d', d => this.statsLink(d))\n   }\n "
+      },
+      {
+        "sha": "18a132b2620a55c1073d9f125133a83fb60760ed",
+        "filename": "src/js/gh_file_grass/operator.js",
+        "status": "modified",
+        "additions": 26,
+        "deletions": 0,
+        "changes": 26,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/735b667579a5c8b9cd8c5f48cdf1c972d2d70007/src%2Fjs%2Fgh_file_grass%2Foperator.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/735b667579a5c8b9cd8c5f48cdf1c972d2d70007/src%2Fjs%2Fgh_file_grass%2Foperator.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Foperator.js?ref=735b667579a5c8b9cd8c5f48cdf1c972d2d70007",
+        "patch": "@@ -16,6 +16,10 @@ export default class GHFileGrassOperator extends GHFileGrassBuilder {\n     this._selectObject('commit', commitIndex, callback)\n   }\n \n+  _selectStat(statIndex, callback) {\n+    this._selectObject('stat', statIndex, callback)\n+  }\n+\n   _addSelected(selection) {\n     selection.classed('selected', true)\n   }\n@@ -47,16 +51,38 @@ export default class GHFileGrassOperator extends GHFileGrassBuilder {\n     const mouseOver = d => {\n       this._selectCommit(d.commitIndex, this._addSelected)\n       this._selectFile(d.fileIndex, this._addSelected)\n+      if (d.index) {\n+        this._selectStat(d.index, this._addSelected)\n+      }\n     }\n     const mouseOut = d => {\n       this._selectCommit(d.commitIndex, this._removeSelected)\n       this._selectFile(d.fileIndex, this._removeSelected)\n+      if (d.index) {\n+        this._selectStat(d.index, this._removeSelected)\n+      }\n     }\n     this._selectClippedGroup('stats').selectAll('rect')\n       .on('mouseover', mouseOver)\n       .on('mouseout', mouseOut)\n   }\n \n+  _addStatsArrowHandler() {\n+    const mouseOver = d => {\n+      [d.sourceIndex, d.targetIndex].forEach(statIndex => {\n+        this._selectStat(statIndex, this._addSelected)\n+      })\n+    }\n+    const mouseOut = d => {\n+      [d.sourceIndex, d.targetIndex].forEach(statIndex => {\n+        this._selectStat(statIndex, this._removeSelected)\n+      })\n+    }\n+    this._selectClippedGroup('stats').selectAll('path')\n+      .on('mouseover', mouseOver)\n+      .on('mouseout', mouseOut)\n+  }\n+\n   _addDragToGroups() {\n     const dragged = () => {\n       this._selectClippedGroup('commits').selectAll('text')"
+      }
+    ]
+  }
+}

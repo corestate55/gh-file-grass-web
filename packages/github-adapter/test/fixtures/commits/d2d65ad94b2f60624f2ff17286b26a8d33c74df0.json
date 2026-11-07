@@ -1,0 +1,116 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/d2d65ad94b2f60624f2ff17286b26a8d33c74df0",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"2ddba4d9570024d5f6534b7cd0fcf4bf9467f99afadcaf46992fb2ebe4e4409c\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4969",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "31",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "d2d65ad94b2f60624f2ff17286b26a8d33c74df0",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmQyZDY1YWQ5NGIyZjYwNjI0ZjJmZjE3Mjg2YjI2YThkMzNjNzRkZjA=",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2020-07-18T22:49:37Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2020-07-18T22:49:37Z"
+      },
+      "message": "Bump lodash from 4.17.15 to 4.17.19\n\nBumps [lodash](https://github.com/lodash/lodash) from 4.17.15 to 4.17.19.\n- [Release notes](https://github.com/lodash/lodash/releases)\n- [Commits](https://github.com/lodash/lodash/compare/4.17.15...4.17.19)\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+      "tree": {
+        "sha": "08e6e21e5ea09805e15544dd4d0adc2f2852501b",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/08e6e21e5ea09805e15544dd4d0adc2f2852501b"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/d2d65ad94b2f60624f2ff17286b26a8d33c74df0",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJfE3yBCRBK7hj4Ov3rIwAAdHIIAIwqwi4vnW6w0EePkpGH7bvk\niA1wRY1NUqzX9veDUV8CPdLqO3zjbTuv+rj4KneZtm/7Sw9rfIvpXC8vYGMPix+q\nAI5XsawTeZIOjhyd7TTbZjnzSrHiYNcyVveNJG/4VOG28hafD+1JJTCnhvOrWC8y\n0dd3FFZD8vqpHZhb/ZplXeqpmQD+n3+6GJaoyWQMJHBjkC6RIpV+RXG8ulG/myUu\n7gi3e5EwXZFKFCYlhDkJqsIVCCHLSVW9Zh2zD3TO0zSEG3qsSeeP5BHsDCtxDkTL\nNwKketM8CE/kXLggV8WJauYieC4Zow2DkiZO/USJ7PAPuN6ZUCV1D+7xyztzn4w=\n=hsHB\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 08e6e21e5ea09805e15544dd4d0adc2f2852501b\nparent 24e2bcf13c8ffcfe0768bc4258847055e65721b2\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1595112577 +0000\ncommitter GitHub <noreply@github.com> 1595112577 +0000\n\nBump lodash from 4.17.15 to 4.17.19\n\nBumps [lodash](https://github.com/lodash/lodash) from 4.17.15 to 4.17.19.\n- [Release notes](https://github.com/lodash/lodash/releases)\n- [Commits](https://github.com/lodash/lodash/compare/4.17.15...4.17.19)\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "verified_at": "2024-11-12T11:09:53Z"
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/d2d65ad94b2f60624f2ff17286b26a8d33c74df0",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/d2d65ad94b2f60624f2ff17286b26a8d33c74df0",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/d2d65ad94b2f60624f2ff17286b26a8d33c74df0/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "24e2bcf13c8ffcfe0768bc4258847055e65721b2",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/24e2bcf13c8ffcfe0768bc4258847055e65721b2",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/24e2bcf13c8ffcfe0768bc4258847055e65721b2"
+      }
+    ],
+    "stats": {
+      "total": 6,
+      "additions": 3,
+      "deletions": 3
+    },
+    "files": [
+      {
+        "sha": "9ad940e0b3f923c989ed52ad26bf44da8aff9b08",
+        "filename": "package-lock.json",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 3,
+        "changes": 6,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/d2d65ad94b2f60624f2ff17286b26a8d33c74df0/package-lock.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/d2d65ad94b2f60624f2ff17286b26a8d33c74df0/package-lock.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package-lock.json?ref=d2d65ad94b2f60624f2ff17286b26a8d33c74df0",
+        "patch": "@@ -7259,9 +7259,9 @@\n       }\n     },\n     \"lodash\": {\n-      \"version\": \"4.17.15\",\n-      \"resolved\": \"https://registry.npmjs.org/lodash/-/lodash-4.17.15.tgz\",\n-      \"integrity\": \"sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==\",\n+      \"version\": \"4.17.19\",\n+      \"resolved\": \"https://registry.npmjs.org/lodash/-/lodash-4.17.19.tgz\",\n+      \"integrity\": \"sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==\",\n       \"dev\": true\n     },\n     \"lodash.defaultsdeep\": {"
+      }
+    ]
+  }
+}

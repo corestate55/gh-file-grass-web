@@ -1,0 +1,4 @@
+packages/github-adapter/test/fixtures/
+dist/
+package-lock.json
+packages/core/test/fixtures/
