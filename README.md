@@ -69,7 +69,7 @@ The repository is an npm-workspaces monorepo, written in TypeScript:
 | `app`                     | The page: Vite + Vue 3.                                                                                          |
 | `docs`                    | The design, the decisions behind it and the operating notes (`DESIGN.md`).                                       |
 
-Development happens on `develop`. Merging into `main` publishes the page to GitHub Pages (see `.github/workflows/deploy.yml`).
+Changes are made on a work branch and merged into `main` through a pull request. Merging into `main` publishes the page to GitHub Pages (see `.github/workflows/deploy.yml`).
 
 ## Credits and license
 

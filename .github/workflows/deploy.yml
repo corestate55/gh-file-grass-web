@@ -1,6 +1,6 @@
 name: Deploy to GitHub Pages
 
-# 公開は main の更新のときだけ。開発は develop で行い、main へのマージで公開する。
+# 公開は main の更新のときだけ。変更は作業ブランチで行い、PR で main にマージすると公開される。
 # workflow_dispatch(手動実行)も、下の各ジョブの条件により main 以外では何もしない。
 on:
   push:
@@ -23,8 +23,8 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: npm
@@ -33,13 +33,13 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
         id: pages
       - run: npm run build
         env:
           # リポジトリ名や独自ドメインに合わせた公開パス(例: /gh-file-grass-web/)
           BASE_PATH: ${{ steps.pages.outputs.base_path }}/
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: app/dist
 
@@ -52,4 +52,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
