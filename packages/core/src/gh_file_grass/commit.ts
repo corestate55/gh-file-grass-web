@@ -1,6 +1,10 @@
 import type { Author, Commit, StatTotal } from '../schema'
 import GHInfoBase from './info_base'
-import { escapeHtml as esc } from './escape'
+import { escapeHtml as esc, truncateText } from './escape'
+
+// ツールチップに出すメッセージの上限。超えた分は省略する(dependabot の長い本文などで巨大にならないように)
+const MESSAGE_MAX_LINES = 8
+const MESSAGE_MAX_CHARS = 400
 
 export default class GHLogCommit extends GHInfoBase {
   sha: string
@@ -40,7 +44,7 @@ export default class GHLogCommit extends GHInfoBase {
       this._liStr(this._codeStr(esc(this.sha))),
       this._liStr(`${esc(this.author.name)} &lt;${esc(this.author.email)}&gt;`),
       this._liStr(esc(this.date)),
-      this._liStr(esc(this.message)),
+      this._liStr(esc(truncateText(this.message, MESSAGE_MAX_LINES, MESSAGE_MAX_CHARS)), 'message'),
       this._liStr(this._statTotalStr()),
       '</ul>',
     ].join('')

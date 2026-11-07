@@ -120,10 +120,19 @@ $strong-stroke-color: #ec939a;
     padding: 5pt;
     color: white;
     border-radius: 8px; // rounded corner
-    white-space: nowrap;
+    // 内容の幅(上限あり)で表示し、長い文字列は折り返す。
+    // `width: max-content` にするのは、右端の近くで利用可能幅が狭まって極端に細くならないようにするため。
+    width: max-content;
+    max-width: min(28rem, 90vw);
+    white-space: normal;
+    overflow-wrap: anywhere;
     height: auto;
-    width: auto;
     pointer-events: none;
+
+    // コミットメッセージは改行を保つ
+    li.message {
+      white-space: pre-wrap;
+    }
 
     &:after {
       bottom: 100%;

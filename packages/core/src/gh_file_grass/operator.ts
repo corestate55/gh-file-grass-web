@@ -82,11 +82,25 @@ export default class GHFileGrassOperator extends GHBarChartBuilder {
     const box = this.container.getBoundingClientRect()
     const left = matrix.e - box.left - this.container.clientLeft + this.container.scrollLeft
     const top = matrix.f - box.top - this.container.clientTop + this.container.scrollTop
+
+    // 幅を測るため、内容を入れて表示してから位置を決める
+    this.tooltip.style('visibility', 'visible').html(htmlStr)
     this.tooltip
-      .style('visibility', 'visible')
-      .style('left', `${left - this.lc * 1.25}px`)
+      .style('left', `${this._clampTooltipLeft(left - this.lc * 1.25)}px`)
       .style('top', `${top + this.lc * yMargin}px`)
-      .html(htmlStr)
+  }
+
+  /**
+   * ツールチップがコンテナの表示範囲の外にはみ出さないようにする(はみ出すと横スクロールが増える)。
+   * 幅が表示範囲より大きいときは左端を優先する。レイアウトが無い環境(幅 0)では何もしない。
+   */
+  _clampTooltipLeft(left: number): number {
+    const node = this.tooltip.node()
+    const view = this.container.clientWidth
+    if (!node || view <= 0) return left
+    const min = this.container.scrollLeft
+    const max = min + view - node.offsetWidth
+    return Math.max(min, Math.min(left, max))
   }
 
   _disableTooltip(): void {

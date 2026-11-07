@@ -35,6 +35,7 @@
   - 実装中に見つけて直したもの: 実行中にブランチを変えられない UI(select を無効化していた)、リアクティブな Proxy を core に渡すと `DataCloneError`(`toRaw` で解決)、テンプレート先頭のコメントでルートがフラグメントになり属性が落ちる。
   - 開発: `npm run dev -w @gh-file-grass/app`(`predev` が core の CSS を生成)、`npm run build && npm run preview -w @gh-file-grass/app` → http://localhost:4173/gh-file-grass-web/
   - **ブラウザでの確認(ユーザーに依頼)**: 1) DevTools の Network を開き `api.github.com` で絞り込む。公開リポジトリ(例 `corestate55/gh-file-grass`)を Load branches → Show して、**OPTIONS(preflight)が出ていない**こと。2) 表示されること(グラフ、ホバーのツールチップがスクロール時もずれない)。3) 実行中にブランチを変えると該当リクエストが canceled になり、エラーが出ないこと。4) 右上の残量バッジが減ること。5) 存在しないリポジトリ・ブランチでエラー文言が出ること。6) 大きなコミット(300 ファイル超)があるリポジトリで警告が出るか(任意)。結果によって直す場所は `describeError`(DESIGN 7.8)。
+- **ツールチップの修正(ユーザー報告)**: 長いコミットメッセージで横長になり横スクロールが出る問題。`width: max-content` + `max-width: min(28rem, 90vw)` + 折り返し(`overflow-wrap: anywhere`)、メッセージは 8 行・400 文字で省略(`…`)、改行は保持(`li.message`)、コンテナの表示範囲からはみ出さないよう位置を補正(`_clampTooltipLeft`)。実ブラウザでの見た目は未確認。
 - **Step 4 完了**(4a: XSS エスケープ・`-Infinity`/NaN 対策・`console.log` 削除・URL エンコード/http(s) 限定、4b: `draw(data,{container})`/`destroy()`・ID 接頭辞 `gfgN-`・入力複製・コンテナ内ツールチップ(位置はコンテナ相対)、4c: SCSS を `.gh-file-grass` 配下にスコープ化、`npm run build:css -w @gh-file-grass/core` で `dist/style.css`)。core の公開 API は `draw` / `FileGrassHandle` / `DrawOptions` / スキーマ型 / `assertInvariants`。
 
 ## 未確定

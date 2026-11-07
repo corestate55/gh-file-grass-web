@@ -154,4 +154,65 @@ describe('tooltip', () => {
     rect.dispatchEvent(new MouseEvent('mouseout'))
     expect(tooltip.style.visibility).toBe('hidden')
   })
+
+  describe('keeping the tooltip inside the visible part of the container', () => {
+    // happy-dom has no layout: provide the measurements the code reads
+    function setup(view: { clientWidth: number; scrollLeft?: number; tooltipWidth: number }) {
+      const container = mount()
+      draw(data(), { container })
+      vi.spyOn(container, 'getBoundingClientRect').mockReturnValue({ left: 0, top: 0 } as DOMRect)
+      Object.defineProperty(container, 'clientWidth', {
+        value: view.clientWidth,
+        configurable: true,
+      })
+      container.scrollLeft = view.scrollLeft ?? 0
+      const tooltip = container.querySelector<HTMLElement>('.gh-file-grass-tooltip')!
+      Object.defineProperty(tooltip, 'offsetWidth', {
+        value: view.tooltipWidth,
+        configurable: true,
+      })
+      return { container, tooltip }
+    }
+    const hoverAt = (container: HTMLElement, ctmX: number) => {
+      for (const el of container.querySelectorAll<SVGGraphicsElement>('svg, svg *')) {
+        el.getScreenCTM = () => new DOMMatrix([1, 0, 0, 1, ctmX, 0])
+      }
+      const rect = container.querySelector('rect.stats')!
+      rect.dispatchEvent(new MouseEvent('mouseover'))
+      return Number(rect.getAttribute('x'))
+    }
+    const leftOf = (tooltip: HTMLElement) => parseFloat(tooltip.style.left)
+
+    test('near the right edge it moves left so that it fits', () => {
+      const { container, tooltip } = setup({ clientWidth: 600, tooltipWidth: 300 })
+      hoverAt(container, 550)
+      expect(leftOf(tooltip)).toBe(300) // 600 - 300
+    })
+
+    test('with room on the right it is placed next to the cell as before', () => {
+      const { container, tooltip } = setup({ clientWidth: 2000, tooltipWidth: 300 })
+      const x = hoverAt(container, 100)
+      expect(leftOf(tooltip)).toBeCloseTo(100 + x - 15)
+    })
+
+    test('it never goes past the left edge, even if it is wider than the view (left edge wins)', () => {
+      const { container, tooltip } = setup({ clientWidth: 200, tooltipWidth: 500 })
+      hoverAt(container, 150)
+      expect(leftOf(tooltip)).toBe(0)
+    })
+
+    test('the visible range follows the horizontal scroll position', () => {
+      const { container, tooltip } = setup({ clientWidth: 600, scrollLeft: 400, tooltipWidth: 300 })
+      hoverAt(container, 1000) // far to the right of the visible range 400..1000
+      expect(leftOf(tooltip)).toBe(700) // 400 + 600 - 300
+      hoverAt(container, -2000) // far to the left of it
+      expect(leftOf(tooltip)).toBe(400)
+    })
+
+    test('without layout information (width 0) nothing is clamped', () => {
+      const { container, tooltip } = setup({ clientWidth: 0, tooltipWidth: 0 })
+      const x = hoverAt(container, 5000)
+      expect(leftOf(tooltip)).toBeCloseTo(5000 + x - 15)
+    })
+  })
 })

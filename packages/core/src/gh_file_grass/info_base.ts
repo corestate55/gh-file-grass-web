@@ -27,8 +27,8 @@ export default class GHInfoBase {
     return this._svgActionMark(mark)
   }
 
-  _liStr(value: string): string {
-    return `<li>${value}</li>`
+  _liStr(value: string, className?: string): string {
+    return className ? `<li class="${className}">${value}</li>` : `<li>${value}</li>`
   }
 
   _insStr(value: string): string {

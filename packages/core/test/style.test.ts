@@ -20,6 +20,23 @@ describe('file_grass.scss', () => {
     expect(css).not.toContain('#stat-tooltip')
   })
 
+  test('the tooltip has a bounded width and wraps instead of growing sideways', () => {
+    const rule = (selector: string) => {
+      const start = css.indexOf(`${selector} {`)
+      if (start < 0) return ''
+      return css.slice(start, css.indexOf('}', start))
+    }
+    const tooltip = rule('.gh-file-grass .gh-file-grass-tooltip')
+    expect(tooltip).toMatch(/width:\s*max-content/)
+    expect(tooltip).toMatch(/max-width:\s*min\(28rem,\s*90vw\)/)
+    expect(tooltip).toMatch(/white-space:\s*normal/)
+    expect(tooltip).toMatch(/overflow-wrap:\s*anywhere/)
+    expect(tooltip).not.toMatch(/nowrap/)
+    expect(rule('.gh-file-grass .gh-file-grass-tooltip li.message')).toMatch(
+      /white-space:\s*pre-wrap/,
+    )
+  })
+
   test('keeps the grass colour classes', () => {
     for (const cls of ['mod1', 'mod4', 'rank0', 'rank4', 'stat-arrow', 'file-life']) {
       expect(css).toContain(cls)

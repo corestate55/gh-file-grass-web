@@ -2,7 +2,7 @@ import { afterEach, describe, expect, test, vi } from 'vitest'
 import { draw as drawInto } from '../src/draw'
 import GHLogCommit from '../src/gh_file_grass/commit'
 import GHLogStat from '../src/gh_file_grass/stat'
-import { encodePath, escapeHtml, safeHref } from '../src/gh_file_grass/escape'
+import { encodePath, escapeHtml, safeHref, truncateText } from '../src/gh_file_grass/escape'
 import type { Commit, GitLogData, Stat } from '../src/schema'
 
 const PAYLOAD = '<img src=x onerror="alert(1)">'
@@ -160,5 +160,70 @@ describe('draw()', () => {
     const data = base({ origin: 'javascript:alert(1)', commits: [commit()] })
     const hrefs = [...draw(data).querySelectorAll('a')].map((a) => hrefOf(a))
     expect(hrefs.every((h) => h === '#')).toBe(true)
+  })
+})
+
+describe('truncateText', () => {
+  test('short text is returned as is (trailing whitespace removed)', () => {
+    expect(truncateText('hello', 8, 400)).toBe('hello')
+    expect(truncateText('hello\n\n', 8, 400)).toBe('hello')
+    expect(truncateText('', 8, 400)).toBe('')
+  })
+
+  test('exactly at the limits is not cut', () => {
+    const lines = Array.from({ length: 8 }, (_, i) => `l${i}`).join('\n')
+    expect(truncateText(lines, 8, 400)).toBe(lines)
+    expect(truncateText('x'.repeat(400), 8, 400)).toBe('x'.repeat(400))
+  })
+
+  test('more lines than allowed: keeps the first lines and adds an ellipsis', () => {
+    const text = Array.from({ length: 12 }, (_, i) => `line ${i + 1}`).join('\n')
+    const out = truncateText(text, 3, 400)
+    expect(out).toBe('line 1\nline 2\nline 3…')
+  })
+
+  test('more characters than allowed', () => {
+    expect(truncateText('a'.repeat(450), 8, 400)).toBe(`${'a'.repeat(400)}…`)
+  })
+
+  test('CRLF and CR line breaks count as lines', () => {
+    expect(truncateText('a\r\nb\rc\nd', 2, 400)).toBe('a\nb…')
+  })
+
+  test('does not leave half of a surrogate pair', () => {
+    const text = 'a'.repeat(399) + '\u{1F600}' + 'tail'
+    const out = truncateText(text, 8, 400)
+    expect(out).toBe(`${'a'.repeat(399)}…`)
+    expect(out).not.toMatch(/[\ud800-\udbff]/)
+  })
+
+  test('whitespace before the ellipsis is dropped', () => {
+    expect(truncateText('abc   \n\n\n\ndef', 1, 400)).toBe('abc…')
+  })
+})
+
+describe('commit tooltip: long messages', () => {
+  test('is cut, keeps line breaks in a dedicated element, and stays escaped', () => {
+    const message = `<b>title</b>\n${Array.from({ length: 30 }, (_, i) => `body ${i}`).join('\n')}`
+    const html = new GHLogCommit(commit({ message })).tooltipHtml()
+    const host = document.createElement('div')
+    host.innerHTML = html
+    const li = host.querySelector('li.message')!
+    expect(li.textContent!.startsWith('<b>title</b>\nbody 0')).toBe(true)
+    expect(li.textContent!.endsWith('…')).toBe(true)
+    expect(li.textContent!.split('\n')).toHaveLength(8)
+    expect(host.querySelector('b')).toBeNull()
+  })
+
+  test('a very long single line is cut', () => {
+    const html = new GHLogCommit(commit({ message: 'x'.repeat(5000) })).tooltipHtml()
+    const host = document.createElement('div')
+    host.innerHTML = html
+    expect(host.querySelector('li.message')!.textContent).toHaveLength(401)
+  })
+
+  test('a normal message is untouched', () => {
+    const html = new GHLogCommit(commit({ message: 'Fix the thing' })).tooltipHtml()
+    expect(html).toContain('<li class="message">Fix the thing</li>')
   })
 })
