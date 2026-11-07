@@ -26,6 +26,7 @@
 - **Step 1 完了**(モノレポ雛形・CI)、**Step 2 完了**(`packages/core/src/schema.ts` に型と `assertInvariants`、`packages/core/test/fixtures/logs.json` を基準に検証)。
 - トークンはユーザーが Revoke 済み。
 - **Step 3 完了**: 元 JS 10 ファイルを `packages/core/src/gh_file_grass/*.ts` に移植(データ注入化・d3-fetch 除去のみ。`console.log`・XSS 等は Step 4 で対応)。元実装の出力を `test/fixtures/golden-original.svg.html` として固定し、SVG が完全一致することをテストで保証。未使用の `_classifyByModifiedLines` は削除。
+- **Step 4 完了**(4a: XSS エスケープ・`-Infinity`/NaN 対策・`console.log` 削除・URL エンコード/http(s) 限定、4b: `draw(data,{container})`/`destroy()`・ID 接頭辞 `gfgN-`・入力複製・コンテナ内ツールチップ(位置はコンテナ相対)、4c: SCSS を `.gh-file-grass` 配下にスコープ化、`npm run build:css -w @gh-file-grass/core` で `dist/style.css`)。core の公開 API は `draw` / `FileGrassHandle` / `DrawOptions` / スキーマ型 / `assertInvariants`。
 
 ## 未確定
 
@@ -34,7 +35,7 @@
 
 ## 次にやること
 
-1. Step 4(core 改修)→ … → Step 8 を小さな単位で進める(DESIGN.md 5 章)。
+1. Step 5(adapter 純粋変換 `toGitLogData`)→ … → Step 8 を小さな単位で進める(DESIGN.md 5 章)。
 
 ## 参照資料(元リポジトリ。読み取り専用で扱うこと。書き換えない)
 

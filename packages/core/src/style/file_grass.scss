@@ -1,0 +1,209 @@
+// Scoped under `.gh-file-grass` (the container class set by draw()) so that it never
+// leaks into the host page. Derived from gh-file-grass/src/css/file_grass.scss.
+$base-color: #7ab89e;
+$base-font-size: 10pt;
+$strong-stroke-color: #ec939a;
+
+%selected-label {
+  fill: $base-color;
+  stroke: none;
+  font-weight: bold;
+}
+
+%chart-select {
+  stroke: none;
+  &.selected {
+    stroke-width: 1pt;
+    stroke: $strong-stroke-color;
+  }
+}
+
+.gh-file-grass {
+  code {
+    font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+  }
+
+  text {
+    font-size: $base-font-size;
+
+    &.file-label {
+      text-anchor: start;
+      &.selected {
+        @extend %selected-label;
+      }
+    }
+
+    &.commit-label {
+      font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+      text-anchor: start;
+      &.selected {
+        @extend %selected-label;
+      }
+    }
+  }
+
+  rect {
+    &.stats {
+      &.mod1 {
+        fill: #c6e48b;
+      }
+      &.mod2 {
+        fill: #7bc96f;
+      }
+      &.mod3 {
+        fill: #239a3b;
+      }
+      &.mod4 {
+        fill: #196127;
+      }
+      &.selected {
+        stroke-width: 1pt;
+        stroke: $strong-stroke-color;
+      }
+    }
+
+    &.file-life {
+      fill: #ebedf0;
+      &.selected {
+        fill: #d3d8de;
+      }
+    }
+
+    &.commit-hist {
+      fill: $base-color;
+      @extend %chart-select;
+    }
+
+    &.commit-chart {
+      @extend %chart-select;
+      &.rank0 {
+        fill: #deede7;
+      }
+      &.rank1 {
+        fill: #acd2c2;
+      }
+      &.rank2 {
+        fill: #7ab89e;
+      }
+      &.rank3 {
+        fill: #509578;
+      }
+      &.rank4 {
+        fill: #366350;
+      }
+    }
+  }
+
+  path {
+    &.stat-arrow {
+      stroke: $base-color;
+      stroke-width: 3pt;
+      stroke-opacity: 0.5;
+      fill: none;
+      &.selected {
+        stroke-width: 6pt;
+        stroke: $strong-stroke-color;
+      }
+    }
+  }
+
+  $keep-color: #d1d5da;
+  $added-color: #6fdc89; // #28a745; // original
+  $deleted-color: #ec939a; // #cb2431; // original
+  $modified-color: #f9d86c; // #dbab09; // original
+
+  // ref. http://www.cssarrowplease.com/
+  .gh-file-grass-tooltip {
+    font-size: $base-font-size;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5pt;
+    color: white;
+    border-radius: 8px; // rounded corner
+    white-space: nowrap;
+    height: auto;
+    width: auto;
+    pointer-events: none;
+
+    &:after {
+      bottom: 100%;
+      left: 10px;
+      border: 10px solid transparent;
+      content: '';
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-bottom-color: rgba(0, 0, 0, 0.7);
+    }
+
+    ul {
+      padding-left: 15pt;
+      margin: 0;
+    }
+    span {
+      &.key {
+        font-weight: bold;
+      }
+      &.files {
+        font-weight: bold;
+      }
+      &.ins {
+        color: $added-color;
+        font-weight: bold;
+      }
+      &.del {
+        color: $deleted-color;
+        font-weight: bold;
+      }
+      &.keep {
+        color: $keep-color;
+        font-weight: bold;
+      }
+      &.mod {
+        color: $modified-color;
+      }
+
+      &.stat-box {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-left: 2px;
+        &.ins {
+          background-color: $added-color;
+        }
+        &.del {
+          background-color: $deleted-color;
+        }
+        &.keep {
+          background-color: $keep-color;
+        }
+      }
+    }
+  }
+
+  svg.action {
+    display: inline-block;
+    vertical-align: text-bottom;
+
+    path {
+      &.added-mark {
+        fill: $added-color;
+      }
+      &.deleted-mark {
+        fill: $deleted-color;
+      }
+      &.renamed-mark {
+        fill: $keep-color;
+      }
+      &.modified-mark {
+        fill: $modified-color;
+      }
+    }
+  }
+
+  .drag-handler {
+    fill: none;
+    pointer-events: all;
+  }
+}
