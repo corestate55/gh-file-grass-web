@@ -11,11 +11,10 @@ import { fileURLToPath } from 'node:url'
 const OWNER = 'corestate55'
 const REPO = 'gh-file-grass'
 const API = 'https://api.github.com'
-const LOGS_JSON = 'gh-file-grass/public/logs.json' // 読み取り専用
-const FIXTURE_DIR = join(
-  dirname(fileURLToPath(import.meta.url)),
-  '../packages/github-adapter/test/fixtures',
-)
+const HERE = dirname(fileURLToPath(import.meta.url))
+// 元 Ruby 実装の出力(ゴールデン)。このリポジトリ内のテストデータを使う
+const LOGS_JSON = join(HERE, '../packages/core/test/fixtures/logs.json')
+const FIXTURE_DIR = join(HERE, '../packages/github-adapter/test/fixtures')
 
 const token = process.env.GITHUB_TOKEN
 if (!token) throw new Error('GITHUB_TOKEN is not set')

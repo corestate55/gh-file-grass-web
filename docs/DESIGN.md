@@ -1,6 +1,6 @@
 # gh-file-grass-web 詳細設計
 
-元リポジトリ: `gh-file-grass`(Ruby コレクタ + Vue3/d3 ビジュアライザ)。本書はその設計調査(2026-11-07)に基づく。
+元リポジトリ: `gh-file-grass`(https://github.com/corestate55/gh-file-grass 。Ruby コレクタ + Vue3/d3 ビジュアライザ)。本書はその設計調査(2026-11-07)に基づく。
 
 凡例: **【事実】** = 元リポジトリのコードや `public/logs.json` を読んで確認済み。**【要検証】** = 未確認(主に GitHub API の挙動)。Step 0 で確かめる。
 

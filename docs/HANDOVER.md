@@ -1,6 +1,6 @@
 # 引き継ぎメモ(新セッション用)
 
-最終更新: 2026-11-07。前セッションは `gh-file-grass`(元リポジトリ)で行った。このディレクトリ(`gh-file-grass-web`)が新アプリのリポジトリ。**まだ実装は一切始めていない。docs のみ。**
+最終更新: 2026-11-07。元リポジトリ `gh-file-grass`(https://github.com/corestate55/gh-file-grass)での調査をもとに、このリポジトリを新アプリとして作った。進捗は下の「進捗」を参照。
 
 ## 何を作るか
 
@@ -16,11 +16,11 @@
 - rename は Ruby 版と同等にしたい(API の `previous_filename` で実現可能。重い処理なら近似でも可)。
 - 描画部分は **パッケージ化**(`packages/core`)。
 - 言語は **TypeScript**。
-- 構成は設計書のとおりで承認済み(npm workspaces: core / github-adapter / app)。リポジトリ名・場所は `gh-file-grass-web`。
+- 構成は設計書のとおりで承認済み(npm workspaces: core / github-adapter / app)。リポジトリ名は `gh-file-grass-web`。
 
 ## 進捗
 
-- **Step 0 完了(2026-11-07)**: トークン(fine-grained PAT、`(a local file)`、期限 2026-11-07 15:00 UTC)をローカルでのみ使用して録画。結果は `packages/github-adapter/test/fixtures/NOTES.md`。DESIGN.md に反映済み(④のみ設計訂正、未決 1・2 確定)。
+- **Step 0 完了(2026-11-07)**: トークン(fine-grained PAT、期限 2026-11-07 15:00 UTC)をローカルでのみ使用して録画。結果は `packages/github-adapter/test/fixtures/NOTES.md`。DESIGN.md に反映済み(④のみ設計訂正、未決 1・2 確定)。
 - トークンは用途終了。**ユーザーが GitHub 上で Revoke する**こと。リポジトリには一切含めていない。
 - `git init` 済み。
 - **Step 1 完了**(モノレポ雛形・CI)、**Step 2 完了**(`packages/core/src/schema.ts` に型と `assertInvariants`、`packages/core/test/fixtures/logs.json` を基準に検証)。
@@ -56,10 +56,10 @@
 
 ## 参照資料(元リポジトリ。読み取り専用で扱うこと。書き換えない)
 
-- `gh-file-grass/public/logs.json` — 期待スキーマ兼ゴールデンテストの基準(gitignore 済みだが作業ツリーには存在。64 コミット/stats 221 件)。**新リポジトリのテスト用フィクスチャにコピーする。**
-- `gh-file-grass/src/js/gh_file_grass/*.js` — 移植元の描画コード(`base.js, builder.js, chart_builder.js, operator.js, files.js, commits.js, commit.js, stats.js, stat.js, info_base.js`)と `src/js/gh_file_grass.js`
-- `gh-file-grass/src/css/file_grass.scss` — スタイル
-- `gh-file-grass/lib/git_log.rb`, `git_log_entry.rb`, `git_log_entry_file.rb`, `git_show_parser.rb` — 変換規則の根拠(DESIGN.md 4.2 に整理済み)
+- 元リポジトリの `public/logs.json` — 期待スキーマ兼ゴールデンテストの基準(gitignore 済みだが作業ツリーには存在。64 コミット/stats 221 件)。**新リポジトリのテスト用フィクスチャにコピーする。**
+- 元リポジトリの `src/js/gh_file_grass/*.js` — 移植元の描画コード(`base.js, builder.js, chart_builder.js, operator.js, files.js, commits.js, commit.js, stats.js, stat.js, info_base.js`)と `src/js/gh_file_grass.js`
+- 元リポジトリの `src/css/file_grass.scss` — スタイル
+- 元リポジトリの `lib/git_log.rb`, `git_log_entry.rb`, `git_log_entry_file.rb`, `git_show_parser.rb` — 変換規則の根拠(DESIGN.md 4.2 に整理済み)
 
 ## 作業ルール(ユーザーの CLAUDE.md より)
 
