@@ -146,6 +146,14 @@ $strong-stroke-color: #ec939a;
       border-bottom-color: rgba(0, 0, 0, 0.7);
     }
 
+    // セルの上に出したときは、三角形を下向きにする
+    &.above:after {
+      top: 100%;
+      bottom: auto;
+      border-bottom-color: transparent;
+      border-top-color: rgba(0, 0, 0, 0.7);
+    }
+
     ul {
       padding-left: 15pt;
       margin: 0;

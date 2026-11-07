@@ -37,6 +37,11 @@ describe('file_grass.scss', () => {
     )
   })
 
+  test('the arrow points down when the tooltip opens above the cell', () => {
+    expect(css).toMatch(/\.gh-file-grass-tooltip\.above:after\s*\{[^}]*border-top-color/)
+    expect(css).toMatch(/\.gh-file-grass-tooltip\.above:after\s*\{[^}]*top:\s*100%/)
+  })
+
   test('keeps the grass colour classes', () => {
     for (const cls of ['mod1', 'mod4', 'rank0', 'rank4', 'stat-arrow', 'file-life']) {
       expect(css).toContain(cls)

@@ -9,6 +9,10 @@ import type GHLogCommit from './commit'
 import type GHLogStat from './stat'
 import type { Area, GroupDatum } from './base'
 
+// ツールチップの三角形の高さ(file_grass.scss の border 10px)と、セルとの余白
+const TOOLTIP_ARROW = 10
+const TOOLTIP_GAP = 2
+
 type AnySelection = Selection<Element, unknown, null, undefined>
 type StatRectDatum = GHLogStat | FileLifeDatum
 
@@ -83,16 +87,19 @@ export default class GHFileGrassOperator extends GHBarChartBuilder {
     const left = matrix.e - box.left - this.container.clientLeft + this.container.scrollLeft
     const top = matrix.f - box.top - this.container.clientTop + this.container.scrollTop
 
-    // 幅を測るため、内容を入れて表示してから位置を決める
+    // 大きさを測るため、内容を入れて表示してから位置を決める
     this.tooltip.style('visibility', 'visible').html(htmlStr)
+    const { top: tooltipTop, above } = this._placeTooltipVertically(top, this.lc * yMargin)
     this.tooltip
+      .classed('above', above)
       .style('left', `${this._clampTooltipLeft(left - this.lc * 1.25)}px`)
-      .style('top', `${top + this.lc * yMargin}px`)
+      .style('top', `${tooltipTop}px`)
   }
 
   /**
-   * ツールチップがコンテナの表示範囲の外にはみ出さないようにする(はみ出すと横スクロールが増える)。
-   * 幅が表示範囲より大きいときは左端を優先する。レイアウトが無い環境(幅 0)では何もしない。
+   * ツールチップがコンテナの表示範囲の外にはみ出さないようにする(はみ出すとスクロールバーが出て、
+   * 見えなくなる)。幅が表示範囲より大きいときは左端を優先する。
+   * レイアウトが無い環境(幅 0)では何もしない。
    */
   _clampTooltipLeft(left: number): number {
     const node = this.tooltip.node()
@@ -103,8 +110,32 @@ export default class GHFileGrassOperator extends GHBarChartBuilder {
     return Math.max(min, Math.min(left, max))
   }
 
+  /**
+   * 縦の位置。通常はセルの下に出す。下に収まらず、上なら収まるときはセルの上に出す(`above`)。
+   * どちらにも収まらないときは表示範囲に押し込む(上端を優先)。レイアウトが無い環境では何もしない。
+   * @param cellTop セルの上端(コンテナ内座標)
+   * @param below   通常時にセルの上端から下へずらす量
+   */
+  _placeTooltipVertically(cellTop: number, below: number): { top: number; above: boolean } {
+    const preferred = cellTop + below
+    const node = this.tooltip.node()
+    const view = this.container.clientHeight
+    if (!node || view <= 0) return { top: preferred, above: false }
+
+    const height = node.offsetHeight
+    const min = this.container.scrollTop
+    const max = min + view - height
+    if (preferred <= max) return { top: Math.max(min, preferred), above: false }
+
+    // 矢印(10px)の分と少しの余白を空けて、セルの上に出す
+    const aboveTop = cellTop - height - TOOLTIP_ARROW - TOOLTIP_GAP
+    if (aboveTop >= min) return { top: aboveTop, above: true }
+    return { top: Math.max(min, Math.min(preferred, max)), above: false }
+  }
+
   _disableTooltip(): void {
-    this.tooltip.style('visibility', 'hidden')
+    // visibility: hidden でも要素はスクロール領域に寄与し続ける。大きさと位置を元に戻して影響をなくす
+    this.tooltip.style('visibility', 'hidden').style('left', '0px').style('top', '0px').html('')
   }
 
   _addStatsHandler(): void {

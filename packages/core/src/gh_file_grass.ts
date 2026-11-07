@@ -33,6 +33,8 @@ export default class GHFileGrass extends GHFileGrassOperator {
       .append('div')
       .attr('class', 'gh-file-grass-tooltip')
       .style('position', 'absolute')
+      .style('left', '0px')
+      .style('top', '0px')
       .style('visibility', 'hidden')
   }
 
