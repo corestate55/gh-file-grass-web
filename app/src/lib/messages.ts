@@ -71,3 +71,14 @@ export const viewMessages = {
   caption: (repo: string, branch: string, commits: number, files: number) =>
     `${repo} @ ${branch}: ${commits} ${commits === 1 ? 'commit' : 'commits'}, ${files} ${files === 1 ? 'file' : 'files'}. Hover over cells for details.`,
 } as const
+
+export const formMessages = {
+  repoLabel: 'Repository',
+  repoPlaceholder: 'owner/repo or https://github.com/owner/repo',
+  loadBranches: 'Load branches',
+  branchLabel: 'Branch',
+  branchesFirst: 'Load branches first',
+  branchesTruncated: 'Only the first 100 branches are listed.',
+  countLabel: 'Number of commits',
+  countInvalid: (min: number, max: number) => `Enter a whole number from ${min} to ${max}.`,
+} as const
