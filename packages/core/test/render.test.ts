@@ -1,35 +1,37 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
+import { beforeEach, describe, expect, test, vi } from 'vitest'
 import logsJson from './fixtures/logs.json'
-import GHFileGrass from '../src/gh_file_grass'
-import type { GitLogData } from '../src/schema'
+import { draw } from '../src'
+import type { GitLogData } from '../src'
 
-// golden-original.svg.html は元実装(gh-file-grass の JS)に同じ logs.json を与えて得た
-// #gh-file-grass の innerHTML。移植後の出力がバイト単位で一致することを確認する。
+// golden-original.svg.html は元実装(gh-file-grass の JS)に同じ logs.json を与えて得た SVG。
+// 移植後の出力は、インスタンス接頭辞(gfgN-)を除けばバイト単位で一致しなければならない。
 const golden = readFileSync(join(import.meta.dirname, 'fixtures/golden-original.svg.html'), 'utf8')
+const data = () => structuredClone(logsJson) as unknown as GitLogData
 
-function render(): string {
-  document.body.innerHTML = '<div id="gh-file-grass"></div><div id="stat-tooltip"></div>'
-  new GHFileGrass().draw(structuredClone(logsJson) as unknown as GitLogData)
-  return document.querySelector('#gh-file-grass')!.innerHTML
+function mount(): HTMLElement {
+  const el = document.createElement('div')
+  document.body.appendChild(el)
+  return el
 }
 
-describe('GHFileGrass (TS port of the original implementation)', () => {
+describe('draw()', () => {
   beforeEach(() => {
-    vi.spyOn(console, 'log').mockImplementation(() => {})
-  })
-  afterEach(() => {
-    vi.restoreAllMocks()
+    document.body.innerHTML = ''
   })
 
-  test('renders SVG identical to the original implementation', () => {
-    expect(render()).toBe(golden)
+  test('renders SVG identical to the original implementation (except id prefix)', () => {
+    const container = mount()
+    draw(data(), { container })
+    const svg = container.querySelector('svg')!.outerHTML
+    expect(svg.replace(/gfg\d+-/g, '')).toBe(golden)
   })
 
   test('element counts', () => {
-    render()
-    const count = (sel: string) => document.querySelectorAll(sel).length
+    const container = mount()
+    draw(data(), { container })
+    const count = (sel: string) => container.querySelectorAll(sel).length
     expect(count('rect.stats')).toBe(221)
     expect(count('text.file-label')).toBe(38)
     expect(count('text.commit-label')).toBe(64)
@@ -38,5 +40,118 @@ describe('GHFileGrass (TS port of the original implementation)', () => {
     expect(count('rect.commit-chart')).toBe(64)
     expect(count('rect.commit-hist')).toBe(38)
     expect(count('rect.drag-handler')).toBe(3)
+  })
+
+  test('does not modify the input data', () => {
+    const input = data()
+    const before = JSON.stringify(input)
+    draw(input, { container: mount() })
+    expect(JSON.stringify(input)).toBe(before)
+  })
+
+  test('two instances in one document have no id collisions', () => {
+    const a = mount()
+    const b = mount()
+    draw(data(), { container: a })
+    draw(data(), { container: b })
+    const ids = [...document.querySelectorAll('[id]')].map((e) => e.id)
+    expect(ids.length).toBeGreaterThan(0)
+    expect(new Set(ids).size).toBe(ids.length)
+    // url(#...) references stay inside their own instance
+    for (const container of [a, b]) {
+      const own = new Set([...container.querySelectorAll('[id]')].map((e) => e.id))
+      for (const el of container.querySelectorAll('[clip-path]')) {
+        const ref = /url\(#(.+)\)/.exec(el.getAttribute('clip-path')!)![1]!
+        expect(own.has(ref)).toBe(true)
+      }
+    }
+  })
+
+  test('hover on one instance does not touch the other', () => {
+    const a = mount()
+    const b = mount()
+    draw(data(), { container: a })
+    draw(data(), { container: b })
+    a.querySelector('text.file-label')!.dispatchEvent(new MouseEvent('mouseover'))
+    expect(a.querySelectorAll('.selected').length).toBeGreaterThan(0)
+    expect(b.querySelectorAll('.selected').length).toBe(0)
+  })
+
+  test('destroy() removes svg and tooltip and restores the container', () => {
+    const container = mount()
+    container.className = 'mine'
+    container.appendChild(document.createElement('span')) // pre-existing child
+    const handle = draw(data(), { container })
+    expect(container.querySelector('svg')).not.toBeNull()
+    expect(container.classList.contains('gh-file-grass')).toBe(true)
+
+    handle.destroy()
+    expect(container.querySelector('svg')).toBeNull()
+    expect(container.querySelector('.gh-file-grass-tooltip')).toBeNull()
+    expect(container.children).toHaveLength(1)
+    expect(container.className).toBe('mine')
+    expect(container.style.position).toBe('')
+    handle.destroy() // idempotent
+  })
+
+  test('destroy() then draw() again gives the same picture', () => {
+    const container = mount()
+    draw(data(), { container }).destroy()
+    draw(data(), { container })
+    const svg = container.querySelector('svg')!.outerHTML
+    expect(svg.replace(/gfg\d+-/g, '')).toBe(golden)
+    expect(container.querySelectorAll('svg')).toHaveLength(1)
+  })
+
+  test('repeated draw/destroy leaves no residue', () => {
+    const container = mount()
+    for (let i = 0; i < 5; i++) draw(data(), { container }).destroy()
+    expect(container.innerHTML).toBe('')
+  })
+
+  test('leaves a draw failure clean', () => {
+    const container = mount()
+    const bad = { ...data(), commits: null } as unknown as GitLogData
+    expect(() => draw(bad, { container })).toThrow()
+    expect(container.innerHTML).toBe('')
+    expect(container.className).toBe('')
+  })
+})
+
+describe('tooltip', () => {
+  beforeEach(() => {
+    document.body.innerHTML = ''
+  })
+
+  const stubGeometry = (container: HTMLElement) => {
+    // happy-dom has no layout: provide a CTM and a container rect.
+    vi.spyOn(container, 'getBoundingClientRect').mockReturnValue({
+      left: 100,
+      top: 50,
+    } as DOMRect)
+    for (const el of container.querySelectorAll<SVGGraphicsElement>('svg, svg *')) {
+      el.getScreenCTM = () => new DOMMatrix([1, 0, 0, 1, 130, 90])
+    }
+  }
+
+  test('shows the tooltip inside the container using container-relative coordinates', () => {
+    const container = mount()
+    draw(data(), { container })
+    stubGeometry(container)
+    const tooltip = container.querySelector<HTMLElement>('.gh-file-grass-tooltip')!
+    expect(tooltip.style.visibility).toBe('hidden')
+
+    const rect = container.querySelector('rect.stats')!
+    rect.dispatchEvent(new MouseEvent('mouseover'))
+    expect(tooltip.style.visibility).toBe('visible')
+    expect(tooltip.innerHTML).toContain('<ul>')
+    const x = Number(rect.getAttribute('x'))
+    const y = Number(rect.getAttribute('y'))
+    // left = ctm.e + x - rect.left - lc*1.25 ; top = ctm.f + y - rect.top + lc*2   (lc = 12)
+    expect(parseFloat(tooltip.style.left)).toBeCloseTo(130 + x - 100 - 15)
+    expect(parseFloat(tooltip.style.top)).toBeCloseTo(90 + y - 50 + 24)
+
+    rect.dispatchEvent(new MouseEvent('mouseout'))
+    expect(tooltip.style.visibility).toBe('hidden')
   })
 })

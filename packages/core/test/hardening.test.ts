@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, test, vi } from 'vitest'
-import GHFileGrass from '../src/gh_file_grass'
+import { draw as drawInto } from '../src/draw'
 import GHLogCommit from '../src/gh_file_grass/commit'
 import GHLogStat from '../src/gh_file_grass/stat'
 import { encodePath, escapeHtml, safeHref } from '../src/gh_file_grass/escape'
@@ -92,8 +92,9 @@ describe('draw()', () => {
 
   const draw = (data: GitLogData) => {
     document.body.innerHTML = '<div id="gh-file-grass"></div>'
-    new GHFileGrass().draw(data)
-    return document.querySelector('#gh-file-grass')!
+    const container = document.querySelector<HTMLElement>('#gh-file-grass')!
+    drawInto(data, { container })
+    return container
   }
   const base = (over: Partial<GitLogData> = {}): GitLogData => ({
     repo: 'o/r',

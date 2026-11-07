@@ -36,7 +36,18 @@ export default class GHFileGrassBase {
   width1 = 0
   height1 = 0
   cBaseRatio = 0.6 // commit base position
-  svg!: Selection<SVGSVGElement, unknown, HTMLElement, unknown>
+  svg!: Selection<SVGSVGElement, unknown, null, undefined>
+  tooltip!: Selection<HTMLDivElement, unknown, null, undefined>
+
+  constructor(
+    readonly container: HTMLElement,
+    // Prefix of every element id, so that several instances can live in one document.
+    readonly idPrefix = '',
+  ) {}
+
+  _id(name: string): string {
+    return `${this.idPrefix}${name}`
+  }
 
   // Function `_px()` and `_py()` are used to calculate initial position
   // for each data (svg object), and they keep its position in data as [px,py].
@@ -109,39 +120,39 @@ export default class GHFileGrassBase {
       .data(groupData)
       .enter()
       .append('g')
-      .attr('id', (d) => `${d.area}-group`)
+      .attr('id', (d) => this._id(`${d.area}-group`))
       .attr('transform', (d) => `translate(${d.px},${d.py})`)
     groups
       .append('defs')
       .append('SVG:clipPath')
-      .attr('id', (d) => `${d.area}-clip`)
+      .attr('id', (d) => this._id(`${d.area}-clip`))
       .append('rect')
       .attr('x', (d) => d.clipPath.x)
       .attr('y', (d) => d.clipPath.y)
       .attr('width', (d) => d.clipPath.width)
       .attr('height', (d) => d.clipPath.height)
-    groups.append('g').attr('clip-path', (d) => `url(#${d.area}-clip)`)
+    groups.append('g').attr('clip-path', (d) => `url(#${this._id(`${d.area}-clip`)})`)
   }
 
   _makeSVGCanvas(): void {
-    this.svg = select<HTMLElement, unknown>('#gh-file-grass')
+    this.svg = select(this.container)
       .append('svg')
-      .attr('id', 'gh-file-grass-canvas')
+      .attr('id', this._id('gh-file-grass-canvas'))
       .attr('width', this.width0)
       .attr('height', this.height0)
     this._makeGroups()
   }
 
-  _selectGroup(area: Area): Selection<SVGGElement, GroupDatum, HTMLElement, unknown> {
-    return this.svg.select<SVGGElement>(`g#${area}-group`) as unknown as Selection<
+  _selectGroup(area: Area): Selection<SVGGElement, GroupDatum, null, undefined> {
+    return this.svg.select<SVGGElement>(`g#${this._id(`${area}-group`)}`) as unknown as Selection<
       SVGGElement,
       GroupDatum,
-      HTMLElement,
-      unknown
+      null,
+      undefined
     >
   }
 
-  _selectClippedGroup(area: Area): Selection<SVGGElement, GroupDatum, HTMLElement, unknown> {
+  _selectClippedGroup(area: Area): Selection<SVGGElement, GroupDatum, null, undefined> {
     return this._selectGroup(area).select<SVGGElement>('g')
   }
 }

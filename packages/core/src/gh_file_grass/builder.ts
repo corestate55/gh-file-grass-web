@@ -27,7 +27,7 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {
   }
 
   _fileLabelId(index: number): string {
-    return `${this._fileClass(index)}-label`
+    return this._id(`${this._fileClass(index)}-label`)
   }
 
   _commitClass(index: number): string {
@@ -35,7 +35,7 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {
   }
 
   _commitLabelId(index: number): string {
-    return `${this._commitClass(index)}-label`
+    return this._id(`${this._commitClass(index)}-label`)
   }
 
   _statClass(index: number): string {
@@ -43,7 +43,7 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {
   }
 
   _statRectId(index: number): string {
-    return this._statClass(index)
+    return this._id(this._statClass(index))
   }
 
   _modClass(index: number): string {

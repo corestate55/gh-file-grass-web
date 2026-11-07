@@ -1,3 +1,4 @@
+import { select } from 'd3-selection'
 import type { GitLogData } from './schema'
 import GHFileGrassOperator from './gh_file_grass/operator'
 
@@ -5,6 +6,7 @@ export default class GHFileGrass extends GHFileGrassOperator {
   draw(data: GitLogData): void {
     this._initialize(data)
     this._makeSVGCanvas()
+    this._makeTooltip()
 
     this._makeCommitHistogram()
     this._makeCommitLinesChart()
@@ -24,5 +26,18 @@ export default class GHFileGrass extends GHFileGrassOperator {
     this._addCommitLinesChartHandler()
 
     this._addDragToGroups()
+  }
+
+  _makeTooltip(): void {
+    this.tooltip = select(this.container)
+      .append('div')
+      .attr('class', 'gh-file-grass-tooltip')
+      .style('position', 'absolute')
+      .style('visibility', 'hidden')
+  }
+
+  destroy(): void {
+    this.svg?.remove()
+    this.tooltip?.remove()
   }
 }

@@ -1,4 +1,3 @@
-import { select } from 'd3-selection'
 import type { Selection } from 'd3-selection'
 import { drag } from 'd3-drag'
 import type { D3DragEvent } from 'd3-drag'
@@ -10,7 +9,7 @@ import type GHLogCommit from './commit'
 import type GHLogStat from './stat'
 import type { Area, GroupDatum } from './base'
 
-type AnySelection = Selection<Element, unknown, SVGSVGElement, unknown>
+type AnySelection = Selection<Element, unknown, null, undefined>
 type StatRectDatum = GHLogStat | FileLifeDatum
 
 export default class GHFileGrassOperator extends GHBarChartBuilder {
@@ -63,24 +62,35 @@ export default class GHFileGrassOperator extends GHBarChartBuilder {
       .on('mouseout', mouseOut)
   }
 
-  _positionMatrixOfId(id: string): DOMMatrix {
-    const target = document.getElementById(id) as unknown as SVGGraphicsElement
+  _positionMatrixOfId(id: string): DOMMatrix | null {
+    const target = this.container.querySelector<SVGGraphicsElement>(`[id="${id}"]`)
+    if (!target) return null
     // attribute .[xy] are only for rect and text.
-    return target.getScreenCTM()!.translate(+target.getAttribute('x')!, +target.getAttribute('y')!)
+    return (
+      target
+        .getScreenCTM()
+        ?.translate(+(target.getAttribute('x') ?? 0), +(target.getAttribute('y') ?? 0)) ?? null
+    )
   }
 
+  // The tooltip is `position: absolute` inside the (positioned) container, so its
+  // coordinates are relative to the container's padding box, not to the page.
   _enableTooltip(htmlStr: string, id: string): void {
     const matrix = this._positionMatrixOfId(id)
+    if (!matrix) return
     const yMargin = id.match(/commit.*label/) ? 1 : 2
-    select('div#stat-tooltip')
+    const box = this.container.getBoundingClientRect()
+    const left = matrix.e - box.left - this.container.clientLeft + this.container.scrollLeft
+    const top = matrix.f - box.top - this.container.clientTop + this.container.scrollTop
+    this.tooltip
       .style('visibility', 'visible')
-      .style('left', `${window.pageXOffset + matrix.e - this.lc * 1.25}px`)
-      .style('top', `${window.pageYOffset + matrix.f + this.lc * yMargin}px`)
+      .style('left', `${left - this.lc * 1.25}px`)
+      .style('top', `${top + this.lc * yMargin}px`)
       .html(htmlStr)
   }
 
   _disableTooltip(): void {
-    select('div#stat-tooltip').style('visibility', 'hidden')
+    this.tooltip.style('visibility', 'hidden')
   }
 
   _addStatsHandler(): void {
@@ -198,7 +208,7 @@ export default class GHFileGrassOperator extends GHBarChartBuilder {
       // to prevent to cover (and disable) stat-rect event.
       this._selectGroup(area)
         .insert('rect', 'g')
-        .attr('id', `${area}-drag-handler`)
+        .attr('id', this._id(`${area}-drag-handler`))
         .attr('class', 'drag-handler')
         .attr('x', (d) => d.clipPath.x)
         .attr('y', (d) => d.clipPath.y)

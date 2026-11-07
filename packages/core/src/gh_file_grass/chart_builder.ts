@@ -20,11 +20,11 @@ export interface CommitHistDatum {
 
 export default class GHBarChartBuilder extends GHFileGrassBuilder {
   _commitHistogramId(index: number): string {
-    return `${this._fileClass(index)}-histogram`
+    return this._id(`${this._fileClass(index)}-histogram`)
   }
 
   _commitLinesChartId(index: number): string {
-    return `${this._commitClass(index)}-chart`
+    return this._id(`${this._commitClass(index)}-chart`)
   }
 
   _commitLinesChartRank(lines: number): string {
