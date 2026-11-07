@@ -26,6 +26,8 @@
 - **Step 1 完了**(モノレポ雛形・CI)、**Step 2 完了**(`packages/core/src/schema.ts` に型と `assertInvariants`、`packages/core/test/fixtures/logs.json` を基準に検証)。
 - トークンはユーザーが Revoke 済み。
 - **Step 3 完了**: 元 JS 10 ファイルを `packages/core/src/gh_file_grass/*.ts` に移植(データ注入化・d3-fetch 除去のみ。`console.log`・XSS 等は Step 4 で対応)。元実装の出力を `test/fixtures/golden-original.svg.html` として固定し、SVG が完全一致することをテストで保証。未使用の `_classifyByModifiedLines` は削除。
+- **Step 5 完了**: `packages/github-adapter/src/` に `toGitLogData`(`rename.ts` / `date.ts` / `file-change.ts` / `blob-history.ts` / `to-git-log-data.ts`)。録画 64 件が `logs.json` と正規化後に完全一致(stats は順序・index・src 込み)、部分範囲(k=2〜63)も検証。architect の計画に従い、判断事項 7 件は推奨どおり(DESIGN 7.6)。
+  - Step 6 への引き継ぎ: 取得クライアントは詳細 API の `Link` ヘッダで files の切り詰めを判定して `truncatedShas` を渡す。`GhCommitDetail` は API の生 JSON をそのまま渡せる。
 - **Step 4 完了**(4a: XSS エスケープ・`-Infinity`/NaN 対策・`console.log` 削除・URL エンコード/http(s) 限定、4b: `draw(data,{container})`/`destroy()`・ID 接頭辞 `gfgN-`・入力複製・コンテナ内ツールチップ(位置はコンテナ相対)、4c: SCSS を `.gh-file-grass` 配下にスコープ化、`npm run build:css -w @gh-file-grass/core` で `dist/style.css`)。core の公開 API は `draw` / `FileGrassHandle` / `DrawOptions` / スキーマ型 / `assertInvariants`。
 
 ## 未確定
@@ -35,7 +37,7 @@
 
 ## 次にやること
 
-1. Step 5(adapter 純粋変換 `toGitLogData`)→ … → Step 8 を小さな単位で進める(DESIGN.md 5 章)。
+1. Step 6(adapter 取得クライアント)→ … → Step 8 を小さな単位で進める(DESIGN.md 5 章)。
 
 ## 参照資料(元リポジトリ。読み取り専用で扱うこと。書き換えない)
 

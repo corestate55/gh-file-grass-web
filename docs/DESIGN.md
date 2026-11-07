@@ -256,14 +256,15 @@ export class GitHubClient {
   ): Promise<HistoryResult>
   estimateCost(ref: RepoRef, shas: string[]): number // キャッシュに無い件数
   get lastRateLimit(): RateLimitInfo | null
-  fetchRateLimit(opts?): Promise<RateLimitInfo> // GET /rate_limit(非消費は【要検証】)
+  fetchRateLimit(opts?): Promise<RateLimitInfo> // GET /rate_limit(非消費。Step 0 ⑧で確認済み)
 }
 export function toGitLogData(input: {
   ref: RepoRef
   branch: string
   commits: GhCommitDetail[] // 新しい順, parents 含む
-  timeZone?: string
-}): { data: GitLogData; warnings: Warning[] } // 純粋関数。件数上限なし
+  timeZone?: string // IANA 名。不正なら RangeError
+  truncatedShas?: ReadonlySet<string> // files が 1 ページ目で切り詰められたコミット。判定は取得側(Step 6)が Link ヘッダで行う
+}): { data: GitLogData; warnings: Warning[] } // 純粋関数。件数上限なし。sha_short 衝突は ShaShortCollisionError
 ```
 
 **fetchHistory の流れ**: (1) `GET /repos/{o}/{r}/commits?sha={branch}&per_page={count}`(1 req) → (2) キャッシュに無い sha 件数を数え `lastRateLimit.remaining` と比較、不足なら詳細取得前に `RateLimitError`(needed/remaining/resetAt) → (3) 詳細を並列 4 で取得、1 件ごとに `onProgress` → (4) 最初のエラーで内部 AbortController を中断。取得済みはキャッシュに残す。
@@ -340,6 +341,10 @@ export function toGitLogData(input: {
 ## 7.5 Step 0 の結果(2026-11-07 完了)
 
 詳細は `packages/github-adapter/test/fixtures/NOTES.md`。要点: ①〜③⑤〜⑨は想定どおり、④のみ設計を訂正(上記 4.3)。マージの files は第一親差分、レート制限ヘッダは CORS で読める、`/rate_limit` は非消費。
+
+## 7.6 Step 5 の結果(2026-11-07 完了)
+
+`toGitLogData` は全 64 件で Ruby の出力と完全一致(正規化後)。決定事項: `removed` の src は API の `sha` から取る / 切り詰めは取得側が判定し `truncatedShas` で渡す / `unknown-src` はコミットごとに 1 件 / sha_short 衝突は例外 / files はコードポイント順 / 不正な timeZone は例外。
 
 ## 8. 未決事項(状況は HANDOVER.md 参照)
 
