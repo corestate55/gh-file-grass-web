@@ -389,6 +389,7 @@ export function toGitLogData(input: {
 - 通しの動作(API は録画 fixture でモック): ブランチ読み込み → 選択 → 件数 40 → Enter で実行 → グラフ・警告・見出し・キャプション、ページエラー 0。
 - ツールチップ(実レイアウト、実マウス): 下端のセルでは上に開き(`above`)コンテナ内に収まる / 右端でも収まる / 400 文字超のメッセージは省略され 28rem で折り返す / どの場合も縦横のスクロールバーなし / 隠した後も 0,0 に戻りスクロール領域に影響しない。
 - 残量が尽きている状態(実 API): 押す前の警告「Not enough quota to fetch anything new (0 left). Wait until …」が出て Show が無効になる。
+- **公開サイト**(`https://corestate55.github.io/gh-file-grass-web/`)で、実際の GitHub API を使って通しで確認(2026-11-07): ブランチ取得 → `corestate55/gh-file-grass` の `develop` ブランチの 5 コミットを表示 → グラフ描画・ツールチップ。API 呼び出しは 8 本(残量確認 1 + 消費 7)で全て 200、**OPTIONS は 0 件**、コンソールのエラー・警告は 0 件。残量バッジは 60 → 53 に追従した。
 
 **【未確認】**: 300 ファイル超の実コミットでの警告表示(仕組みは curl で確認済み)、5xx の CORS、見た目の最終確認(利用者の目)。
 
@@ -410,16 +411,17 @@ export function toGitLogData(input: {
 
 ### 9.1 ブランチ運用
 
-- 開発は `develop`、公開は `main`。`main` は空の初期コミットから始まり、`develop` はその上に積まれている(共通の祖先があるので、PR・マージが普通にできる)。
-- **`develop` を `main` にマージしたときだけ** GitHub Pages が更新される。`.github/workflows/deploy.yml` は `main` への push のみで動き、手動実行も `main` 以外では何もしない。
-- CI(`.github/workflows/ci.yml`: lint / format / typecheck / test / build)は、`main`・`develop` への push と PR で動く。
+- 変更は作業ブランチ(例: `feature/...`)で行い、PR で `main` にマージする。`develop` ブランチは使わない(初回リリースの後に廃止した)。
+- **`main` が更新されたときだけ** GitHub Pages が更新される。`.github/workflows/deploy.yml` は `main` への push のみで動き、手動実行も `main` 以外では何もしない。
+- CI(`.github/workflows/ci.yml`: lint / format / typecheck / test / build)は、`main` への push と PR で動く。
+- 初回リリースは、`develop` からの PR #1(squash マージ)。そのため `main` の履歴は、空の初期コミットと、プロジェクト全体を含む 1 コミットから始まる。
 
-### 9.2 初回の公開手順
+### 9.2 公開(2026-11-07 に完了)
 
-1. リポジトリの Settings → Pages → Build and deployment → Source を **GitHub Actions** にする(初回のみ)。
-2. `develop` から `main` への PR を作ってマージする。
-3. Actions の "Deploy to GitHub Pages" が成功したら、`https://corestate55.github.io/gh-file-grass-web/` を開く。
-   - `github-pages` 環境のデプロイは、既定で `main` のみ許可される。
+1. Pages の有効化: Source を **GitHub Actions** にした(`gh api -X POST repos/corestate55/gh-file-grass-web/pages -f build_type=workflow`。画面なら Settings → Pages → Build and deployment → Source)。
+2. PR #1 を `main` にマージ → "Deploy to GitHub Pages" が成功し、`https://corestate55.github.io/gh-file-grass-web/` が公開された。
+3. 以後は、`main` へのマージのたびに自動で更新される。
+   - `github-pages` 環境のデプロイは、`main` のみ許可されている。
    - 公開パスは `BASE_PATH`(既定 `/gh-file-grass-web/`)で決まる。ワークフローは `configure-pages` の `base_path` を渡すので、リポジトリ名が違っても動く。
 
 ### 9.3 開発とローカルでの動作確認
@@ -430,9 +432,8 @@ export function toGitLogData(input: {
 
 ## 10. 今後の課題
 
-- **ブラウザでの確認が残っているもの**: 300 ファイル超の実コミットでの警告表示(仕組みは curl で確認済み)、5xx 応答の CORS、実際の見た目と操作感(利用者の目で)。
-- **初回デプロイ時の確認**: `configure-pages@v5` / `upload-pages-artifact@v3` / `deploy-pages@v4` は、既知の版を指定しただけで、まだ一度も実行していない。
-- **GitHub Actions の更新**: `actions/checkout@v4` と `actions/setup-node@v4` が Node 20 向けで非推奨になっている(警告のみ)。新しい版に上げる。
+- **確認が残っているもの**: 300 ファイル超の実コミットでの警告表示(仕組みは curl で確認済み)、5xx 応答の CORS、実際の見た目と操作感(利用者の目で)。
+- **アクション更新後の初回デプロイ**: `checkout@v7` / `setup-node@v7`(CI・デプロイ)、`configure-pages@v6` / `upload-pages-artifact@v5` / `deploy-pages@v5`(デプロイ)に更新した(旧版は Node 20 向けで非推奨)。CI で動く 2 つは PR の CI で確認できるが、Pages 用の 3 つは `main` に入るまで試せない。失敗しても、公開済みのサイトは前のまま残る。
 - **取得データの再利用**: 現在は取得したコミット詳細をメモリだけに持つので、リロードで全件取り直す(20 件の表示で 21 リクエスト)。コミットの内容は sha で不変なので、localStorage に保存すれば消費を大きく減らせるが、「データは保存しない」という当初の方針(1 章)の変更になる。
 - **ファイル名ラベルの幅**: 長いファイル名がヒストグラムの棒に少し重なる。ラベル幅の見積もり(`maxFileNameLength * fontSize * 0.7`)が、実際のフォントより狭いため。元の実装の計算式に由来する。
 - **観測が 1 リポジトリのみのもの**: コミットの並び順(API 順 = `git log` 順)、`files` の並び順(API 順 = diff 順)。崩れても描画への影響は小さい(stats の index の並びが変わる程度)。
