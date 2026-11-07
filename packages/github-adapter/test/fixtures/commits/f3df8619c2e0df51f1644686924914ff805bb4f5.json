@@ -1,0 +1,133 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/f3df8619c2e0df51f1644686924914ff805bb4f5",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"1ef9d7f9f2f247b6b2b0db3776b565a326dcd6494b7b867220f1525fa741978b\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4976",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "24",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "f3df8619c2e0df51f1644686924914ff805bb4f5",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmYzZGY4NjE5YzJlMGRmNTFmMTY0NDY4NjkyNDkxNGZmODA1YmI0ZjU=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2021-03-20T11:54:52Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2021-03-20T11:54:52Z"
+      },
+      "message": "Merge remote-tracking branch 'origin/dependabot/npm_and_yarn/node-sass-4.13.1' into proto/ghdependabots",
+      "tree": {
+        "sha": "6ebc315bbaeebdad92125ffd4cbdfccd1b063034",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/6ebc315bbaeebdad92125ffd4cbdfccd1b063034"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/f3df8619c2e0df51f1644686924914ff805bb4f5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/f3df8619c2e0df51f1644686924914ff805bb4f5",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/f3df8619c2e0df51f1644686924914ff805bb4f5",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/f3df8619c2e0df51f1644686924914ff805bb4f5/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "67a7109f2f78c919da3101beb3faae63d7bfd4bc",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/67a7109f2f78c919da3101beb3faae63d7bfd4bc",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/67a7109f2f78c919da3101beb3faae63d7bfd4bc"
+      },
+      {
+        "sha": "a4588ddf22d8725f5881fa640ceb9124cd912a88",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/a4588ddf22d8725f5881fa640ceb9124cd912a88",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/a4588ddf22d8725f5881fa640ceb9124cd912a88"
+      }
+    ],
+    "stats": {
+      "total": 60,
+      "additions": 29,
+      "deletions": 31
+    },
+    "files": [
+      {
+        "sha": "7f844bd3f5c216a6f7dab58258ed4d3f1fe9dd76",
+        "filename": "package-lock.json",
+        "status": "modified",
+        "additions": 28,
+        "deletions": 30,
+        "changes": 58,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/f3df8619c2e0df51f1644686924914ff805bb4f5/package-lock.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/f3df8619c2e0df51f1644686924914ff805bb4f5/package-lock.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package-lock.json?ref=f3df8619c2e0df51f1644686924914ff805bb4f5",
+        "patch": "@@ -5917,9 +5917,9 @@\n       }\n     },\n     \"globule\": {\n-      \"version\": \"1.2.1\",\n-      \"resolved\": \"https://registry.npmjs.org/globule/-/globule-1.2.1.tgz\",\n-      \"integrity\": \"sha512-g7QtgWF4uYSL5/dn71WxubOrS7JVGCnFPEnoeChJmBnyR9Mw8nGoEwOgJL/RC2Te0WhbsEUCejfH8SZNJ+adYQ==\",\n+      \"version\": \"1.3.2\",\n+      \"resolved\": \"https://registry.npmjs.org/globule/-/globule-1.3.2.tgz\",\n+      \"integrity\": \"sha512-7IDTQTIu2xzXkT+6mlluidnWo+BypnbSoEVVQCGfzqnl5Ik8d3e1d4wycb8Rj9tWW+Z39uPWsdlquqiqPCd/pA==\",\n       \"dev\": true,\n       \"requires\": {\n         \"glob\": \"~7.1.1\",\n@@ -6406,9 +6406,9 @@\n       \"dev\": true\n     },\n     \"in-publish\": {\n-      \"version\": \"2.0.0\",\n-      \"resolved\": \"https://registry.npmjs.org/in-publish/-/in-publish-2.0.0.tgz\",\n-      \"integrity\": \"sha1-4g/146KvwmkDILbcVSaCqcf631E=\",\n+      \"version\": \"2.0.1\",\n+      \"resolved\": \"https://registry.npmjs.org/in-publish/-/in-publish-2.0.1.tgz\",\n+      \"integrity\": \"sha512-oDM0kUSNFC31ShNxHKUyfZKy8ZeXZBWMjMdZHKLOk13uvT27VTL/QzRGfRUcevJhpkZAvlhPYuXkF7eNWrtyxQ==\",\n       \"dev\": true\n     },\n     \"indent-string\": {\n@@ -6754,13 +6754,10 @@\n       \"dev\": true\n     },\n     \"is-finite\": {\n-      \"version\": \"1.0.2\",\n-      \"resolved\": \"https://registry.npmjs.org/is-finite/-/is-finite-1.0.2.tgz\",\n-      \"integrity\": \"sha1-zGZ3aVYCvlUO8R6LSqYwU0K20Ko=\",\n-      \"dev\": true,\n-      \"requires\": {\n-        \"number-is-nan\": \"^1.0.0\"\n-      }\n+      \"version\": \"1.1.0\",\n+      \"resolved\": \"https://registry.npmjs.org/is-finite/-/is-finite-1.1.0.tgz\",\n+      \"integrity\": \"sha512-cdyMtqX/BOqqNBBiKlIVkytNHm49MtMlYyn1zxzvJKWmFMlGzm+ry5BBfYyeY9YmNKbRSo/o7OX9w9ale0wg3w==\",\n+      \"dev\": true\n     },\n     \"is-fullwidth-code-point\": {\n       \"version\": \"2.0.0\",\n@@ -6963,9 +6960,9 @@\n       }\n     },\n     \"js-base64\": {\n-      \"version\": \"2.5.1\",\n-      \"resolved\": \"https://registry.npmjs.org/js-base64/-/js-base64-2.5.1.tgz\",\n-      \"integrity\": \"sha512-M7kLczedRMYX4L8Mdh4MzyAMM9O5osx+4FcOQuTvr3A9F2D9S5JXheN0ewNbrvK2UatkTRhL5ejGmGSjNMiZuw==\",\n+      \"version\": \"2.6.4\",\n+      \"resolved\": \"https://registry.npmjs.org/js-base64/-/js-base64-2.6.4.tgz\",\n+      \"integrity\": \"sha512-pZe//GGmwJndub7ZghVHz7vjb2LgC1m8B07Au3eYqeqv9emhESByMXxaEgkUkEqJe87oBbSniGYoQNIBklc7IQ==\",\n       \"dev\": true\n     },\n     \"js-levenshtein\": {\n@@ -8005,9 +8002,9 @@\n       }\n     },\n     \"node-sass\": {\n-      \"version\": \"4.13.0\",\n-      \"resolved\": \"https://registry.npmjs.org/node-sass/-/node-sass-4.13.0.tgz\",\n-      \"integrity\": \"sha512-W1XBrvoJ1dy7VsvTAS5q1V45lREbTlZQqFbiHb3R3OTTCma0XBtuG6xZ6Z4506nR4lmHPTqVRwxT6KgtWC97CA==\",\n+      \"version\": \"4.13.1\",\n+      \"resolved\": \"https://registry.npmjs.org/node-sass/-/node-sass-4.13.1.tgz\",\n+      \"integrity\": \"sha512-TTWFx+ZhyDx1Biiez2nB0L3YrCZ/8oHagaDalbuBSlqXgUPsdkUSzJsVxeDO9LtPB49+Fh3WQl3slABo6AotNw==\",\n       \"dev\": true,\n       \"requires\": {\n         \"async-foreach\": \"^0.1.3\",\n@@ -10271,9 +10268,9 @@\n       \"integrity\": \"sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==\"\n     },\n     \"sass-graph\": {\n-      \"version\": \"2.2.4\",\n-      \"resolved\": \"https://registry.npmjs.org/sass-graph/-/sass-graph-2.2.4.tgz\",\n-      \"integrity\": \"sha1-E/vWPNHK8JCLn9k0dq1DpR0eC0k=\",\n+      \"version\": \"2.2.6\",\n+      \"resolved\": \"https://registry.npmjs.org/sass-graph/-/sass-graph-2.2.6.tgz\",\n+      \"integrity\": \"sha512-MKuEYXFSGuRSi8FZ3A7imN1CeVn9Gpw0/SFJKdL1ejXJneI9a5rwlEZrKejhEFAA3O6yr3eIyl/WuvASvlT36g==\",\n       \"dev\": true,\n       \"requires\": {\n         \"glob\": \"^7.0.0\",\n@@ -10393,9 +10390,9 @@\n           \"dev\": true\n         },\n         \"yargs\": {\n-          \"version\": \"7.1.0\",\n-          \"resolved\": \"https://registry.npmjs.org/yargs/-/yargs-7.1.0.tgz\",\n-          \"integrity\": \"sha1-a6MY6xaWFyf10oT46gA+jWFU0Mg=\",\n+          \"version\": \"7.1.1\",\n+          \"resolved\": \"https://registry.npmjs.org/yargs/-/yargs-7.1.1.tgz\",\n+          \"integrity\": \"sha512-huO4Fr1f9PmiJJdll5kwoS2e4GqzGSsMT3PPMpOwoVkOK8ckqAewMTZyA6LXVQWflleb/Z8oPBEvNsMft0XE+g==\",\n           \"dev\": true,\n           \"requires\": {\n             \"camelcase\": \"^3.0.0\",\n@@ -10410,16 +10407,17 @@\n             \"string-width\": \"^1.0.2\",\n             \"which-module\": \"^1.0.0\",\n             \"y18n\": \"^3.2.1\",\n-            \"yargs-parser\": \"^5.0.0\"\n+            \"yargs-parser\": \"5.0.0-security.0\"\n           }\n         },\n         \"yargs-parser\": {\n-          \"version\": \"5.0.0\",\n-          \"resolved\": \"https://registry.npmjs.org/yargs-parser/-/yargs-parser-5.0.0.tgz\",\n-          \"integrity\": \"sha1-J17PDX/+Bcd+ZOfIbkzZS/DhIoo=\",\n+          \"version\": \"5.0.0-security.0\",\n+          \"resolved\": \"https://registry.npmjs.org/yargs-parser/-/yargs-parser-5.0.0-security.0.tgz\",\n+          \"integrity\": \"sha512-T69y4Ps64LNesYxeYGYPvfoMTt/7y1XtfpIslUeK4um+9Hu7hlGoRtaDLvdXb7+/tfq4opVa2HRY5xGip022rQ==\",\n           \"dev\": true,\n           \"requires\": {\n-            \"camelcase\": \"^3.0.0\"\n+            \"camelcase\": \"^3.0.0\",\n+            \"object.assign\": \"^4.1.0\"\n           }\n         }\n       }"
+      },
+      {
+        "sha": "5e1e004139728f096e6606fed822c99b20ef4f8b",
+        "filename": "package.json",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 1,
+        "changes": 2,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/f3df8619c2e0df51f1644686924914ff805bb4f5/package.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/f3df8619c2e0df51f1644686924914ff805bb4f5/package.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package.json?ref=f3df8619c2e0df51f1644686924914ff805bb4f5",
+        "patch": "@@ -25,7 +25,7 @@\n     \"babel-eslint\": \"^10.0.3\",\n     \"eslint\": \"^6.7.2\",\n     \"eslint-plugin-vue\": \"^6.0.1\",\n-    \"node-sass\": \"^4.13.0\",\n+    \"node-sass\": \"^4.13.1\",\n     \"prettier-eslint\": \"^9.0.1\",\n     \"sass-loader\": \"^8.0.0\",\n     \"vue-template-compiler\": \"^2.6.10\""
+      }
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"e12f509f7e06230571d2c60fd970ef2e5765a3f9d106e9c087e04e4065bfe398\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4938",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "62",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OjZlM2MyODViNzlkYjRlMjZlNGQzMmRmODA0ZDc1ZTQ3YTZmNGUwYTE=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-01T05:26:02Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-01T05:26:02Z"
+      },
+      "message": "Fix rubocop issues.",
+      "tree": {
+        "sha": "0304f0eafbdee0c094ef24ae1a45a4dccbc9dcc8",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/0304f0eafbdee0c094ef24ae1a45a4dccbc9dcc8"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd"
+      }
+    ],
+    "stats": {
+      "total": 386,
+      "additions": 220,
+      "deletions": 166
+    },
+    "files": [
+      {
+        "sha": "32e12d60e6bd71edb938237d50c844f52ffb5e81",
+        "filename": "bin/log_collector.rb",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 0,
+        "changes": 1,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1/bin%2Flog_collector.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1/bin%2Flog_collector.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/bin%2Flog_collector.rb?ref=6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+        "patch": "@@ -1,4 +1,5 @@\n # frozen_string_literal: true\n+\n require 'json'\n require 'optparse'\n require_relative '../lib/git_log'"
+      },
+      {
+        "sha": "ed1053a57804f4c30f1a4162cdcffb20b73c92c0",
+        "filename": "lib/git_log.rb",
+        "status": "modified",
+        "additions": 30,
+        "deletions": 12,
+        "changes": 42,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1/lib%2Fgit_log.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1/lib%2Fgit_log.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_log.rb?ref=6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+        "patch": "@@ -33,35 +33,48 @@ def to_data_without_init_commit\n     }\n   end\n \n-  def merge_data(data, init_log)\n-    log_parser = GitShowParser.new(init_log.sha)\n-    merger = log_parser.to_data\n-\n+  def merge_commits_data(data, merger)\n     data[:commits].concat(merger[:commits]) # append at last\n-    data[:commits].each_with_index { |c, i| c[:index] = data[:commits].length - i }\n+    data[:commits].each_with_index do |c, i|\n+      c[:index] = data[:commits].length - i\n+    end\n+  end\n \n+  def merge_stats_data(data, merger)\n     data[:stats].concat(merger[:stats]) # append at last\n+  end\n \n+  def merge_files_data(data, merger)\n     merger[:files].each do |tf|\n       f2merge = data[:files].find { |f| f[:name] == tf[:name] }\n       if f2merge\n         f2merge[:commits].concat(tf[:commits]) # append at last\n       else\n-        data[:files].unshift(tf)\n+        data[:files].push(tf)\n       end\n     end\n-    data[:files].each_with_index { |f, i| f[:index] = i + 1 }\n+    data[:files]\n+      .sort { |a, b| a[:name] <=> b[:name] }\n+      .each_with_index { |f, i| f[:index] = i + 1 }\n+  end\n+\n+  def merge_data(data, init_log)\n+    log_parser = GitShowParser.new(init_log.sha)\n+    merger = log_parser.to_data\n+    merge_commits_data(data, merger)\n+    merge_stats_data(data, merger)\n+    merge_files_data(data, merger)\n     data\n   end\n \n   def make_commits\n     # logs(count = nil) gets all logs\n     # NOTICE: first commit:\n-    #   ignore first commit (it doesn't have parent)\n-    #   because `diff_parent` for the log returns \"diff initial-commit current\"...\n+    #   ignore first commit (it doesn't have parent), because\n+    #   `diff_parent` for the log returns \"diff initial-commit current\".\n     commits = @git.log(@count)\n-                .select { |log| !log.parent.nil? }\n-                .map { |log| GitLogEntry.new(log).to_data }\n+                  .reject { |log| log.parent.nil? }\n+                  .map { |log| GitLogEntry.new(log).to_data }\n     commits.each_with_index { |commit, i| commit[:index] = commits.length - i }\n     commits\n   end\n@@ -76,7 +89,7 @@ def make_stats\n     stats.flatten\n   end\n \n-  def make_file_table\n+  def make_file_table_from_stats\n     file_table = {}\n     @stats.each do |stat|\n       if file_table[stat[:path]]\n@@ -85,6 +98,11 @@ def make_file_table\n         file_table[stat[:path]] = [stat[:sha_short]]\n       end\n     end\n+    file_table\n+  end\n+\n+  def make_file_table\n+    file_table = make_file_table_from_stats\n     file_table.keys.sort.map.with_index do |file, index|\n       {\n         name: file,"
+      },
+      {
+        "sha": "4a145bb6909e0154857c54c92b4cd738856e84b9",
+        "filename": "lib/git_log_entry.rb",
+        "status": "modified",
+        "additions": 23,
+        "deletions": 72,
+        "changes": 95,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1/lib%2Fgit_log_entry.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1/lib%2Fgit_log_entry.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_log_entry.rb?ref=6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+        "patch": "@@ -1,54 +1,6 @@\n # frozen_string_literal: true\n \n-# property of a file in a log entry\n-class GitLogEntryFile\n-  def initialize(diff_file, diff_stat, diff_stat_path)\n-    @file = diff_file\n-    @stat = diff_stat\n-    @stat_path = diff_stat_path\n-    throw Error unless @stat\n-  end\n-\n-  # rubocop:disable Metrics/MethodLength\n-  def to_data\n-    {\n-      path: @file.path,\n-      mode: @file.mode,\n-      type: invert_type,\n-      src: @file.dst, # invert src/dst\n-      dst: @file.src,\n-      stat_path: @stat_path,\n-      insertions: @stat[:deletions], # invert insertions/deletions\n-      deletions: @stat[:insertions],\n-      lines: @stat[:insertions] + @stat[:deletions]\n-    }\n-  end\n-  # rubocop:enable Metrics/MethodLength\n-\n-  def insertions\n-    @stat[:deletions]\n-  end\n-\n-  def deletions\n-    @stat[:insertions]\n-  end\n-\n-  def path\n-    @file.path\n-  end\n-\n-  def type\n-    invert_type\n-  end\n-\n-  private\n-\n-  def invert_type\n-    type = @file.type\n-    return type if type == 'modified'\n-    type == 'new' ? 'deleted' : 'new'\n-  end\n-end\n+require_relative './git_log_entry_file'\n \n # a log entry\n class GitLogEntry\n@@ -92,38 +44,37 @@ def to_data\n \n   def debug_print\n     warn \"commit: #{@log.sha}\"\n-    warn \"- parents: #{@log.parents.map { |c| c.sha }}\"\n+    warn \"- parents: #{@log.parents.map(&:sha)}\"\n     @diff_files.each do |file|\n-      warn \"- file: #{file.path} | #{file.type} (+#{file.insertions},-#{file.deletions})\"\n+      warn \"- file: #{file.path} | #{file.type}\" \\\n+           \" (+#{file.insertions},-#{file.deletions})\"\n     end\n   end\n \n   def make_stats_path(path, src, dst)\n     { path: path, src: src, dst: dst }\n   end\n \n+  def make_inverted_stats_path(path, changed, src, dst)\n+    # invert src/dst\n+    inverted_path = path.sub(changed, \"{#{dst} => #{src}}\")\n+    make_stats_path(inverted_path, dst, src)\n+  end\n+\n+  def params_from(stats_path, changed, be_src, be_dst)\n+    src = stats_path.sub(changed, be_src || '')\n+    dst = stats_path.sub(changed, be_dst || '')\n+    [stats_path, changed, src, dst]\n+  end\n+\n   def parse_moved_file(stats_path)\n-    if stats_path =~ /({(.+)? => (.+)?})/\n-      changed = Regexp.last_match(1)\n-      be_src = Regexp.last_match(2)\n-      be_dst = Regexp.last_match(3)\n-      src = stats_path.sub(changed, be_src || '')\n-      dst = stats_path.sub(changed, be_dst || '')\n-      inverted_stats_path = stats_path.sub(changed, \"{#{dst} => #{src}}\")\n-      # warn \"#{stats_path}\"\n-      # warn \"  - changed: #{changed}, #{be_src}, #{be_dst}\"\n-      # warn \"  - src: #{src}\"\n-      # warn \"  - dst: #{dst}\"\n-      # warn \"  - inverted_stats_path: #{inverted_stats_path}\"\n-      make_stats_path(inverted_stats_path, dst, src) # invert src/dst\n-      # make_stats_path(stats_path, src, dst)\n-    elsif stats_path =~ /((.+) => (.+))/\n-      changed = Regexp.last_match(1)\n-      src = Regexp.last_match(2)\n-      dst = Regexp.last_match(3)\n-      inverted_stats_path = stats_path.sub(changed, \"{#{dst} => #{src}}\")\n-      make_stats_path(inverted_stats_path, dst, src) # invert src/dst\n-      # make_stats_path(stats_path, src, dst)\n+    case stats_path\n+    when /({(.+)? => (.+)?})/\n+      md = Regexp.last_match\n+      make_inverted_stats_path(*params_from(stats_path, md[1], md[2], md[3]))\n+    when /((.+) => (.+))/\n+      md = Regexp.last_match\n+      make_inverted_stats_path(stats_path, md[1], md[2], md[3])\n     else\n       make_stats_path(stats_path, stats_path, stats_path) # dummy\n     end"
+      },
+      {
+        "sha": "837bbd2cb85b52d1eb593dee1dd7df9ac612e4ea",
+        "filename": "lib/git_log_entry_file.rb",
+        "status": "added",
+        "additions": 52,
+        "deletions": 0,
+        "changes": 52,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1/lib%2Fgit_log_entry_file.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1/lib%2Fgit_log_entry_file.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_log_entry_file.rb?ref=6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+        "patch": "@@ -0,0 +1,52 @@\n+# frozen_string_literal: true\n+\n+# property of a file in a log entry\n+class GitLogEntryFile\n+  def initialize(diff_file, diff_stat, diff_stat_path)\n+    @file = diff_file\n+    @stat = diff_stat\n+    @stat_path = diff_stat_path\n+    throw Error unless @stat\n+  end\n+\n+  # rubocop:disable Metrics/MethodLength\n+  def to_data\n+    {\n+      path: @file.path,\n+      mode: @file.mode,\n+      type: invert_type,\n+      src: @file.dst, # invert src/dst\n+      dst: @file.src,\n+      stat_path: @stat_path,\n+      insertions: @stat[:deletions], # invert insertions/deletions\n+      deletions: @stat[:insertions],\n+      lines: @stat[:insertions] + @stat[:deletions]\n+    }\n+  end\n+  # rubocop:enable Metrics/MethodLength\n+\n+  def insertions\n+    @stat[:deletions]\n+  end\n+\n+  def deletions\n+    @stat[:insertions]\n+  end\n+\n+  def path\n+    @file.path\n+  end\n+\n+  def type\n+    invert_type\n+  end\n+\n+  private\n+\n+  def invert_type\n+    type = @file.type\n+    return type if type == 'modified'\n+\n+    type == 'new' ? 'deleted' : 'new'\n+  end\n+end"
+      },
+      {
+        "sha": "e3ad7697847e8b1a00bd23e9f089911cda219f35",
+        "filename": "lib/git_show_parser.rb",
+        "status": "modified",
+        "additions": 114,
+        "deletions": 82,
+        "changes": 196,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1/lib%2Fgit_show_parser.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1/lib%2Fgit_show_parser.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_show_parser.rb?ref=6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+        "patch": "@@ -1,87 +1,16 @@\n+# frozen_string_literal: true\n+\n require 'json'\n \n+# rubocop:disable Metrics/ClassLength\n+# parse a commit info by `git show`\n class GitShowParser\n   def initialize(sha)\n     @sha = sha\n     @files = []\n     @type = :modified\n   end\n \n-  def parse\n-    header = true\n-    insertion_count = 0\n-    deletion_count = 0\n-\n-    git_show_str = `git show #{@sha}`\n-    git_show_str.split(/\\n/).each do |line|\n-      # puts line\n-      if line =~ /^commit (.+)/\n-        @sha_full = Regexp.last_match(1)\n-        next\n-      end\n-      if line =~ /^Author: (.+) <(.+)>/\n-        @author = Regexp.last_match(1)\n-        @mail = Regexp.last_match(2)\n-        next\n-      end\n-      if line =~ /^Date:\\s+(.+)/\n-        @commit_date = Regexp.last_match(1)\n-        next\n-      end\n-      next if line =~ /^\\s*$/\n-\n-      if header && line =~ /^\\s+(.+)$/\n-        @message = Regexp.last_match(1)\n-      end\n-\n-      if line =~ /^diff(.+)a\\/(.+) b\\/(.+)/\n-        header = false\n-        unless @files.empty?\n-          @files[-1][:insertion] = insertion_count\n-          @files[-1][:deletion] = deletion_count\n-        end\n-        insertion_count = 0\n-        deletion_count = 0\n-\n-        file_before = Regexp.last_match(2)\n-        file_after = Regexp.last_match(3)\n-        @files.push({\n-                      path: file_after,\n-                      path_src: file_before,\n-                      path_dst: file_after,\n-                      insertion: 0,\n-                      deletion: 0\n-                    })\n-        next\n-      end\n-      if line =~ /^new file mode (.+)/\n-        @files[-1][:type] = :new\n-        @files[-1][:mode] = Regexp.last_match(1)\n-        next\n-      end\n-      if line =~ /^index (.+)\\.\\.(.+)/\n-        @src = Regexp.last_match(1)\n-        @dst = Regexp.last_match(2)\n-        @files[-1][:src] = @src\n-        @files[-1][:dst] = @dst\n-        next\n-      end\n-      next if line =~ /^\\+\\+\\+.*/ || line =~ /^---.*/\n-      if line =~ /^\\+.*/\n-        insertion_count += 1\n-        next\n-      end\n-      if line =~ /^\\-.*/\n-        deletion_count += 1\n-        next\n-      end\n-    end\n-    unless @files.empty?\n-      @files[-1][:insertion] = insertion_count\n-      @files[-1][:deletion] = deletion_count\n-    end\n-  end\n-\n   def to_data\n     parse\n     {\n@@ -93,16 +22,115 @@ def to_data\n \n   private\n \n+  # rubocop:disable Metrics/MethodLength\n+  def parse_header(line)\n+    case line\n+    when /^commit (.+)/\n+      @sha_full = Regexp.last_match(1)\n+    when /^Author: (.+) <(.+)>/\n+      @author = Regexp.last_match(1)\n+      @mail = Regexp.last_match(2)\n+    when /^Date:\\s+(.+)/\n+      @commit_date = Regexp.last_match(1)\n+    when /^\\s+(.+)$/\n+      @message = Regexp.last_match(1)\n+    end\n+  end\n+  # rubocop:enable Metrics/MethodLength\n+\n+  def save_diff_count(count)\n+    return if @files.empty?\n+\n+    @files[-1][:insertions] = count[:ins]\n+    @files[-1][:deletions] = count[:del]\n+  end\n+\n+  def reset_diff_count(count)\n+    count[:ins] = 0\n+    count[:del] = 0\n+  end\n+\n+  def diff_head?(line)\n+    line =~ %r{^diff.+a/.+ b/.+}\n+  end\n+\n+  def diff_head_indicator?(line)\n+    line =~ /^\\+{3}.*/ || line =~ /^\\-{3}.*/\n+  end\n+\n+  def parse_diff_head_line(line)\n+    line =~ %r{^diff(.+)a/(.+) b/(.+)}\n+    file_before = Regexp.last_match(2)\n+    file_after = Regexp.last_match(3)\n+    @files.push(\n+      path: file_after,\n+      path_src: file_before,\n+      path_dst: file_after,\n+      insertions: 0,\n+      deletions: 0\n+    )\n+  end\n+\n+  def parse_diff_head(line, count)\n+    return unless diff_head?(line)\n+\n+    save_diff_count(count)\n+    reset_diff_count(count)\n+    parse_diff_head_line(line)\n+  end\n+\n+  # rubocop:disable Metrics/MethodLength\n+  def parse_diff_body(line, count)\n+    return if diff_head_indicator?(line)\n+\n+    case line\n+    when /^new file mode (.+)/\n+      @files[-1][:type] = :new\n+      @files[-1][:mode] = Regexp.last_match(1)\n+    when /^index (.+)\\.\\.(.+)/\n+      @files[-1][:src] = Regexp.last_match(1)\n+      @files[-1][:dst] = Regexp.last_match(2)\n+    when /^\\+.*/\n+      count[:ins] += 1\n+    when /^\\-.*/\n+      count[:del] += 1\n+    end\n+  end\n+  # rubocop:enable Metrics/MethodLength\n+\n+  # rubocop:disable Metrics/MethodLength\n+  def parse\n+    header = true\n+    count = {}\n+    reset_diff_count(count)\n+\n+    git_show_str = `git show #{@sha}`\n+    git_show_str.split(/\\n/).each do |line|\n+      if header && !diff_head?(line)\n+        parse_header(line)\n+      elsif header && diff_head?(line)\n+        parse_diff_head(line, count)\n+        header = false\n+      else\n+        parse_diff_head(line, count)\n+        parse_diff_body(line, count)\n+      end\n+    end\n+    save_diff_count(count)\n+  end\n+  # rubocop:enable Metrics/MethodLength\n+\n   def make_files\n     @files.map.with_index do |file, i|\n       {\n         name: file[:path],\n         index: i + 1,\n-        commits: [ @sha_full[0, 7] ]\n+        commits: [@sha_full[0, 7]]\n       }\n     end\n   end\n \n+  # rubocop:disable Metrics/MethodLength\n   def make_stats\n     @files.map do |file|\n       {\n@@ -116,17 +144,19 @@ def make_stats\n           src: file[:path_src],\n           dst: file[:path_dst]\n         },\n-        insertions: file[:insertion],\n-        deletions: file[:deletion],\n-        lines: file[:insertion] + file[:deletion],\n+        insertions: file[:insertions],\n+        deletions: file[:deletions],\n+        lines: file[:insertions] + file[:deletions],\n         sha_short: @sha_full[0, 7]\n       }\n     end\n   end\n+  # rubocop:enable Metrics/MethodLength\n \n+  # rubocop:disable Metrics/MethodLength\n   def make_commit\n-    insertions = @files.map { |f| f[:insertion] }.inject(0) { |r, x| r + x }\n-    deletions = @files.map { |f| f[:deletion] }.inject(0) { |r, x| r + x }\n+    insertions = @files.map { |f| f[:insertions] }.inject(0) { |r, x| r + x }\n+    deletions = @files.map { |f| f[:deletions] }.inject(0) { |r, x| r + x }\n     commit = {\n       sha: @sha_full,\n       sha_short: @sha_full[0, 7],\n@@ -144,9 +174,11 @@ def make_commit\n         file: @files.length\n       }\n     }\n-    [ commit ]\n+    [commit]\n   end\n+  # rubocop:enable Metrics/MethodLength\n end\n+# rubocop:enable Metrics/ClassLength\n \n # gsp = GitShowParser.new('266cba1')\n # puts JSON.pretty_generate(gsp.to_data)"
+      }
+    ]
+  }
+}

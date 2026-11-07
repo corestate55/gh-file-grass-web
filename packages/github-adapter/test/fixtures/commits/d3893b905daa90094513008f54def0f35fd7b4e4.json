@@ -1,0 +1,140 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/d3893b905daa90094513008f54def0f35fd7b4e4",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"2914cafb3174e6a26e8474cc7c7ba9fe8e85d001cb33347a5c6a3863e9a47e91\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4924",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "76",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "d3893b905daa90094513008f54def0f35fd7b4e4",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmQzODkzYjkwNWRhYTkwMDk0NTEzMDA4ZjU0ZGVmMGYzNWZkN2I0ZTQ=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-11-05T13:14:17Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-11-05T13:14:17Z"
+      },
+      "message": "Add rubocop and fix its issues",
+      "tree": {
+        "sha": "d9e5d3e5389fde14a396a6d253e9ed0f6fa55e35",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/d9e5d3e5389fde14a396a6d253e9ed0f6fa55e35"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/d3893b905daa90094513008f54def0f35fd7b4e4",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/d3893b905daa90094513008f54def0f35fd7b4e4",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/d3893b905daa90094513008f54def0f35fd7b4e4",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/d3893b905daa90094513008f54def0f35fd7b4e4/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "cdac51d574d5bdd9a0ce5927b32e22df130ee199",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/cdac51d574d5bdd9a0ce5927b32e22df130ee199",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/cdac51d574d5bdd9a0ce5927b32e22df130ee199"
+      }
+    ],
+    "stats": {
+      "total": 59,
+      "additions": 43,
+      "deletions": 16
+    },
+    "files": [
+      {
+        "sha": "fcf154bc1f1f22a119b054f350e46d9f0bb0d3f1",
+        "filename": "Gemfile",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 0,
+        "changes": 1,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/d3893b905daa90094513008f54def0f35fd7b4e4/Gemfile",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/d3893b905daa90094513008f54def0f35fd7b4e4/Gemfile",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/Gemfile?ref=d3893b905daa90094513008f54def0f35fd7b4e4",
+        "patch": "@@ -5,3 +5,4 @@ source 'https://rubygems.org'\n git_source(:github) { |repo_name| \"https://github.com/#{repo_name}\" }\n \n gem 'git'\n+gem 'rubocop'"
+      },
+      {
+        "sha": "202d1a416971ede9133bf28b62be2fcce9e5755d",
+        "filename": "Gemfile.lock",
+        "status": "modified",
+        "additions": 16,
+        "deletions": 0,
+        "changes": 16,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/d3893b905daa90094513008f54def0f35fd7b4e4/Gemfile.lock",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/d3893b905daa90094513008f54def0f35fd7b4e4/Gemfile.lock",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/Gemfile.lock?ref=d3893b905daa90094513008f54def0f35fd7b4e4",
+        "patch": "@@ -1,13 +1,29 @@\n GEM\n   remote: https://rubygems.org/\n   specs:\n+    ast (2.4.0)\n     git (1.5.0)\n+    jaro_winkler (1.5.4)\n+    parallel (1.18.0)\n+    parser (2.6.5.0)\n+      ast (~> 2.4.0)\n+    rainbow (3.0.0)\n+    rubocop (0.76.0)\n+      jaro_winkler (~> 1.5.1)\n+      parallel (~> 1.10)\n+      parser (>= 2.6)\n+      rainbow (>= 2.2.2, < 4.0)\n+      ruby-progressbar (~> 1.7)\n+      unicode-display_width (>= 1.4.0, < 1.7)\n+    ruby-progressbar (1.10.1)\n+    unicode-display_width (1.6.0)\n \n PLATFORMS\n   ruby\n \n DEPENDENCIES\n   git\n+  rubocop\n \n BUNDLED WITH\n    2.0.2"
+      },
+      {
+        "sha": "f7fc6501a6030fb7a36e73d80797a3265ee184d5",
+        "filename": "log_corrector.rb",
+        "status": "modified",
+        "additions": 26,
+        "deletions": 16,
+        "changes": 42,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/d3893b905daa90094513008f54def0f35fd7b4e4/log_corrector.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/d3893b905daa90094513008f54def0f35fd7b4e4/log_corrector.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/log_corrector.rb?ref=d3893b905daa90094513008f54def0f35fd7b4e4",
+        "patch": "@@ -4,6 +4,7 @@\n require 'json'\n require 'optparse'\n \n+# property of a file in a log entry\n class GitLogEntryFile\n   def initialize(diff_file, diff_stat, diff_stat_path)\n     @file = diff_file\n@@ -12,6 +13,7 @@ def initialize(diff_file, diff_stat, diff_stat_path)\n     throw Error unless @stat\n   end\n \n+  # rubocop:disable Metrics/MethodLength\n   def to_data\n     {\n       path: @file.path,\n@@ -25,8 +27,10 @@ def to_data\n       lines: @stat[:insertions] + @stat[:deletions]\n     }\n   end\n+  # rubocop:enable Metrics/MethodLength\n end\n \n+# a log entry\n class GitLogEntry\n   def initialize(log)\n     @log = log\n@@ -35,10 +39,13 @@ def initialize(log)\n     @diff_stat_files = diff_stats[:files]\n     @diff_files = log.diff_parent.map do |diff_file|\n       diff_stat_path = find_diff_stat(diff_file.path)\n-      GitLogEntryFile.new(diff_file, @diff_stat_files[diff_stat_path], parse_moved_file(diff_stat_path))\n+      diff_stat = @diff_stat_files[diff_stat_path]\n+      parsed_diff_stat_path = parse_moved_file(diff_stat_path)\n+      GitLogEntryFile.new(diff_file, diff_stat, parsed_diff_stat_path)\n     end\n   end\n \n+  # rubocop:disable Metrics/MethodLength\n   def to_data\n     {\n       sha: @log.sha,\n@@ -51,26 +58,28 @@ def to_data\n       message: @log.message,\n       stat: {\n         total: @diff_stat_total,\n-        files: @diff_files.map { |d| d.to_data }\n+        files: @diff_files.map(&:to_data)\n       }\n     }\n   end\n+  # rubocop:enable Metrics/MethodLength\n \n   private\n \n+  def make_stats_path(path, src, dst)\n+    { path: path, src: src, dst: dst }\n+  end\n+\n   def parse_moved_file(stats_path)\n     if stats_path =~ /({(.+)? => (.+)?})/\n-      changed, src, dst = $1, $2, $3\n-      {\n-        path: stats_path,\n-        src: stats_path.sub(changed, src || ''),\n-        dst: stats_path.sub(changed, dst || '')\n-      }\n+      changed = Regexp.last_match(1)\n+      src = stats_path.sub(changed, Regexp.last_match(2) || '')\n+      dst = stats_path.sub(changed, Regexp.last_match(3) || '')\n+      make_stats_path(stats_path, src, dst)\n     elsif stats_path =~ /(.+) => (.+)/\n-      src, dst = $1, $2\n-      { path: stats_path, src: src, dst: dst }\n+      make_stats_path(stats_path, Regexp.last_match(1), Regexp.last_match(2))\n     else\n-      { path: stats_path, src: stats_path, dst: stats_path } # dummy\n+      make_stats_path(stats_path, stats_path, stats_path) # dummy\n     end\n   end\n \n@@ -82,6 +91,7 @@ def find_diff_stat(path)\n   end\n end\n \n+# container of logs: repository level\n class GitLog\n   def initialize(repository, count = 5)\n     @git = Git.open(repository)\n@@ -97,7 +107,7 @@ def to_data\n       branch: @git.branch.full,\n       commits: reconstruct_commits,\n       stats: @stats,\n-    files: @file_table\n+      files: @file_table\n     }\n   end\n \n@@ -106,7 +116,7 @@ def to_data\n   def make_commits\n     # logs(count = nil) gets all logs\n     commits = @git.log(@count).map { |log| GitLogEntry.new(log).to_data }\n-    commits.each_with_index { |commit, i | commit[:index] = commits.length - i }\n+    commits.each_with_index { |commit, i| commit[:index] = commits.length - i }\n     commits\n   end\n \n@@ -144,9 +154,9 @@ def reconstruct_commits\n \n # \"Usage: [bundle exec] ruby #{$0} [-r /path/to/repo-dir] [-n count]\"\n params = ARGV.getopts('r:n:p')\n-repo_path = params['r'] || '.' # optional, default: current dir\n-count = params['n'] || nil # optional, default: nil = use all logs\n-pretty_print = params['p'] || nil # optional, default: nil = disable pretty print\n+repo_path = params['r'] || '.' # optional, default:. = current dir\n+count = params['n'] || nil # optional, default:nil = use all logs\n+pretty_print = params['p'] || nil # optional, default:nil = disable pretty print\n \n git_log = GitLog.new(repo_path, count)\n if pretty_print"
+      }
+    ]
+  }
+}

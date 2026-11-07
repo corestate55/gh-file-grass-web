@@ -1,0 +1,152 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/7897d9f0f6f9605fab19dc790523020429b4378f",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"6dd8201961083a8ae48efd262abf19f904d5c6410b8d20266cc6ceb37ec51938\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4961",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "39",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "7897d9f0f6f9605fab19dc790523020429b4378f",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5Ojc4OTdkOWYwZjZmOTYwNWZhYjE5ZGM3OTA1MjMwMjA0MjliNDM3OGY=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-13T02:46:12Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-13T02:46:12Z"
+      },
+      "message": "Refactoring GitLogEntry and Add bin-file check.",
+      "tree": {
+        "sha": "8aaf14b48b2949fa830b9191a33ba2db4c8fa1b3",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/8aaf14b48b2949fa830b9191a33ba2db4c8fa1b3"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/7897d9f0f6f9605fab19dc790523020429b4378f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/7897d9f0f6f9605fab19dc790523020429b4378f",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/7897d9f0f6f9605fab19dc790523020429b4378f",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/7897d9f0f6f9605fab19dc790523020429b4378f/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "fa0bc49b3014391854d36e82927504eb4eed5004",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/fa0bc49b3014391854d36e82927504eb4eed5004",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/fa0bc49b3014391854d36e82927504eb4eed5004"
+      }
+    ],
+    "stats": {
+      "total": 97,
+      "additions": 59,
+      "deletions": 38
+    },
+    "files": [
+      {
+        "sha": "af66d91074315535322a1dc8e6c8df48654cfc7c",
+        "filename": "lib/git_log_entry.rb",
+        "status": "modified",
+        "additions": 45,
+        "deletions": 27,
+        "changes": 72,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/7897d9f0f6f9605fab19dc790523020429b4378f/lib%2Fgit_log_entry.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/7897d9f0f6f9605fab19dc790523020429b4378f/lib%2Fgit_log_entry.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_log_entry.rb?ref=7897d9f0f6f9605fab19dc790523020429b4378f",
+        "patch": "@@ -8,10 +8,13 @@ def initialize(log, git)\n     @log = log\n \n     diff = git.diff(@log.parent.sha, @log.sha)\n-    @diff_stat_total = diff.stats[:total]\n-    @diff_stat_files = diff.stats[:files]\n-    # warn \"diff_stat_files: #{@diff_stat_files}\"\n-    @diff_files = diff_files_from(diff)\n+    # diff.stats =>\n+    #   {total: {insertions: XX, deletions: XX, lines: XX, files: XX},\n+    #    files: [{'path/to/file1' => {insertions: XX, deletions: XX},\n+    #            {'path/to/file2' => {insertions: XX, deletions: XX},...]}\n+    @stats_total = diff.stats[:total]\n+    @stat_of_file = diff.stats[:files]\n+    @diff_files = log_entry_files_from(diff)\n     # debug_print\n   end\n \n@@ -27,7 +30,7 @@ def to_data\n       date: @log.date,\n       message: @log.message,\n       stat: {\n-        total: @diff_stat_total,\n+        total: @stats_total,\n         files: @diff_files.map(&:to_data)\n       }\n     }\n@@ -45,42 +48,57 @@ def debug_print\n     end\n   end\n \n-  def make_stats_path(path, _changed, src, dst)\n-    { path: path, src: src, dst: dst }\n-  end\n-\n-  def diff_files_from(diff)\n+  def log_entry_files_from(diff)\n+    # convert moved(renamed) file path in `@stat_of_file`.\n+    stat_of = convert_stat_of_file\n     diff.map do |diff_file|\n-      diff_stat_path = find_diff_stat(diff_file.path)\n-      diff_stat = @diff_stat_files[diff_stat_path]\n-      parsed_diff_stat_path = parse_moved_file(diff_stat_path)\n-      GitLogEntryFile.new(diff_file, diff_stat, parsed_diff_stat_path)\n+      # diff_file is a Git::Diff::DiffFile class instance\n+      # It has...\n+      #   - path: file path\n+      #   - patch: diff body\n+      #   - mode: file permission\n+      #   - src: diff hash\n+      #   - dst: diff hash\n+      #   - type: new/modified/deleted\n+      #   - #binary?\n+      stat = stat_of[diff_file.path][:stat]\n+      parsed_stat_path = stat_of[diff_file.path][:stat_path]\n+      GitLogEntryFile.new(diff_file, stat, parsed_stat_path)\n     end\n   end\n \n-  def params_from(stats_path, changed, be_src, be_dst)\n-    src = stats_path.sub(changed, be_src || '')\n-    dst = stats_path.sub(changed, be_dst || '')\n-    [stats_path, changed, src, dst]\n+  def make_stat_path(path, _changed, src, dst)\n+    { path: path, src: src, dst: dst }\n+  end\n+\n+  def params_from(path, changed, be_src, be_dst)\n+    src = path.sub(changed, be_src || '')\n+    dst = path.sub(changed, be_dst || '')\n+    [path, changed, src, dst]\n   end\n \n-  def parse_moved_file(stats_path)\n-    case stats_path\n+  def parse_moved_path(path)\n+    case path\n     when /({(.+)? => (.+)?})/\n       md = Regexp.last_match\n-      make_stats_path(*params_from(stats_path, md[1], md[2], md[3]))\n+      make_stat_path(*params_from(path, md[1], md[2], md[3]))\n     when /((.+) => (.+))/\n       md = Regexp.last_match\n-      make_stats_path(stats_path, md[1], md[2], md[3])\n+      make_stat_path(path, md[1], md[2], md[3])\n     else\n-      make_stats_path(stats_path, '', stats_path, stats_path) # dummy\n+      make_stat_path(path, '', path, path) # dummy\n     end\n   end\n \n-  def find_diff_stat(path)\n-    @diff_stat_files.each_key.find do |k|\n-      file_path = parse_moved_file(k)\n-      file_path[:src] == path\n+  def convert_stat_of_file\n+    parsed = @stat_of_file.map do |path, stat|\n+      # A key of `@stat_of_file` includes '{src=>dst}' when the file was moved.\n+      # Convert `{src=>dst}` style path to {path:, src:, dst:}\n+      parsed_path = parse_moved_path(path)\n+      # For moved file {src=>dst},\n+      # `diff_file.path` (in diff.map) correspond with src path.\n+      [parsed_path[:src], { stat: stat, stat_path: parsed_path }]\n     end\n+    parsed.to_h\n   end\n end"
+      },
+      {
+        "sha": "e38bf345634aae008cdc826e19bb0aacda79a399",
+        "filename": "lib/git_log_entry_file.rb",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 0,
+        "changes": 1,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/7897d9f0f6f9605fab19dc790523020429b4378f/lib%2Fgit_log_entry_file.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/7897d9f0f6f9605fab19dc790523020429b4378f/lib%2Fgit_log_entry_file.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_log_entry_file.rb?ref=7897d9f0f6f9605fab19dc790523020429b4378f",
+        "patch": "@@ -20,6 +20,7 @@ def to_data\n       type: @file.type,\n       src: @file.src,\n       dst: @file.dst,\n+      bin: @file.binary?,\n       stat_path: @stat_path,\n       insertions: @stat[:insertions],\n       deletions: @stat[:deletions],"
+      },
+      {
+        "sha": "ac2c06e9d4da5197298d8dd8462afd721001dd07",
+        "filename": "src/css/file_grass.scss",
+        "status": "modified",
+        "additions": 8,
+        "deletions": 10,
+        "changes": 18,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/7897d9f0f6f9605fab19dc790523020429b4378f/src%2Fcss%2Ffile_grass.scss",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/7897d9f0f6f9605fab19dc790523020429b4378f/src%2Fcss%2Ffile_grass.scss",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fcss%2Ffile_grass.scss?ref=7897d9f0f6f9605fab19dc790523020429b4378f",
+        "patch": "@@ -30,13 +30,6 @@ text {\n   }\n }\n \n-%rect-base {\n-  fill-opacity: 0.6;\n-  &.selected {\n-    fill-opacity: 1.0;\n-  }\n-}\n-\n rect {\n   &.stats {\n     &.mod1 {\n@@ -58,13 +51,18 @@ rect {\n   }\n \n   &.file-life {\n-    @extend %rect-base;\n-    fill: #CACFD2;\n+    fill: #ebedf0;\n+    &.selected {\n+      fill: #d3d8de;\n+    }\n   }\n \n   &.commit-hist {\n-    @extend %rect-base;\n     fill: $base-color;\n+    fill-opacity: 0.6;\n+    &.selected {\n+      fill-opacity: 1.0;\n+    }\n   }\n }\n "
+      },
+      {
+        "sha": "db53f6cbe7431010cae06fb8c4c04869bbeca68b",
+        "filename": "src/js/gh_file_grass/stat.js",
+        "status": "modified",
+        "additions": 5,
+        "deletions": 1,
+        "changes": 6,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/7897d9f0f6f9605fab19dc790523020429b4378f/src%2Fjs%2Fgh_file_grass%2Fstat.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/7897d9f0f6f9605fab19dc790523020429b4378f/src%2Fjs%2Fgh_file_grass%2Fstat.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fstat.js?ref=7897d9f0f6f9605fab19dc790523020429b4378f",
+        "patch": "@@ -8,6 +8,7 @@ export default class GHLogStat extends GHInfoBase {\n     this.type = stat.type\n     this.src = stat.src\n     this.dst = stat.dst\n+    this.bin = stat.bin\n     this.stat_path = stat.stat_path\n     this.insertions = stat.insertions\n     this.deletions = stat.deletions\n@@ -69,9 +70,12 @@ export default class GHLogStat extends GHInfoBase {\n   }\n \n   _statIndicatorStr() {\n+    const bar = this._statBarStr(this.insertions, this.deletions)\n+    if (this.bin) {\n+      return `BIN ${bar}`\n+    }\n     const ins = '+' + this.insertions\n     const del = '-' + this.deletions\n-    const bar = this._statBarStr(this.insertions, this.deletions)\n     return `${this._insStr(ins)}, ${this._delStr(del)} ${bar} (${this.lines})`\n   }\n "
+      }
+    ]
+  }
+}

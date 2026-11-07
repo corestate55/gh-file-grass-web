@@ -1,0 +1,245 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"190d26ec7676f78a031f73c1e6e61bc64d1d44d22685b2c8c01b5b68c8595f46\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4925",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "75",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmFhZWQ2ZWI0YTYwYjRkMzM2YzBmYWViMmE1MzQzZGUxMDcyZDJhNzQ=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-11-25T06:54:18Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-11-25T06:54:18Z"
+      },
+      "message": "Add initial vue app by vue-cli3",
+      "tree": {
+        "sha": "478992070dc8d6db808fa7ea98d2fec713e50f99",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/478992070dc8d6db808fa7ea98d2fec713e50f99"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d3893b905daa90094513008f54def0f35fd7b4e4",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/d3893b905daa90094513008f54def0f35fd7b4e4",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/d3893b905daa90094513008f54def0f35fd7b4e4"
+      }
+    ],
+    "stats": {
+      "total": 11729,
+      "additions": 11722,
+      "deletions": 7
+    },
+    "files": [
+      {
+        "sha": "e6270ff0063ea75719106e5573dddcccb081a8f9",
+        "filename": ".gitignore",
+        "status": "modified",
+        "additions": 24,
+        "deletions": 6,
+        "changes": 30,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/.gitignore",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/.gitignore",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/.gitignore?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+        "patch": "@@ -1,8 +1,26 @@\n-*_test.rb\n-*.log\n-*.json\n-\n-.git/\n-.idea/\n+# for ruby\n .bundle/\n vendor/\n+\n+# for js\n+.DS_Store\n+node_modules\n+/dist\n+\n+# local env files\n+.env.local\n+.env.*.local\n+\n+# Log files\n+npm-debug.log*\n+yarn-debug.log*\n+yarn-error.log*\n+\n+# Editor directories and files\n+.idea\n+.vscode\n+*.suo\n+*.ntvs*\n+*.njsproj\n+*.sln\n+*.sw?"
+      },
+      {
+        "sha": "097625527008db3195e4d02be811034977f3dd2d",
+        "filename": "README.md",
+        "status": "modified",
+        "additions": 37,
+        "deletions": 1,
+        "changes": 38,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/README.md",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/README.md",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/README.md?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+        "patch": "@@ -1 +1,37 @@\n-# gh-file-grass\n\\ No newline at end of file\n+# gh-file-grass\n+\n+## Project setup (ruby)\n+```\n+bundle install\n+```\n+### Generate gh data\n+```\n+bundle exec ./bin/log_corrector.rb -r /path/to/repository > ./public/logs.json\n+```\n+Option:\n+* `-c COUNT`: length of logs\n+* `-p`: pretty-print\n+\n+\n+## Project setup (JS app)\n+```\n+npm install\n+```\n+\n+### Compiles and hot-reloads for development\n+```\n+npm run serve\n+```\n+\n+### Compiles and minifies for production\n+```\n+npm run build\n+```\n+\n+### Lints and fixes files\n+```\n+npm run lint\n+```\n+\n+### Customize configuration\n+See [Configuration Reference](https://cli.vuejs.org/config/)."
+      },
+      {
+        "sha": "e9558405fdcc02f12d757acb308e02937a7444f1",
+        "filename": "babel.config.js",
+        "status": "added",
+        "additions": 5,
+        "deletions": 0,
+        "changes": 5,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/babel.config.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/babel.config.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/babel.config.js?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+        "patch": "@@ -0,0 +1,5 @@\n+module.exports = {\n+  presets: [\n+    '@vue/cli-plugin-babel/preset'\n+  ]\n+}"
+      },
+      {
+        "sha": "f7fc6501a6030fb7a36e73d80797a3265ee184d5",
+        "filename": "bin/log_corrector.rb",
+        "status": "renamed",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/bin%2Flog_corrector.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/bin%2Flog_corrector.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/bin%2Flog_corrector.rb?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+        "previous_filename": "log_corrector.rb"
+      },
+      {
+        "sha": "796e4e7d6b0f6d54b32fc4f0d1aea6509b6f7e98",
+        "filename": "package-lock.json",
+        "status": "added",
+        "additions": 11499,
+        "deletions": 0,
+        "changes": 11499,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/package-lock.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/package-lock.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package-lock.json?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74"
+      },
+      {
+        "sha": "94d0303fc61d9908c41368d14986525f6cafe403",
+        "filename": "package.json",
+        "status": "added",
+        "additions": 46,
+        "deletions": 0,
+        "changes": 46,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/package.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/package.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package.json?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+        "patch": "@@ -0,0 +1,46 @@\n+{\n+  \"name\": \"gh-file-grass\",\n+  \"version\": \"0.1.0\",\n+  \"private\": true,\n+  \"scripts\": {\n+    \"serve\": \"vue-cli-service serve\",\n+    \"build\": \"vue-cli-service build\",\n+    \"lint\": \"vue-cli-service lint\"\n+  },\n+  \"dependencies\": {\n+    \"core-js\": \"^3.3.2\",\n+    \"vue\": \"^2.6.10\"\n+  },\n+  \"devDependencies\": {\n+    \"@vue/cli-plugin-babel\": \"^4.0.0\",\n+    \"@vue/cli-plugin-eslint\": \"^4.0.0\",\n+    \"@vue/cli-service\": \"^4.0.0\",\n+    \"babel-eslint\": \"^10.0.3\",\n+    \"eslint\": \"^5.16.0\",\n+    \"eslint-plugin-vue\": \"^5.0.0\",\n+    \"vue-template-compiler\": \"^2.6.10\"\n+  },\n+  \"eslintConfig\": {\n+    \"root\": true,\n+    \"env\": {\n+      \"node\": true\n+    },\n+    \"extends\": [\n+      \"plugin:vue/essential\",\n+      \"eslint:recommended\"\n+    ],\n+    \"rules\": {},\n+    \"parserOptions\": {\n+      \"parser\": \"babel-eslint\"\n+    }\n+  },\n+  \"postcss\": {\n+    \"plugins\": {\n+      \"autoprefixer\": {}\n+    }\n+  },\n+  \"browserslist\": [\n+    \"> 1%\",\n+    \"last 2 versions\"\n+  ]\n+}"
+      },
+      {
+        "sha": "df36fcfb72584e00488330b560ebcf34a41c64c2",
+        "filename": "public/favicon.ico",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/public%2Ffavicon.ico",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/public%2Ffavicon.ico",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/public%2Ffavicon.ico?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74"
+      },
+      {
+        "sha": "02f21f797a851533e018cd345c12d85ee211efd3",
+        "filename": "public/index.html",
+        "status": "added",
+        "additions": 17,
+        "deletions": 0,
+        "changes": 17,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/public%2Findex.html",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/public%2Findex.html",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/public%2Findex.html?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+        "patch": "@@ -0,0 +1,17 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+  <head>\n+    <meta charset=\"utf-8\">\n+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">\n+    <link rel=\"icon\" href=\"<%= BASE_URL %>favicon.ico\">\n+    <title>gh-file-grass</title>\n+  </head>\n+  <body>\n+    <noscript>\n+      <strong>We're sorry but gh-file-grass doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>\n+    </noscript>\n+    <div id=\"app\"></div>\n+    <!-- built files will be auto injected -->\n+  </body>\n+</html>"
+      },
+      {
+        "sha": "fcc566279aef926ce288d41de2fd4d841a400705",
+        "filename": "src/App.vue",
+        "status": "added",
+        "additions": 28,
+        "deletions": 0,
+        "changes": 28,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/src%2FApp.vue",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/src%2FApp.vue",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2FApp.vue?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+        "patch": "@@ -0,0 +1,28 @@\n+<template>\n+  <div id=\"app\">\n+    <img alt=\"Vue logo\" src=\"./assets/logo.png\">\n+    <HelloWorld msg=\"Welcome to Your Vue.js App\"/>\n+  </div>\n+</template>\n+\n+<script>\n+import HelloWorld from './components/HelloWorld.vue'\n+\n+export default {\n+  name: 'app',\n+  components: {\n+    HelloWorld\n+  }\n+}\n+</script>\n+\n+<style>\n+#app {\n+  font-family: 'Avenir', Helvetica, Arial, sans-serif;\n+  -webkit-font-smoothing: antialiased;\n+  -moz-osx-font-smoothing: grayscale;\n+  text-align: center;\n+  color: #2c3e50;\n+  margin-top: 60px;\n+}\n+</style>"
+      },
+      {
+        "sha": "f3d2503fc2a44b5053b0837ebea6e87a2d339a43",
+        "filename": "src/assets/logo.png",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/src%2Fassets%2Flogo.png",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/src%2Fassets%2Flogo.png",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fassets%2Flogo.png?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74"
+      },
+      {
+        "sha": "879051a29739fdfb17ae82ed23b53fac251c2b7e",
+        "filename": "src/components/HelloWorld.vue",
+        "status": "added",
+        "additions": 58,
+        "deletions": 0,
+        "changes": 58,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/src%2Fcomponents%2FHelloWorld.vue",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/src%2Fcomponents%2FHelloWorld.vue",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fcomponents%2FHelloWorld.vue?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+        "patch": "@@ -0,0 +1,58 @@\n+<template>\n+  <div class=\"hello\">\n+    <h1>{{ msg }}</h1>\n+    <p>\n+      For a guide and recipes on how to configure / customize this project,<br>\n+      check out the\n+      <a href=\"https://cli.vuejs.org\" target=\"_blank\" rel=\"noopener\">vue-cli documentation</a>.\n+    </p>\n+    <h3>Installed CLI Plugins</h3>\n+    <ul>\n+      <li><a href=\"https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel\" target=\"_blank\" rel=\"noopener\">babel</a></li>\n+      <li><a href=\"https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint\" target=\"_blank\" rel=\"noopener\">eslint</a></li>\n+    </ul>\n+    <h3>Essential Links</h3>\n+    <ul>\n+      <li><a href=\"https://vuejs.org\" target=\"_blank\" rel=\"noopener\">Core Docs</a></li>\n+      <li><a href=\"https://forum.vuejs.org\" target=\"_blank\" rel=\"noopener\">Forum</a></li>\n+      <li><a href=\"https://chat.vuejs.org\" target=\"_blank\" rel=\"noopener\">Community Chat</a></li>\n+      <li><a href=\"https://twitter.com/vuejs\" target=\"_blank\" rel=\"noopener\">Twitter</a></li>\n+      <li><a href=\"https://news.vuejs.org\" target=\"_blank\" rel=\"noopener\">News</a></li>\n+    </ul>\n+    <h3>Ecosystem</h3>\n+    <ul>\n+      <li><a href=\"https://router.vuejs.org\" target=\"_blank\" rel=\"noopener\">vue-router</a></li>\n+      <li><a href=\"https://vuex.vuejs.org\" target=\"_blank\" rel=\"noopener\">vuex</a></li>\n+      <li><a href=\"https://github.com/vuejs/vue-devtools#vue-devtools\" target=\"_blank\" rel=\"noopener\">vue-devtools</a></li>\n+      <li><a href=\"https://vue-loader.vuejs.org\" target=\"_blank\" rel=\"noopener\">vue-loader</a></li>\n+      <li><a href=\"https://github.com/vuejs/awesome-vue\" target=\"_blank\" rel=\"noopener\">awesome-vue</a></li>\n+    </ul>\n+  </div>\n+</template>\n+\n+<script>\n+export default {\n+  name: 'HelloWorld',\n+  props: {\n+    msg: String\n+  }\n+}\n+</script>\n+\n+<!-- Add \"scoped\" attribute to limit CSS to this component only -->\n+<style scoped>\n+h3 {\n+  margin: 40px 0 0;\n+}\n+ul {\n+  list-style-type: none;\n+  padding: 0;\n+}\n+li {\n+  display: inline-block;\n+  margin: 0 10px;\n+}\n+a {\n+  color: #42b983;\n+}\n+</style>"
+      },
+      {
+        "sha": "63eb05f711c8cb5cda45128882fa69c351f105fb",
+        "filename": "src/main.js",
+        "status": "added",
+        "additions": 8,
+        "deletions": 0,
+        "changes": 8,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/src%2Fmain.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/aaed6eb4a60b4d336c0faeb2a5343de1072d2a74/src%2Fmain.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fmain.js?ref=aaed6eb4a60b4d336c0faeb2a5343de1072d2a74",
+        "patch": "@@ -0,0 +1,8 @@\n+import Vue from 'vue'\n+import App from './App.vue'\n+\n+Vue.config.productionTip = false\n+\n+new Vue({\n+  render: h => h(App),\n+}).$mount('#app')"
+      }
+    ]
+  }
+}

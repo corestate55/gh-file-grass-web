@@ -1,0 +1,116 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/4e8d104912b8e24ba66ae47d87647c4ea20a4341",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"1466e3a94bcd11dea9ad2de18b3a316859078afd5803909ac734a6262ad66630\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4968",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "32",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "4e8d104912b8e24ba66ae47d87647c4ea20a4341",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OjRlOGQxMDQ5MTJiOGUyNGJhNjZhZTQ3ZDg3NjQ3YzRlYTIwYTQzNDE=",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2020-06-07T13:51:48Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2020-06-07T13:51:48Z"
+      },
+      "message": "Bump websocket-extensions from 0.1.3 to 0.1.4\n\nBumps [websocket-extensions](https://github.com/faye/websocket-extensions-node) from 0.1.3 to 0.1.4.\n- [Release notes](https://github.com/faye/websocket-extensions-node/releases)\n- [Changelog](https://github.com/faye/websocket-extensions-node/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/faye/websocket-extensions-node/compare/0.1.3...0.1.4)\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+      "tree": {
+        "sha": "a0d760d4f131591ff71733358227a0f961490705",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/a0d760d4f131591ff71733358227a0f961490705"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/4e8d104912b8e24ba66ae47d87647c4ea20a4341",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJe3PD0CRBK7hj4Ov3rIwAAdHIIALAVgFA8Ee1O3DEjig69CTHv\n3PWGNaQ5L4jVycpvZE9ou14vwI46sQEnTEyCpRrpQQiGXE2q5lMjxq2RhPzUEmrf\n86n+qmhJ21yQQUKLmq4kee3fUBmVUTo+KwJP+Uk7Rs8rsnV3G/h3Gp9JRZ0ZBPfA\nu7Pp09gzmTyUWlTv0938y65oXuJZrjOb2C6AggPZIgGcAtE2Z36kdcSQCeApMH7h\n5j7/R3G/ZLQ/vtGSJt/T5PuNTswLkDqyA1kU/opDIJbclAUdY9beMUUcrLVv483j\nlIm9iF0ffmU+jFxT72cmy/1L7D8POz3SqtevJUknWo3z0rDhoId3WPscb1IFXCQ=\n=C7ur\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree a0d760d4f131591ff71733358227a0f961490705\nparent 24e2bcf13c8ffcfe0768bc4258847055e65721b2\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1591537908 +0000\ncommitter GitHub <noreply@github.com> 1591537908 +0000\n\nBump websocket-extensions from 0.1.3 to 0.1.4\n\nBumps [websocket-extensions](https://github.com/faye/websocket-extensions-node) from 0.1.3 to 0.1.4.\n- [Release notes](https://github.com/faye/websocket-extensions-node/releases)\n- [Changelog](https://github.com/faye/websocket-extensions-node/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/faye/websocket-extensions-node/compare/0.1.3...0.1.4)\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "verified_at": "2024-01-16T19:59:59Z"
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/4e8d104912b8e24ba66ae47d87647c4ea20a4341",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/4e8d104912b8e24ba66ae47d87647c4ea20a4341",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/4e8d104912b8e24ba66ae47d87647c4ea20a4341/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "24e2bcf13c8ffcfe0768bc4258847055e65721b2",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/24e2bcf13c8ffcfe0768bc4258847055e65721b2",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/24e2bcf13c8ffcfe0768bc4258847055e65721b2"
+      }
+    ],
+    "stats": {
+      "total": 6,
+      "additions": 3,
+      "deletions": 3
+    },
+    "files": [
+      {
+        "sha": "cbe8a3de26473c6d4b0edb157b608e5e9681a385",
+        "filename": "package-lock.json",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 3,
+        "changes": 6,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/4e8d104912b8e24ba66ae47d87647c4ea20a4341/package-lock.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/4e8d104912b8e24ba66ae47d87647c4ea20a4341/package-lock.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package-lock.json?ref=4e8d104912b8e24ba66ae47d87647c4ea20a4341",
+        "patch": "@@ -12501,9 +12501,9 @@\n       }\n     },\n     \"websocket-extensions\": {\n-      \"version\": \"0.1.3\",\n-      \"resolved\": \"https://registry.npmjs.org/websocket-extensions/-/websocket-extensions-0.1.3.tgz\",\n-      \"integrity\": \"sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==\",\n+      \"version\": \"0.1.4\",\n+      \"resolved\": \"https://registry.npmjs.org/websocket-extensions/-/websocket-extensions-0.1.4.tgz\",\n+      \"integrity\": \"sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==\",\n       \"dev\": true\n     },\n     \"which\": {"
+      }
+    ]
+  }
+}

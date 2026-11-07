@@ -1,0 +1,128 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/ed47ef0557f11109697deb93d4a571e1a1d219f2",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"c3f55a6508317f9c3f51fa6759e9ba65ecc6b321ee1ba052c4a4e10d4873c165\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4936",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "64",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "ed47ef0557f11109697deb93d4a571e1a1d219f2",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmVkNDdlZjA1NTdmMTExMDk2OTdkZWI5M2Q0YTU3MWUxYTFkMjE5ZjI=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-11-30T12:54:55Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-11-30T12:54:55Z"
+      },
+      "message": "Add git_show_parser for initial commit.",
+      "tree": {
+        "sha": "3b31a6feca35241077b802282c3586c9e5d0843a",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/3b31a6feca35241077b802282c3586c9e5d0843a"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/ed47ef0557f11109697deb93d4a571e1a1d219f2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/ed47ef0557f11109697deb93d4a571e1a1d219f2",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/ed47ef0557f11109697deb93d4a571e1a1d219f2",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/ed47ef0557f11109697deb93d4a571e1a1d219f2/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "2d223200786048b860add9c55218a087ce9bcfe3",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/2d223200786048b860add9c55218a087ce9bcfe3",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/2d223200786048b860add9c55218a087ce9bcfe3"
+      }
+    ],
+    "stats": {
+      "total": 187,
+      "additions": 184,
+      "deletions": 3
+    },
+    "files": [
+      {
+        "sha": "49e03e643c3bb7db9440d956d42a307b983fdaed",
+        "filename": "bin/git_show_parser.rb",
+        "status": "added",
+        "additions": 152,
+        "deletions": 0,
+        "changes": 152,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/ed47ef0557f11109697deb93d4a571e1a1d219f2/bin%2Fgit_show_parser.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/ed47ef0557f11109697deb93d4a571e1a1d219f2/bin%2Fgit_show_parser.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/bin%2Fgit_show_parser.rb?ref=ed47ef0557f11109697deb93d4a571e1a1d219f2",
+        "patch": "@@ -0,0 +1,152 @@\n+require 'json'\n+\n+class GitShowParser\n+  def initialize(sha)\n+    @sha = sha\n+    @files = []\n+    @type = :modified\n+  end\n+\n+  def parse\n+    header = true\n+    insertion_count = 0\n+    deletion_count = 0\n+\n+    git_show_str = `git show #{@sha}`\n+    git_show_str.split(/\\n/).each do |line|\n+      # puts line\n+      if line =~ /^commit (.+)/\n+        @sha_full = Regexp.last_match(1)\n+        next\n+      end\n+      if line =~ /^Author: (.+) <(.+)>/\n+        @author = Regexp.last_match(1)\n+        @mail = Regexp.last_match(2)\n+        next\n+      end\n+      if line =~ /^Date:\\s+(.+)/\n+        @commit_date = Regexp.last_match(1)\n+        next\n+      end\n+      next if line =~ /^\\s*$/\n+\n+      if header && line =~ /^\\s+(.+)$/\n+        @message = Regexp.last_match(1)\n+      end\n+\n+      if line =~ /^diff(.+)a\\/(.+) b\\/(.+)/\n+        header = false\n+        unless @files.empty?\n+          @files[-1][:insertion] = insertion_count\n+          @files[-1][:deletion] = deletion_count\n+        end\n+        insertion_count = 0\n+        deletion_count = 0\n+\n+        file_before = Regexp.last_match(2)\n+        file_after = Regexp.last_match(3)\n+        @files.push({\n+                      path: file_after,\n+                      path_src: file_before,\n+                      path_dst: file_after,\n+                      insertion: 0,\n+                      deletion: 0\n+                    })\n+        next\n+      end\n+      if line =~ /^new file mode (.+)/\n+        @files[-1][:type] = :new\n+        @files[-1][:mode] = Regexp.last_match(1)\n+        next\n+      end\n+      if line =~ /^index (.+)\\.\\.(.+)/\n+        @src = Regexp.last_match(1)\n+        @dst = Regexp.last_match(2)\n+        @files[-1][:src] = @src\n+        @files[-1][:dst] = @dst\n+        next\n+      end\n+      next if line =~ /^\\+\\+\\+.*/ || line =~ /^---.*/\n+      if line =~ /^\\+.*/\n+        insertion_count += 1\n+        next\n+      end\n+      if line =~ /^\\-.*/\n+        deletion_count += 1\n+        next\n+      end\n+    end\n+    unless @files.empty?\n+      @files[-1][:insertion] = insertion_count\n+      @files[-1][:deletion] = deletion_count\n+    end\n+  end\n+\n+  def to_data\n+    parse\n+    {\n+      commits: make_commit,\n+      stats: make_stats,\n+      files: make_files\n+    }\n+  end\n+\n+  private\n+\n+  def make_files\n+    @files.map.with_index do |file, i|\n+      {\n+        name: file[:path],\n+        index: i + 1,\n+        commits: [ @sha_full[0, 7] ]\n+      }\n+    end\n+  end\n+\n+  def make_stats\n+    @files.map do |file|\n+      {\n+        path: file[:path],\n+        mode: file[:mode],\n+        type: file[:type],\n+        src: file[:src],\n+        dst: file[:dst],\n+        stat_path: {\n+          path: file[:path],\n+          src: file[:path_src],\n+          dst: file[:path_dst]\n+        },\n+        insertions: file[:insertion],\n+        deletions: file[:deletion],\n+        lines: file[:insertion] + file[:deletion],\n+        sha_short: @sha_full[0, 7]\n+      }\n+    end\n+  end\n+\n+  def make_commit\n+    insertions = @files.map { |f| f[:insertion] }.inject(0) { |r, x| r + x }\n+    deletions = @files.map { |f| f[:deletion] }.inject(0) { |r, x| r + x }\n+    commit = {\n+      sha: @sha_full,\n+      sha_short: @sha_full[0, 7],\n+      author: {\n+        name: @author,\n+        email: @mail\n+      },\n+      date: @commit_date,\n+      message: @message,\n+      index: 1,\n+      stat_total: {\n+        insertions: insertions,\n+        deletions: deletions,\n+        lines: insertions + deletions,\n+        file: @files.length\n+      }\n+    }\n+    [ commit ]\n+  end\n+end\n+\n+# gsp = GitShowParser.new('266cba1')\n+# puts JSON.pretty_generate(gsp.to_data)"
+      },
+      {
+        "sha": "1c8ff0526d2c6ec2cc99d3a6dbc077d904cfed75",
+        "filename": "bin/log_collector.rb",
+        "status": "modified",
+        "additions": 32,
+        "deletions": 3,
+        "changes": 35,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/ed47ef0557f11109697deb93d4a571e1a1d219f2/bin%2Flog_collector.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/ed47ef0557f11109697deb93d4a571e1a1d219f2/bin%2Flog_collector.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/bin%2Flog_collector.rb?ref=ed47ef0557f11109697deb93d4a571e1a1d219f2",
+        "patch": "@@ -3,6 +3,7 @@\n require 'git'\n require 'json'\n require 'optparse'\n+require_relative './git_show_parser'\n \n # property of a file in a log entry\n class GitLogEntryFile\n@@ -69,7 +70,7 @@ def initialize(log)\n       parsed_diff_stat_path = parse_moved_file(diff_stat_path)\n       GitLogEntryFile.new(diff_file, diff_stat, parsed_diff_stat_path)\n     end\n-    debug_print\n+    # debug_print\n   end\n \n   # rubocop:disable Metrics/MethodLength\n@@ -137,6 +138,15 @@ def initialize(repository, count = 5)\n   end\n \n   def to_data\n+    data = to_data_without_init_commit\n+    # append initial commit data if necessary\n+    init_log = @git.log(@count).find { |log| log.parent.nil? }\n+    init_log ? merge_data(data, init_log) : data\n+  end\n+\n+  private\n+\n+  def to_data_without_init_commit\n     {\n       repo: @git.repo,\n       branch: @git.branch.full,\n@@ -146,11 +156,30 @@ def to_data\n     }\n   end\n \n-  private\n+  def merge_data(data, init_log)\n+    log_parser = GitShowParser.new(init_log.sha)\n+    merger = log_parser.to_data\n+\n+    data[:commits].concat(merger[:commits]) # append at last\n+    data[:commits].each_with_index { |c, i| c[:index] = i + 1 }\n+\n+    data[:stats].concat(merger[:stats]) # append at last\n+\n+    merger[:files].each do |tf|\n+      f2merge = data[:files].find { |f| f[:name] == tf[:name] }\n+      if f2merge\n+        f2merge[:commits].concat(tf[:commits]) # append at last\n+      else\n+        data[:files].unshift(tf)\n+      end\n+    end\n+    data[:files].each_with_index { |f, i| f[:index] = i + 1 }\n+    data\n+  end\n \n   def make_commits\n     # logs(count = nil) gets all logs\n-    # TODO: first commit:\n+    # NOTICE: first commit:\n     #   ignore first commit (it doesn't have parent)\n     #   because `diff_parent` for the log returns \"diff initial-commit current\"...\n     commits = @git.log(@count)"
+      }
+    ]
+  }
+}

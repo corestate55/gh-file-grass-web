@@ -1,0 +1,224 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"304f2d32579452e265215df5e98a695b0bfc77535cc65524b56682c49dd77bda\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4949",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "51",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OjQwYmMwODcyZWY0ZmJmOTYwN2VmYWZmZmE0NGY1M2YyNGM0M2FjOTM=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-05T12:57:34Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-05T12:57:34Z"
+      },
+      "message": "Add and format with prettier.",
+      "tree": {
+        "sha": "b8ecca998b24a5ce14d6881f8991621410c1bece",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/b8ecca998b24a5ce14d6881f8991621410c1bece"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/40bc0872ef4fbf9607efafffa44f53f24c43ac93/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b69583cc0db44603c7d05ca99261c7f41cd5bca6",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/b69583cc0db44603c7d05ca99261c7f41cd5bca6",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/b69583cc0db44603c7d05ca99261c7f41cd5bca6"
+      }
+    ],
+    "stats": {
+      "total": 397,
+      "additions": 342,
+      "deletions": 55
+    },
+    "files": [
+      {
+        "sha": "9091331880c52819d4dfffc474494789a823479b",
+        "filename": ".prettierrc.js",
+        "status": "added",
+        "additions": 12,
+        "deletions": 0,
+        "changes": 12,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/40bc0872ef4fbf9607efafffa44f53f24c43ac93/.prettierrc.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/40bc0872ef4fbf9607efafffa44f53f24c43ac93/.prettierrc.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/.prettierrc.js?ref=40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "patch": "@@ -0,0 +1,12 @@\n+'use strict'\n+\n+module.exports = {\n+  printWidth: 80,\n+  tabWidth: 2,\n+  useTabs: false,\n+  semi: false,\n+  singleQuote: true,\n+  trailingComma: 'none',\n+  bracketSpacing: true,\n+  arrowParens: 'avoid'\n+}"
+      },
+      {
+        "sha": "7105afa643c7ff53558092b0da6f74669036e36e",
+        "filename": "package-lock.json",
+        "status": "modified",
+        "additions": 248,
+        "deletions": 0,
+        "changes": 248,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/40bc0872ef4fbf9607efafffa44f53f24c43ac93/package-lock.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/40bc0872ef4fbf9607efafffa44f53f24c43ac93/package-lock.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package-lock.json?ref=40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "patch": "@@ -1005,6 +1005,12 @@\n       \"integrity\": \"sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==\",\n       \"dev\": true\n     },\n+    \"@types/eslint-visitor-keys\": {\n+      \"version\": \"1.0.0\",\n+      \"resolved\": \"https://registry.npmjs.org/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz\",\n+      \"integrity\": \"sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==\",\n+      \"dev\": true\n+    },\n     \"@types/events\": {\n       \"version\": \"3.0.0\",\n       \"resolved\": \"https://registry.npmjs.org/@types/events/-/events-3.0.0.tgz\",\n@@ -1022,6 +1028,12 @@\n         \"@types/node\": \"*\"\n       }\n     },\n+    \"@types/json-schema\": {\n+      \"version\": \"7.0.3\",\n+      \"resolved\": \"https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.3.tgz\",\n+      \"integrity\": \"sha512-Il2DtDVRGDcqjDtE+rF8iqg1CArehSK84HZJCT7AMITlyXRBpuPhqGLDQMowraqqu1coEaimg4ZOqggt6L6L+A==\",\n+      \"dev\": true\n+    },\n     \"@types/minimatch\": {\n       \"version\": \"3.0.3\",\n       \"resolved\": \"https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.3.tgz\",\n@@ -1046,6 +1058,47 @@\n       \"integrity\": \"sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==\",\n       \"dev\": true\n     },\n+    \"@typescript-eslint/experimental-utils\": {\n+      \"version\": \"1.13.0\",\n+      \"resolved\": \"https://registry.npmjs.org/@typescript-eslint/experimental-utils/-/experimental-utils-1.13.0.tgz\",\n+      \"integrity\": \"sha512-zmpS6SyqG4ZF64ffaJ6uah6tWWWgZ8m+c54XXgwFtUv0jNz8aJAVx8chMCvnk7yl6xwn8d+d96+tWp7fXzTuDg==\",\n+      \"dev\": true,\n+      \"requires\": {\n+        \"@types/json-schema\": \"^7.0.3\",\n+        \"@typescript-eslint/typescript-estree\": \"1.13.0\",\n+        \"eslint-scope\": \"^4.0.0\"\n+      }\n+    },\n+    \"@typescript-eslint/parser\": {\n+      \"version\": \"1.13.0\",\n+      \"resolved\": \"https://registry.npmjs.org/@typescript-eslint/parser/-/parser-1.13.0.tgz\",\n+      \"integrity\": \"sha512-ITMBs52PCPgLb2nGPoeT4iU3HdQZHcPaZVw+7CsFagRJHUhyeTgorEwHXhFf3e7Evzi8oujKNpHc8TONth8AdQ==\",\n+      \"dev\": true,\n+      \"requires\": {\n+        \"@types/eslint-visitor-keys\": \"^1.0.0\",\n+        \"@typescript-eslint/experimental-utils\": \"1.13.0\",\n+        \"@typescript-eslint/typescript-estree\": \"1.13.0\",\n+        \"eslint-visitor-keys\": \"^1.0.0\"\n+      }\n+    },\n+    \"@typescript-eslint/typescript-estree\": {\n+      \"version\": \"1.13.0\",\n+      \"resolved\": \"https://registry.npmjs.org/@typescript-eslint/typescript-estree/-/typescript-estree-1.13.0.tgz\",\n+      \"integrity\": \"sha512-b5rCmd2e6DCC6tCTN9GSUAuxdYwCM/k/2wdjHGrIRGPSJotWMCe/dGpi66u42bhuh8q3QBzqM4TMA1GUUCJvdw==\",\n+      \"dev\": true,\n+      \"requires\": {\n+        \"lodash.unescape\": \"4.0.1\",\n+        \"semver\": \"5.5.0\"\n+      },\n+      \"dependencies\": {\n+        \"semver\": {\n+          \"version\": \"5.5.0\",\n+          \"resolved\": \"https://registry.npmjs.org/semver/-/semver-5.5.0.tgz\",\n+          \"integrity\": \"sha512-4SJ3dm0WAwWy/NVeioZh5AntkdJoWKxHxcmyP622fOkgHa4z3R0TdBJICINyaSDE6uNwVc8gZr+ZinwZAH4xIA==\",\n+          \"dev\": true\n+        }\n+      }\n+    },\n     \"@vue/babel-helper-vue-jsx-merge-props\": {\n       \"version\": \"1.0.0\",\n       \"resolved\": \"https://registry.npmjs.org/@vue/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-1.0.0.tgz\",\n@@ -3075,6 +3128,12 @@\n       \"resolved\": \"https://registry.npmjs.org/commander/-/commander-2.20.3.tgz\",\n       \"integrity\": \"sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==\"\n     },\n+    \"common-tags\": {\n+      \"version\": \"1.8.0\",\n+      \"resolved\": \"https://registry.npmjs.org/common-tags/-/common-tags-1.8.0.tgz\",\n+      \"integrity\": \"sha512-6P6g0uetGpW/sdyUy/iQQCbFF0kWVMSIVSyYz7Zgjcgh8mgw8PQzDNZeyZ5DQ2gM7LBoZPHmnjz8rUthkBG5tw==\",\n+      \"dev\": true\n+    },\n     \"commondir\": {\n       \"version\": \"1.0.1\",\n       \"resolved\": \"https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz\",\n@@ -4091,6 +4150,12 @@\n         \"path-type\": \"^3.0.0\"\n       }\n     },\n+    \"dlv\": {\n+      \"version\": \"1.1.3\",\n+      \"resolved\": \"https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz\",\n+      \"integrity\": \"sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==\",\n+      \"dev\": true\n+    },\n     \"dns-equal\": {\n       \"version\": \"1.0.0\",\n       \"resolved\": \"https://registry.npmjs.org/dns-equal/-/dns-equal-1.0.0.tgz\",\n@@ -7198,12 +7263,24 @@\n       \"integrity\": \"sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=\",\n       \"dev\": true\n     },\n+    \"lodash.merge\": {\n+      \"version\": \"4.6.2\",\n+      \"resolved\": \"https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz\",\n+      \"integrity\": \"sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==\",\n+      \"dev\": true\n+    },\n     \"lodash.transform\": {\n       \"version\": \"4.6.0\",\n       \"resolved\": \"https://registry.npmjs.org/lodash.transform/-/lodash.transform-4.6.0.tgz\",\n       \"integrity\": \"sha1-EjBkIvYzJK7YSD0/ODMrX2cFR6A=\",\n       \"dev\": true\n     },\n+    \"lodash.unescape\": {\n+      \"version\": \"4.0.1\",\n+      \"resolved\": \"https://registry.npmjs.org/lodash.unescape/-/lodash.unescape-4.0.1.tgz\",\n+      \"integrity\": \"sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=\",\n+      \"dev\": true\n+    },\n     \"lodash.uniq\": {\n       \"version\": \"4.5.0\",\n       \"resolved\": \"https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz\",\n@@ -7225,6 +7302,58 @@\n       \"integrity\": \"sha512-Sgr5lbboAUBo3eXCSPL4/KoVz3ROKquOjcctxmHIt+vol2DrqTQe3SwkKKuYhEiWB5kYa13YyopJ69deJ1irzQ==\",\n       \"dev\": true\n     },\n+    \"loglevel-colored-level-prefix\": {\n+      \"version\": \"1.0.0\",\n+      \"resolved\": \"https://registry.npmjs.org/loglevel-colored-level-prefix/-/loglevel-colored-level-prefix-1.0.0.tgz\",\n+      \"integrity\": \"sha1-akAhj9x64V/HbD0PPmdsRlOIYD4=\",\n+      \"dev\": true,\n+      \"requires\": {\n+        \"chalk\": \"^1.1.3\",\n+        \"loglevel\": \"^1.4.1\"\n+      },\n+      \"dependencies\": {\n+        \"ansi-regex\": {\n+          \"version\": \"2.1.1\",\n+          \"resolved\": \"https://registry.npmjs.org/ansi-regex/-/ansi-regex-2.1.1.tgz\",\n+          \"integrity\": \"sha1-w7M6te42DYbg5ijwRorn7yfWVN8=\",\n+          \"dev\": true\n+        },\n+        \"ansi-styles\": {\n+          \"version\": \"2.2.1\",\n+          \"resolved\": \"https://registry.npmjs.org/ansi-styles/-/ansi-styles-2.2.1.tgz\",\n+          \"integrity\": \"sha1-tDLdM1i2NM914eRmQ2gkBTPB3b4=\",\n+          \"dev\": true\n+        },\n+        \"chalk\": {\n+          \"version\": \"1.1.3\",\n+          \"resolved\": \"https://registry.npmjs.org/chalk/-/chalk-1.1.3.tgz\",\n+          \"integrity\": \"sha1-qBFcVeSnAv5NFQq9OHKCKn4J/Jg=\",\n+          \"dev\": true,\n+          \"requires\": {\n+            \"ansi-styles\": \"^2.2.1\",\n+            \"escape-string-regexp\": \"^1.0.2\",\n+            \"has-ansi\": \"^2.0.0\",\n+            \"strip-ansi\": \"^3.0.0\",\n+            \"supports-color\": \"^2.0.0\"\n+          }\n+        },\n+        \"strip-ansi\": {\n+          \"version\": \"3.0.1\",\n+          \"resolved\": \"https://registry.npmjs.org/strip-ansi/-/strip-ansi-3.0.1.tgz\",\n+          \"integrity\": \"sha1-ajhfuIU9lS1f8F0Oiq+UJ43GPc8=\",\n+          \"dev\": true,\n+          \"requires\": {\n+            \"ansi-regex\": \"^2.0.0\"\n+          }\n+        },\n+        \"supports-color\": {\n+          \"version\": \"2.0.0\",\n+          \"resolved\": \"https://registry.npmjs.org/supports-color/-/supports-color-2.0.0.tgz\",\n+          \"integrity\": \"sha1-U10EXOa2Nj+kARcIRimZXp3zJMc=\",\n+          \"dev\": true\n+        }\n+      }\n+    },\n     \"loose-envify\": {\n       \"version\": \"1.4.0\",\n       \"resolved\": \"https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz\",\n@@ -9119,6 +9248,95 @@\n       \"integrity\": \"sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==\",\n       \"dev\": true\n     },\n+    \"prettier-eslint\": {\n+      \"version\": \"9.0.1\",\n+      \"resolved\": \"https://registry.npmjs.org/prettier-eslint/-/prettier-eslint-9.0.1.tgz\",\n+      \"integrity\": \"sha512-KZT65QTosSAqBBqmrC+RpXbsMRe7Os2YSR9cAfFbDlyPAopzA/S5bioiZ3rpziNQNSJaOxmtXSx07EQ+o2Dlug==\",\n+      \"dev\": true,\n+      \"requires\": {\n+        \"@typescript-eslint/parser\": \"^1.10.2\",\n+        \"common-tags\": \"^1.4.0\",\n+        \"core-js\": \"^3.1.4\",\n+        \"dlv\": \"^1.1.0\",\n+        \"eslint\": \"^5.0.0\",\n+        \"indent-string\": \"^4.0.0\",\n+        \"lodash.merge\": \"^4.6.0\",\n+        \"loglevel-colored-level-prefix\": \"^1.0.0\",\n+        \"prettier\": \"^1.7.0\",\n+        \"pretty-format\": \"^23.0.1\",\n+        \"require-relative\": \"^0.8.7\",\n+        \"typescript\": \"^3.2.1\",\n+        \"vue-eslint-parser\": \"^2.0.2\"\n+      },\n+      \"dependencies\": {\n+        \"acorn\": {\n+          \"version\": \"5.7.3\",\n+          \"resolved\": \"https://registry.npmjs.org/acorn/-/acorn-5.7.3.tgz\",\n+          \"integrity\": \"sha512-T/zvzYRfbVojPWahDsE5evJdHb3oJoQfFbsrKM7w5Zcs++Tr257tia3BmMP8XYVjp1S9RZXQMh7gao96BlqZOw==\",\n+          \"dev\": true\n+        },\n+        \"acorn-jsx\": {\n+          \"version\": \"3.0.1\",\n+          \"resolved\": \"https://registry.npmjs.org/acorn-jsx/-/acorn-jsx-3.0.1.tgz\",\n+          \"integrity\": \"sha1-r9+UiPsezvyDSPb7IvRk4ypYs2s=\",\n+          \"dev\": true,\n+          \"requires\": {\n+            \"acorn\": \"^3.0.4\"\n+          },\n+          \"dependencies\": {\n+            \"acorn\": {\n+              \"version\": \"3.3.0\",\n+              \"resolved\": \"https://registry.npmjs.org/acorn/-/acorn-3.3.0.tgz\",\n+              \"integrity\": \"sha1-ReN/s56No/JbruP/U2niu18iAXo=\",\n+              \"dev\": true\n+            }\n+          }\n+        },\n+        \"debug\": {\n+          \"version\": \"3.2.6\",\n+          \"resolved\": \"https://registry.npmjs.org/debug/-/debug-3.2.6.tgz\",\n+          \"integrity\": \"sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==\",\n+          \"dev\": true,\n+          \"requires\": {\n+            \"ms\": \"^2.1.1\"\n+          }\n+        },\n+        \"eslint-scope\": {\n+          \"version\": \"3.7.3\",\n+          \"resolved\": \"https://registry.npmjs.org/eslint-scope/-/eslint-scope-3.7.3.tgz\",\n+          \"integrity\": \"sha512-W+B0SvF4gamyCTmUc+uITPY0989iXVfKvhwtmJocTaYoc/3khEHmEmvfY/Gn9HA9VV75jrQECsHizkNw1b68FA==\",\n+          \"dev\": true,\n+          \"requires\": {\n+            \"esrecurse\": \"^4.1.0\",\n+            \"estraverse\": \"^4.1.1\"\n+          }\n+        },\n+        \"espree\": {\n+          \"version\": \"3.5.4\",\n+          \"resolved\": \"https://registry.npmjs.org/espree/-/espree-3.5.4.tgz\",\n+          \"integrity\": \"sha512-yAcIQxtmMiB/jL32dzEp2enBeidsB7xWPLNiw3IIkpVds1P+h7qF9YwJq1yUNzp2OKXgAprs4F61ih66UsoD1A==\",\n+          \"dev\": true,\n+          \"requires\": {\n+            \"acorn\": \"^5.5.0\",\n+            \"acorn-jsx\": \"^3.0.0\"\n+          }\n+        },\n+        \"vue-eslint-parser\": {\n+          \"version\": \"2.0.3\",\n+          \"resolved\": \"https://registry.npmjs.org/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz\",\n+          \"integrity\": \"sha512-ZezcU71Owm84xVF6gfurBQUGg8WQ+WZGxgDEQu1IHFBZNx7BFZg3L1yHxrCBNNwbwFtE1GuvfJKMtb6Xuwc/Bw==\",\n+          \"dev\": true,\n+          \"requires\": {\n+            \"debug\": \"^3.1.0\",\n+            \"eslint-scope\": \"^3.7.1\",\n+            \"eslint-visitor-keys\": \"^1.0.0\",\n+            \"espree\": \"^3.5.2\",\n+            \"esquery\": \"^1.0.0\",\n+            \"lodash\": \"^4.17.4\"\n+          }\n+        }\n+      }\n+    },\n     \"pretty-error\": {\n       \"version\": \"2.1.1\",\n       \"resolved\": \"https://registry.npmjs.org/pretty-error/-/pretty-error-2.1.1.tgz\",\n@@ -9129,6 +9347,24 @@\n         \"utila\": \"~0.4\"\n       }\n     },\n+    \"pretty-format\": {\n+      \"version\": \"23.6.0\",\n+      \"resolved\": \"https://registry.npmjs.org/pretty-format/-/pretty-format-23.6.0.tgz\",\n+      \"integrity\": \"sha512-zf9NV1NSlDLDjycnwm6hpFATCGl/K1lt0R/GdkAK2O5LN/rwJoB+Mh93gGJjut4YbmecbfgLWVGSTCr0Ewvvbw==\",\n+      \"dev\": true,\n+      \"requires\": {\n+        \"ansi-regex\": \"^3.0.0\",\n+        \"ansi-styles\": \"^3.2.0\"\n+      },\n+      \"dependencies\": {\n+        \"ansi-regex\": {\n+          \"version\": \"3.0.0\",\n+          \"resolved\": \"https://registry.npmjs.org/ansi-regex/-/ansi-regex-3.0.0.tgz\",\n+          \"integrity\": \"sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=\",\n+          \"dev\": true\n+        }\n+      }\n+    },\n     \"private\": {\n       \"version\": \"0.1.8\",\n       \"resolved\": \"https://registry.npmjs.org/private/-/private-0.1.8.tgz\",\n@@ -9701,6 +9937,12 @@\n       \"integrity\": \"sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==\",\n       \"dev\": true\n     },\n+    \"require-relative\": {\n+      \"version\": \"0.8.7\",\n+      \"resolved\": \"https://registry.npmjs.org/require-relative/-/require-relative-0.8.7.tgz\",\n+      \"integrity\": \"sha1-eZlTn8ngR6N5KPoZb44VY9q9Nt4=\",\n+      \"dev\": true\n+    },\n     \"requires-port\": {\n       \"version\": \"1.0.0\",\n       \"resolved\": \"https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz\",\n@@ -11291,6 +11533,12 @@\n       \"integrity\": \"sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=\",\n       \"dev\": true\n     },\n+    \"typescript\": {\n+      \"version\": \"3.7.3\",\n+      \"resolved\": \"https://registry.npmjs.org/typescript/-/typescript-3.7.3.tgz\",\n+      \"integrity\": \"sha512-Mcr/Qk7hXqFBXMN7p7Lusj1ktCBydylfQM/FZCk5glCNQJrCUKPkMHdo9R0MTFWsC/4kPFvDS0fDPvukfCkFsw==\",\n+      \"dev\": true\n+    },\n     \"uglify-js\": {\n       \"version\": \"3.4.10\",\n       \"resolved\": \"https://registry.npmjs.org/uglify-js/-/uglify-js-3.4.10.tgz\","
+      },
+      {
+        "sha": "09c0fc32cb64ffa9bf34ba4ca5a3e689a93de05e",
+        "filename": "package.json",
+        "status": "modified",
+        "additions": 4,
+        "deletions": 1,
+        "changes": 5,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/40bc0872ef4fbf9607efafffa44f53f24c43ac93/package.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/40bc0872ef4fbf9607efafffa44f53f24c43ac93/package.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package.json?ref=40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "patch": "@@ -5,7 +5,9 @@\n   \"scripts\": {\n     \"serve\": \"vue-cli-service serve\",\n     \"build\": \"vue-cli-service build\",\n-    \"lint\": \"vue-cli-service lint\"\n+    \"lint\": \"vue-cli-service lint\",\n+    \"lint:fix\": \"vue-cli-service lint --fix\",\n+    \"format\": \"prettier --write 'src/**/*.{js,vue}'\"\n   },\n   \"dependencies\": {\n     \"core-js\": \"^3.3.2\",\n@@ -24,6 +26,7 @@\n     \"eslint\": \"^5.16.0\",\n     \"eslint-plugin-vue\": \"^5.0.0\",\n     \"node-sass\": \"^4.13.0\",\n+    \"prettier-eslint\": \"^9.0.1\",\n     \"sass-loader\": \"^8.0.0\",\n     \"vue-template-compiler\": \"^2.6.10\"\n   },"
+      },
+      {
+        "sha": "cbe873a69535fc4c47263db73f0f1bea892d95bb",
+        "filename": "src/App.vue",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 2,
+        "changes": 3,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2FApp.vue",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2FApp.vue",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2FApp.vue?ref=40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "patch": "@@ -15,5 +15,4 @@ export default {\n }\n </script>\n \n-<style>\n-</style>\n+<style></style>"
+      },
+      {
+        "sha": "dc63b7d441620b5e16248a37b3c6d19d7e46a516",
+        "filename": "src/components/GHFileGrass.vue",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 2,
+        "changes": 3,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fcomponents%2FGHFileGrass.vue",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fcomponents%2FGHFileGrass.vue",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fcomponents%2FGHFileGrass.vue?ref=40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "patch": "@@ -20,5 +20,4 @@ export default {\n }\n </script>\n \n-<style scoped>\n-</style>\n+<style scoped></style>"
+      },
+      {
+        "sha": "1e428cfb57c7b49c5fd2a035114bc9d507b1679b",
+        "filename": "src/js/gh_file_grass.js",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 1,
+        "changes": 2,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fjs%2Fgh_file_grass.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fjs%2Fgh_file_grass.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass.js?ref=40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "patch": "@@ -1,4 +1,4 @@\n-import GHFileGrassOperator from \"./gh_file_grass/operator\"\n+import GHFileGrassOperator from './gh_file_grass/operator'\n \n export default class GHFileGrass extends GHFileGrassOperator {\n   async draw(logUrl) {"
+      },
+      {
+        "sha": "62babe9c424035c670c6389055a509129cdde009",
+        "filename": "src/js/gh_file_grass/base.js",
+        "status": "modified",
+        "additions": 24,
+        "deletions": 10,
+        "changes": 34,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fjs%2Fgh_file_grass%2Fbase.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fjs%2Fgh_file_grass%2Fbase.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fbase.js?ref=40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "patch": "@@ -47,25 +47,41 @@ export default class GHFileGrassBase {\n   _makeGroups() {\n     const groupData = [\n       {\n-        keyword: 'commits', px: this.px0, py: this.py0,\n+        keyword: 'commits',\n+        px: this.px0,\n+        py: this.py0,\n         clipPath: {\n-          x: 0, y: -this.py0, width: this.width1, height: this.py0\n+          x: 0,\n+          y: -this.py0,\n+          width: this.width1,\n+          height: this.py0\n         }\n       },\n       {\n-        keyword: 'files', px: 0, py: this.py0,\n+        keyword: 'files',\n+        px: 0,\n+        py: this.py0,\n         clipPath: {\n-          x: 0, y: 0, width: this.px0, height: this.height1\n+          x: 0,\n+          y: 0,\n+          width: this.px0,\n+          height: this.height1\n         }\n       },\n       {\n-        keyword: 'stats', px: this.px0, py: this.py0,\n+        keyword: 'stats',\n+        px: this.px0,\n+        py: this.py0,\n         clipPath: {\n-          x: 0, y: 0, width: this.width1, height: this.height1\n+          x: 0,\n+          y: 0,\n+          width: this.width1,\n+          height: this.height1\n         }\n       }\n     ]\n-    const groups = this.svg.selectAll('g')\n+    const groups = this.svg\n+      .selectAll('g')\n       .data(groupData)\n       .enter()\n       .append('g')\n@@ -80,9 +96,7 @@ export default class GHFileGrassBase {\n       .attr('y', d => d.clipPath.y)\n       .attr('width', d => d.clipPath.width)\n       .attr('height', d => d.clipPath.height)\n-    groups\n-      .append('g')\n-      .attr('clip-path', d => `url(#${d.keyword}-clip)`)\n+    groups.append('g').attr('clip-path', d => `url(#${d.keyword}-clip)`)\n   }\n \n   _makeSVGCanvas() {"
+      },
+      {
+        "sha": "b91ce122c14c237fa435f860ad13cb5fa20b34c5",
+        "filename": "src/js/gh_file_grass/builder.js",
+        "status": "modified",
+        "additions": 13,
+        "deletions": 17,
+        "changes": 30,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fbuilder.js?ref=40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "patch": "@@ -73,11 +73,9 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n     if (dstStats.length < 1) {\n       return false\n     }\n-    const results = dstStats.map(\n-      dstStat => {\n-        return this._isRenamedStat(dstStat) || stat.path !== dstStat.path\n-      }\n-    )\n+    const results = dstStats.map(dstStat => {\n+      return this._isRenamedStat(dstStat) || stat.path !== dstStat.path\n+    })\n     // if exists false in results: stat has NOT-RENAMED destination in dstStats.\n     return results.reduce((acc, curr) => acc && curr, true)\n   }\n@@ -88,7 +86,9 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n       // console.log('- end-1: ', stat1)\n       return this._indexOfCommit(stat1.sha_short)\n     }\n-    const stat2 = this._findStatsByFile(file.name).find(d => this._areRenamedDstStatsOf(d))\n+    const stat2 = this._findStatsByFile(file.name).find(d =>\n+      this._areRenamedDstStatsOf(d)\n+    )\n     if (stat2) {\n       // console.log('- end-2: ', stat2)\n       return this._indexOfCommit(stat2.sha_short)\n@@ -103,17 +103,16 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n       const endIndex = this._lifeEndIndex(file)\n       // console.log(`- start:${startIndex}, end:${endIndex}`)\n       const range = Array.from(\n-        {length: endIndex - startIndex + 1},\n+        { length: endIndex - startIndex + 1 },\n         (_, i) => ({\n           fileIndex: file.index,\n           commitIndex: i + startIndex\n         })\n       )\n-      const classBy = d => [\n-        'file-life',\n-        `file-${d.fileIndex}`,\n-        `commit-${d.commitIndex}`\n-      ].join(' ')\n+      const classBy = d =>\n+        ['file-life', `file-${d.fileIndex}`, `commit-${d.commitIndex}`].join(\n+          ' '\n+        )\n \n       this._selectClippedGroup('stats')\n         .selectAll(`rect.file-${file.index}`)\n@@ -211,11 +210,8 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n         })\n       })\n     }\n-    const classBy = d => [\n-      'stat-arrow',\n-      `stat-${d.sourceIndex}`,\n-      `stat-${d.targetIndex}`\n-    ].join(' ')\n+    const classBy = d =>\n+      ['stat-arrow', `stat-${d.sourceIndex}`, `stat-${d.targetIndex}`].join(' ')\n \n     this.statsLink = linkHorizontal() // link generator\n     this._selectClippedGroup('stats')"
+      },
+      {
+        "sha": "249906157413f90e0c4cca3f53e9303a4c6946e1",
+        "filename": "src/js/gh_file_grass/operator.js",
+        "status": "modified",
+        "additions": 37,
+        "deletions": 21,
+        "changes": 58,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fjs%2Fgh_file_grass%2Foperator.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fjs%2Fgh_file_grass%2Foperator.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Foperator.js?ref=40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "patch": "@@ -1,6 +1,6 @@\n import { select, event } from 'd3-selection'\n import { drag } from 'd3-drag'\n-import GHFileGrassBuilder from \"./builder\"\n+import GHFileGrassBuilder from './builder'\n \n export default class GHFileGrassOperator extends GHFileGrassBuilder {\n   _selectObject(keyword, index, callback) {\n@@ -31,7 +31,8 @@ export default class GHFileGrassOperator extends GHFileGrassBuilder {\n   _addFilesHandler() {\n     const mouseOver = d => this._selectFile(d.index, this._addSelected)\n     const mouseOut = d => this._selectFile(d.index, this._removeSelected)\n-    this._selectClippedGroup('files').selectAll('text')\n+    this._selectClippedGroup('files')\n+      .selectAll('text')\n       .on('mouseover', mouseOver)\n       .on('mouseout', mouseOut)\n   }\n@@ -42,7 +43,10 @@ export default class GHFileGrassOperator extends GHFileGrassBuilder {\n       this._liStr('SHA', commit.sha),\n       this._liStr('Date', commit.date),\n       this._liStr('Message', commit.message),\n-      this._liStr('Author', `${commit.author.name} &lt;${commit.author.email}&gt;`),\n+      this._liStr(\n+        'Author',\n+        `${commit.author.name} &lt;${commit.author.email}&gt;`\n+      ),\n       '</ul>'\n     ].join('')\n   }\n@@ -56,7 +60,8 @@ export default class GHFileGrassOperator extends GHFileGrassBuilder {\n       this._selectCommit(d.index, this._removeSelected)\n       this._disableTooltip()\n     }\n-    this._selectClippedGroup('commits').selectAll('text')\n+    this._selectClippedGroup('commits')\n+      .selectAll('text')\n       .on('mouseover', mouseOver)\n       .on('mouseout', mouseOut)\n   }\n@@ -73,8 +78,10 @@ export default class GHFileGrassOperator extends GHFileGrassBuilder {\n     const insRepeat = cal(ins, total)\n     const delRepeat = cal(del, total)\n     const keepRepeat = 5 - insRepeat - delRepeat\n-    const barData = {ins: insRepeat, del: delRepeat, keep: keepRepeat}\n-    return Object.keys(barData).map(key => barStr(key, barData[key])).join('')\n+    const barData = { ins: insRepeat, del: delRepeat, keep: keepRepeat }\n+    return Object.keys(barData)\n+      .map(key => barStr(key, barData[key]))\n+      .join('')\n   }\n \n   _insStr(value) {\n@@ -147,7 +154,8 @@ export default class GHFileGrassOperator extends GHFileGrassBuilder {\n         this._disableTooltip()\n       }\n     }\n-    this._selectClippedGroup('stats').selectAll('rect')\n+    this._selectClippedGroup('stats')\n+      .selectAll('rect')\n       .on('mouseover', mouseOver)\n       .on('mouseout', mouseOut)\n   }\n@@ -163,7 +171,8 @@ export default class GHFileGrassOperator extends GHFileGrassBuilder {\n         this._selectStat(statIndex, this._removeSelected)\n       })\n     }\n-    this._selectClippedGroup('stats').selectAll('path')\n+    this._selectClippedGroup('stats')\n+      .selectAll('path')\n       .on('mouseover', mouseOver)\n       .on('mouseout', mouseOut)\n   }\n@@ -184,22 +193,29 @@ export default class GHFileGrassOperator extends GHFileGrassBuilder {\n \n   _addDragToGroups() {\n     const dragged = () => {\n-      this._selectClippedGroup('commits').selectAll('text')\n-        .attr('x', d => d.px += event.dx)\n+      this._selectClippedGroup('commits')\n+        .selectAll('text')\n+        .attr('x', d => (d.px += event.dx))\n         .attr('transform', d => `rotate(-60,${d.px},${d.py})`)\n-      this._selectClippedGroup('files').selectAll('text')\n-        .attr('y', d => d.py += event.dy)\n-      this._selectClippedGroup('stats').selectAll('rect')\n-        .attr('x', d => d.px += event.dx)\n-        .attr('y', d => d.py += event.dy)\n-      this._selectClippedGroup('stats').selectAll('path')\n+      this._selectClippedGroup('files')\n+        .selectAll('text')\n+        .attr('y', d => (d.py += event.dy))\n+      this._selectClippedGroup('stats')\n+        .selectAll('rect')\n+        .attr('x', d => (d.px += event.dx))\n+        .attr('y', d => (d.py += event.dy))\n+      this._selectClippedGroup('stats')\n+        .selectAll('path')\n         .attr('d', d => {\n-          d.source[0] += event.dx; d.source[1] += event.dy\n-          d.target[0] += event.dx; d.target[1] += event.dy\n+          d.source[0] += event.dx\n+          d.source[1] += event.dy\n+          d.target[0] += event.dx\n+          d.target[1] += event.dy\n           return this.statsLink(d)\n-      })\n-      this._selectClippedGroup('files').selectAll('rect')\n-        .attr('y', d => d.py += event.dy)\n+        })\n+      this._selectClippedGroup('files')\n+        .selectAll('rect')\n+        .attr('y', d => (d.py += event.dy))\n     }\n \n     // NOTICE: insert before 'g' (group of clipped-stats)"
+      },
+      {
+        "sha": "fca74cfc96c298f4d9ad197ae35b58cc892c9cac",
+        "filename": "src/main.js",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 1,
+        "changes": 2,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fmain.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/40bc0872ef4fbf9607efafffa44f53f24c43ac93/src%2Fmain.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fmain.js?ref=40bc0872ef4fbf9607efafffa44f53f24c43ac93",
+        "patch": "@@ -4,5 +4,5 @@ import App from './App.vue'\n Vue.config.productionTip = false\n \n new Vue({\n-  render: h => h(App),\n+  render: h => h(App)\n }).$mount('#app')"
+      }
+    ]
+  }
+}

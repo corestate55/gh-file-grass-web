@@ -1,0 +1,121 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/a7fd9090f92e6f7cf2fc8547dba0e45ae8f1e531",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"c8720cbef10535ed55d7704d69fee78992e8309317a0feb3e14f2f04ff7e78a6\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4979",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "21",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "a7fd9090f92e6f7cf2fc8547dba0e45ae8f1e531",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmE3ZmQ5MDkwZjkyZTZmN2NmMmZjODU0N2RiYTBlNDVhZThmMWU1MzE=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2021-03-20T11:55:36Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2021-03-20T11:55:36Z"
+      },
+      "message": "Merge remote-tracking branch 'origin/dependabot/npm_and_yarn/highlight.js-9.18.5' into proto/ghdependabots",
+      "tree": {
+        "sha": "f3b079a8ee6e233b3019cbb8f22296caddcfb35b",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/f3b079a8ee6e233b3019cbb8f22296caddcfb35b"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/a7fd9090f92e6f7cf2fc8547dba0e45ae8f1e531",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/a7fd9090f92e6f7cf2fc8547dba0e45ae8f1e531",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/a7fd9090f92e6f7cf2fc8547dba0e45ae8f1e531",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/a7fd9090f92e6f7cf2fc8547dba0e45ae8f1e531/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "199164c7c3beba7dc4225fe9fc9de9fc5316ac81",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/199164c7c3beba7dc4225fe9fc9de9fc5316ac81",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/199164c7c3beba7dc4225fe9fc9de9fc5316ac81"
+      },
+      {
+        "sha": "ad27c23f71b3a10ed0e501b2fadd20c72be1080d",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/ad27c23f71b3a10ed0e501b2fadd20c72be1080d",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/ad27c23f71b3a10ed0e501b2fadd20c72be1080d"
+      }
+    ],
+    "stats": {
+      "total": 6,
+      "additions": 3,
+      "deletions": 3
+    },
+    "files": [
+      {
+        "sha": "0f66a6e4f41df995b504918d2f7c9828f92a5808",
+        "filename": "package-lock.json",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 3,
+        "changes": 6,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/a7fd9090f92e6f7cf2fc8547dba0e45ae8f1e531/package-lock.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/a7fd9090f92e6f7cf2fc8547dba0e45ae8f1e531/package-lock.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package-lock.json?ref=a7fd9090f92e6f7cf2fc8547dba0e45ae8f1e531",
+        "patch": "@@ -6080,9 +6080,9 @@\n       \"dev\": true\n     },\n     \"highlight.js\": {\n-      \"version\": \"9.16.2\",\n-      \"resolved\": \"https://registry.npmjs.org/highlight.js/-/highlight.js-9.16.2.tgz\",\n-      \"integrity\": \"sha512-feMUrVLZvjy0oC7FVJQcSQRqbBq9kwqnYE4+Kj9ZjbHh3g+BisiPgF49NyQbVLNdrL/qqZr3Ca9yOKwgn2i/tw==\",\n+      \"version\": \"9.18.5\",\n+      \"resolved\": \"https://registry.npmjs.org/highlight.js/-/highlight.js-9.18.5.tgz\",\n+      \"integrity\": \"sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==\",\n       \"dev\": true\n     },\n     \"hmac-drbg\": {"
+      }
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"8829486fb2b5fbbfe0422a242096078863c535be7c8fe3d4234038469c638b2e\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4937",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "63",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmRkNjMyMjBlYzg5MDNjM2E4YTIzODViNGUyYzNkNmI0N2ZjMTg4YmQ=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-11-30T14:02:34Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-11-30T14:02:34Z"
+      },
+      "message": "Refactoring and Fix bugs.",
+      "tree": {
+        "sha": "3be5e2fe727802dd41715c00f939be4c86db5b8e",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/3be5e2fe727802dd41715c00f939be4c86db5b8e"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ed47ef0557f11109697deb93d4a571e1a1d219f2",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/ed47ef0557f11109697deb93d4a571e1a1d219f2",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/ed47ef0557f11109697deb93d4a571e1a1d219f2"
+      }
+    ],
+    "stats": {
+      "total": 472,
+      "additions": 246,
+      "deletions": 226
+    },
+    "files": [
+      {
+        "sha": "aae1bf09564d02d57ceb05f2c2f472cb86dec881",
+        "filename": "bin/log_collector.rb",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 225,
+        "changes": 226,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd/bin%2Flog_collector.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd/bin%2Flog_collector.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/bin%2Flog_collector.rb?ref=dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+        "patch": "@@ -1,231 +1,7 @@\n # frozen_string_literal: true\n-\n-require 'git'\n require 'json'\n require 'optparse'\n-require_relative './git_show_parser'\n-\n-# property of a file in a log entry\n-class GitLogEntryFile\n-  def initialize(diff_file, diff_stat, diff_stat_path)\n-    @file = diff_file\n-    @stat = diff_stat\n-    @stat_path = diff_stat_path\n-    throw Error unless @stat\n-  end\n-\n-  # rubocop:disable Metrics/MethodLength\n-  def to_data\n-    {\n-      path: @file.path,\n-      mode: @file.mode,\n-      type: invert_type,\n-      src: @file.dst, # invert src/dst\n-      dst: @file.src,\n-      stat_path: @stat_path,\n-      insertions: @stat[:deletions], # invert insertions/deletions\n-      deletions: @stat[:insertions],\n-      lines: @stat[:insertions] + @stat[:deletions]\n-    }\n-  end\n-  # rubocop:enable Metrics/MethodLength\n-\n-  def insertions\n-    @stat[:deletions]\n-  end\n-\n-  def deletions\n-    @stat[:insertions]\n-  end\n-\n-  def path\n-    @file.path\n-  end\n-\n-  def type\n-    invert_type\n-  end\n-\n-  private\n-\n-  def invert_type\n-    type = @file.type\n-    return type if type == 'modified'\n-    type == 'new' ? 'deleted' : 'new'\n-  end\n-end\n-\n-# a log entry\n-class GitLogEntry\n-  def initialize(log)\n-    @log = log\n-\n-    diff = @log.diff_parent\n-    @diff_stat_total = diff.stats[:total]\n-    @diff_stat_files = diff.stats[:files]\n-\n-    @diff_files = @log.diff_parent.map do |diff_file|\n-      diff_stat_path = find_diff_stat(diff_file.path)\n-      diff_stat = @diff_stat_files[diff_stat_path]\n-      parsed_diff_stat_path = parse_moved_file(diff_stat_path)\n-      GitLogEntryFile.new(diff_file, diff_stat, parsed_diff_stat_path)\n-    end\n-    # debug_print\n-  end\n-\n-  # rubocop:disable Metrics/MethodLength\n-  def to_data\n-    {\n-      sha: @log.sha,\n-      sha_short: @log.sha[0, 7],\n-      author: {\n-        name: @log.author.name,\n-        email: @log.author.email\n-      },\n-      date: @log.date,\n-      message: @log.message,\n-      stat: {\n-        total: @diff_stat_total,\n-        files: @diff_files.map(&:to_data)\n-      }\n-    }\n-  end\n-  # rubocop:enable Metrics/MethodLength\n-\n-  private\n-\n-  def debug_print\n-    warn \"commit: #{@log.sha}\"\n-    warn \"- parents: #{@log.parents.map { |c| c.sha }}\"\n-    @diff_files.each do |file|\n-      warn \"- file: #{file.path} | #{file.type} (+#{file.insertions},-#{file.deletions})\"\n-    end\n-  end\n-\n-  def make_stats_path(path, src, dst)\n-    { path: path, src: src, dst: dst }\n-  end\n-\n-  def parse_moved_file(stats_path)\n-    if stats_path =~ /({(.+)? => (.+)?})/\n-      changed = Regexp.last_match(1)\n-      src = stats_path.sub(changed, Regexp.last_match(2) || '')\n-      dst = stats_path.sub(changed, Regexp.last_match(3) || '')\n-      make_stats_path(stats_path, src, dst)\n-    elsif stats_path =~ /(.+) => (.+)/\n-      make_stats_path(stats_path, Regexp.last_match(1), Regexp.last_match(2))\n-    else\n-      make_stats_path(stats_path, stats_path, stats_path) # dummy\n-    end\n-  end\n-\n-  def find_diff_stat(path)\n-    @diff_stat_files.each_key.find do |k|\n-      file_path = parse_moved_file(k)\n-      file_path[:src] == path\n-    end\n-  end\n-end\n-\n-# container of logs: repository level\n-class GitLog\n-  def initialize(repository, count = 5)\n-    @git = Git.open(repository)\n-    @count = count || nil\n-    @commits = make_commits\n-    @stats = make_stats\n-    @file_table = make_file_table\n-  end\n-\n-  def to_data\n-    data = to_data_without_init_commit\n-    # append initial commit data if necessary\n-    init_log = @git.log(@count).find { |log| log.parent.nil? }\n-    init_log ? merge_data(data, init_log) : data\n-  end\n-\n-  private\n-\n-  def to_data_without_init_commit\n-    {\n-      repo: @git.repo,\n-      branch: @git.branch.full,\n-      commits: reconstruct_commits,\n-      stats: @stats,\n-      files: @file_table\n-    }\n-  end\n-\n-  def merge_data(data, init_log)\n-    log_parser = GitShowParser.new(init_log.sha)\n-    merger = log_parser.to_data\n-\n-    data[:commits].concat(merger[:commits]) # append at last\n-    data[:commits].each_with_index { |c, i| c[:index] = i + 1 }\n-\n-    data[:stats].concat(merger[:stats]) # append at last\n-\n-    merger[:files].each do |tf|\n-      f2merge = data[:files].find { |f| f[:name] == tf[:name] }\n-      if f2merge\n-        f2merge[:commits].concat(tf[:commits]) # append at last\n-      else\n-        data[:files].unshift(tf)\n-      end\n-    end\n-    data[:files].each_with_index { |f, i| f[:index] = i + 1 }\n-    data\n-  end\n-\n-  def make_commits\n-    # logs(count = nil) gets all logs\n-    # NOTICE: first commit:\n-    #   ignore first commit (it doesn't have parent)\n-    #   because `diff_parent` for the log returns \"diff initial-commit current\"...\n-    commits = @git.log(@count)\n-                .select { |log| !log.parent.nil? }\n-                .map { |log| GitLogEntry.new(log).to_data }\n-    commits.each_with_index { |commit, i| commit[:index] = commits.length - i }\n-    commits\n-  end\n-\n-  def make_stats\n-    stats = @commits.map do |commit|\n-      commit[:stat][:files].map do |stat_file|\n-        stat_file[:sha_short] = commit[:sha_short]\n-        stat_file\n-      end\n-    end\n-    stats.flatten\n-  end\n-\n-  def make_file_table\n-    file_table = {}\n-    @stats.each do |stat|\n-      if file_table[stat[:path]]\n-        file_table[stat[:path]].push(stat[:sha_short])\n-      else\n-        file_table[stat[:path]] = [stat[:sha_short]]\n-      end\n-    end\n-    file_table.keys.sort.map.with_index do |file, index|\n-      {\n-        name: file,\n-        index: index + 1,\n-        commits: file_table[file]\n-      }\n-    end\n-  end\n-\n-  def reconstruct_commits\n-    # move [stat][total] to [stat_total]\n-    # and delete [stat][files] it was followed as @stats array.\n-    @commits.each do |commit|\n-      commit[:stat_total] = commit[:stat][:total] # rename\n-      commit.delete(:stat)\n-    end\n-  end\n-end\n+require_relative '../lib/git_log'\n \n # \"Usage: [bundle exec] ruby #{$0} [-r /path/to/repo-dir] [-n count]\"\n params = ARGV.getopts('r:n:p')"
+      },
+      {
+        "sha": "188b1ee9684f4a8566f0903a9396f787bfe4cb83",
+        "filename": "lib/git_log.rb",
+        "status": "added",
+        "additions": 105,
+        "deletions": 0,
+        "changes": 105,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd/lib%2Fgit_log.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd/lib%2Fgit_log.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_log.rb?ref=dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+        "patch": "@@ -0,0 +1,105 @@\n+# frozen_string_literal: true\n+\n+require 'git'\n+require_relative './git_show_parser'\n+require_relative './git_log_entry'\n+\n+# container of logs: repository level\n+class GitLog\n+  def initialize(repository, count = 5)\n+    @git = Git.open(repository)\n+    @count = count || nil\n+    @commits = make_commits\n+    @stats = make_stats\n+    @file_table = make_file_table\n+  end\n+\n+  def to_data\n+    data = to_data_without_init_commit\n+    # append initial commit data if necessary\n+    init_log = @git.log(@count).find { |log| log.parent.nil? }\n+    init_log ? merge_data(data, init_log) : data\n+  end\n+\n+  private\n+\n+  def to_data_without_init_commit\n+    {\n+      repo: @git.repo,\n+      branch: @git.branch.full,\n+      commits: reconstruct_commits,\n+      stats: @stats,\n+      files: @file_table\n+    }\n+  end\n+\n+  def merge_data(data, init_log)\n+    log_parser = GitShowParser.new(init_log.sha)\n+    merger = log_parser.to_data\n+\n+    data[:commits].concat(merger[:commits]) # append at last\n+    data[:commits].each_with_index { |c, i| c[:index] = data[:commits].length - i }\n+\n+    data[:stats].concat(merger[:stats]) # append at last\n+\n+    merger[:files].each do |tf|\n+      f2merge = data[:files].find { |f| f[:name] == tf[:name] }\n+      if f2merge\n+        f2merge[:commits].concat(tf[:commits]) # append at last\n+      else\n+        data[:files].unshift(tf)\n+      end\n+    end\n+    data[:files].each_with_index { |f, i| f[:index] = i + 1 }\n+    data\n+  end\n+\n+  def make_commits\n+    # logs(count = nil) gets all logs\n+    # NOTICE: first commit:\n+    #   ignore first commit (it doesn't have parent)\n+    #   because `diff_parent` for the log returns \"diff initial-commit current\"...\n+    commits = @git.log(@count)\n+                .select { |log| !log.parent.nil? }\n+                .map { |log| GitLogEntry.new(log).to_data }\n+    commits.each_with_index { |commit, i| commit[:index] = commits.length - i }\n+    commits\n+  end\n+\n+  def make_stats\n+    stats = @commits.map do |commit|\n+      commit[:stat][:files].map do |stat_file|\n+        stat_file[:sha_short] = commit[:sha_short]\n+        stat_file\n+      end\n+    end\n+    stats.flatten\n+  end\n+\n+  def make_file_table\n+    file_table = {}\n+    @stats.each do |stat|\n+      if file_table[stat[:path]]\n+        file_table[stat[:path]].push(stat[:sha_short])\n+      else\n+        file_table[stat[:path]] = [stat[:sha_short]]\n+      end\n+    end\n+    file_table.keys.sort.map.with_index do |file, index|\n+      {\n+        name: file,\n+        index: index + 1,\n+        commits: file_table[file]\n+      }\n+    end\n+  end\n+\n+  def reconstruct_commits\n+    # move [stat][total] to [stat_total]\n+    # and delete [stat][files] it was followed as @stats array.\n+    @commits.each do |commit|\n+      commit[:stat_total] = commit[:stat][:total] # rename\n+      commit.delete(:stat)\n+    end\n+  end\n+end"
+      },
+      {
+        "sha": "e08bcfe00f39b634d87840eb32f09ff680c7cda2",
+        "filename": "lib/git_log_entry.rb",
+        "status": "added",
+        "additions": 139,
+        "deletions": 0,
+        "changes": 139,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd/lib%2Fgit_log_entry.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd/lib%2Fgit_log_entry.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_log_entry.rb?ref=dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+        "patch": "@@ -0,0 +1,139 @@\n+# frozen_string_literal: true\n+\n+# property of a file in a log entry\n+class GitLogEntryFile\n+  def initialize(diff_file, diff_stat, diff_stat_path)\n+    @file = diff_file\n+    @stat = diff_stat\n+    @stat_path = diff_stat_path\n+    throw Error unless @stat\n+  end\n+\n+  # rubocop:disable Metrics/MethodLength\n+  def to_data\n+    {\n+      path: @file.path,\n+      mode: @file.mode,\n+      type: invert_type,\n+      src: @file.dst, # invert src/dst\n+      dst: @file.src,\n+      stat_path: @stat_path,\n+      insertions: @stat[:deletions], # invert insertions/deletions\n+      deletions: @stat[:insertions],\n+      lines: @stat[:insertions] + @stat[:deletions]\n+    }\n+  end\n+  # rubocop:enable Metrics/MethodLength\n+\n+  def insertions\n+    @stat[:deletions]\n+  end\n+\n+  def deletions\n+    @stat[:insertions]\n+  end\n+\n+  def path\n+    @file.path\n+  end\n+\n+  def type\n+    invert_type\n+  end\n+\n+  private\n+\n+  def invert_type\n+    type = @file.type\n+    return type if type == 'modified'\n+    type == 'new' ? 'deleted' : 'new'\n+  end\n+end\n+\n+# a log entry\n+class GitLogEntry\n+  def initialize(log)\n+    @log = log\n+\n+    diff = @log.diff_parent\n+    @diff_stat_total = diff.stats[:total]\n+    @diff_stat_files = diff.stats[:files]\n+    # warn \"diff_stat_files: #{@diff_stat_files}\"\n+\n+    @diff_files = @log.diff_parent.map do |diff_file|\n+      diff_stat_path = find_diff_stat(diff_file.path)\n+      diff_stat = @diff_stat_files[diff_stat_path]\n+      parsed_diff_stat_path = parse_moved_file(diff_stat_path)\n+      GitLogEntryFile.new(diff_file, diff_stat, parsed_diff_stat_path)\n+    end\n+    # debug_print\n+  end\n+\n+  # rubocop:disable Metrics/MethodLength\n+  def to_data\n+    {\n+      sha: @log.sha,\n+      sha_short: @log.sha[0, 7],\n+      author: {\n+        name: @log.author.name,\n+        email: @log.author.email\n+      },\n+      date: @log.date,\n+      message: @log.message,\n+      stat: {\n+        total: @diff_stat_total,\n+        files: @diff_files.map(&:to_data)\n+      }\n+    }\n+  end\n+  # rubocop:enable Metrics/MethodLength\n+\n+  private\n+\n+  def debug_print\n+    warn \"commit: #{@log.sha}\"\n+    warn \"- parents: #{@log.parents.map { |c| c.sha }}\"\n+    @diff_files.each do |file|\n+      warn \"- file: #{file.path} | #{file.type} (+#{file.insertions},-#{file.deletions})\"\n+    end\n+  end\n+\n+  def make_stats_path(path, src, dst)\n+    { path: path, src: src, dst: dst }\n+  end\n+\n+  def parse_moved_file(stats_path)\n+    if stats_path =~ /({(.+)? => (.+)?})/\n+      changed = Regexp.last_match(1)\n+      be_src = Regexp.last_match(2)\n+      be_dst = Regexp.last_match(3)\n+      src = stats_path.sub(changed, be_src || '')\n+      dst = stats_path.sub(changed, be_dst || '')\n+      inverted_stats_path = stats_path.sub(changed, \"{#{dst} => #{src}}\")\n+      # warn \"#{stats_path}\"\n+      # warn \"  - changed: #{changed}, #{be_src}, #{be_dst}\"\n+      # warn \"  - src: #{src}\"\n+      # warn \"  - dst: #{dst}\"\n+      # warn \"  - inverted_stats_path: #{inverted_stats_path}\"\n+      make_stats_path(inverted_stats_path, dst, src) # invert src/dst\n+      # make_stats_path(stats_path, src, dst)\n+    elsif stats_path =~ /((.+) => (.+))/\n+      changed = Regexp.last_match(1)\n+      src = Regexp.last_match(2)\n+      dst = Regexp.last_match(3)\n+      inverted_stats_path = stats_path.sub(changed, \"{#{dst} => #{src}}\")\n+      make_stats_path(inverted_stats_path, dst, src) # invert src/dst\n+      # make_stats_path(stats_path, src, dst)\n+    else\n+      make_stats_path(stats_path, stats_path, stats_path) # dummy\n+    end\n+  end\n+\n+  def find_diff_stat(path)\n+    @diff_stat_files.each_key.find do |k|\n+      file_path = parse_moved_file(k)\n+      # file_path[:src] == path\n+      file_path[:dst] == path # invert src/dst\n+    end\n+  end\n+end"
+      },
+      {
+        "sha": "49e03e643c3bb7db9440d956d42a307b983fdaed",
+        "filename": "lib/git_show_parser.rb",
+        "status": "renamed",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd/lib%2Fgit_show_parser.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd/lib%2Fgit_show_parser.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_show_parser.rb?ref=dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+        "previous_filename": "bin/git_show_parser.rb"
+      },
+      {
+        "sha": "c4931d58d39063f8f35cef75ff56283cc6e2f416",
+        "filename": "src/js/gh_file_grass/builder.js",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 1,
+        "changes": 2,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fbuilder.js?ref=dd63220ec8903c3a8a2385b4e2c3d6b47fc188bd",
+        "patch": "@@ -64,7 +64,7 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n   _isDstStatRenamed(stat) {\n     const dstStat = this._findDstStat(stat)\n     if (dstStat) {\n-      return this._isRenamedStat(dstStat)\n+      return this._isRenamedStat(dstStat) || stat.path !== dstStat.path\n     }\n     return false\n   }"
+      }
+    ]
+  }
+}

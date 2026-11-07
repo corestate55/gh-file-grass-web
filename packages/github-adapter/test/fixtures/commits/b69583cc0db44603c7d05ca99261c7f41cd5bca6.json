@@ -1,0 +1,128 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/b69583cc0db44603c7d05ca99261c7f41cd5bca6",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"19680806d187107aff776ae6f2632c3e1c9356f474f7207d80c804af81778449\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4948",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "52",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "b69583cc0db44603c7d05ca99261c7f41cd5bca6",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmI2OTU4M2NjMGRiNDQ2MDNjN2QwNWNhOTkyNjFjN2Y0MWNkNWJjYTY=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-05T12:22:18Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-05T12:22:18Z"
+      },
+      "message": "Modify tooltip and stat-arrow style.",
+      "tree": {
+        "sha": "11b79054e8b76917a47af921a147a7f96e6114e9",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/11b79054e8b76917a47af921a147a7f96e6114e9"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/b69583cc0db44603c7d05ca99261c7f41cd5bca6",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/b69583cc0db44603c7d05ca99261c7f41cd5bca6",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/b69583cc0db44603c7d05ca99261c7f41cd5bca6",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/b69583cc0db44603c7d05ca99261c7f41cd5bca6/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "1796b98682324ba7c62af881aed04f87cca028b6",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/1796b98682324ba7c62af881aed04f87cca028b6",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/1796b98682324ba7c62af881aed04f87cca028b6"
+      }
+    ],
+    "stats": {
+      "total": 25,
+      "additions": 21,
+      "deletions": 4
+    },
+    "files": [
+      {
+        "sha": "fcd3a073ebb3efb8ea3595db7afda265a7334f68",
+        "filename": "src/css/file_grass.scss",
+        "status": "modified",
+        "additions": 2,
+        "deletions": 1,
+        "changes": 3,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/b69583cc0db44603c7d05ca99261c7f41cd5bca6/src%2Fcss%2Ffile_grass.scss",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/b69583cc0db44603c7d05ca99261c7f41cd5bca6/src%2Fcss%2Ffile_grass.scss",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fcss%2Ffile_grass.scss?ref=b69583cc0db44603c7d05ca99261c7f41cd5bca6",
+        "patch": "@@ -69,10 +69,11 @@ path.stat-arrow {\n   transition: stroke .1s ease-in-out;\n \n   stroke: $base-color;\n-  stroke-width: 2pt;\n+  stroke-width: 3pt;\n   stroke-opacity: 0.5;\n   fill: none;\n   &.selected {\n+    stroke-width: 6pt;\n     stroke: $strong-stroke-color;\n   }\n }"
+      },
+      {
+        "sha": "cde0b1f2090423c85dca56bf54702b36deef5051",
+        "filename": "src/js/gh_file_grass/operator.js",
+        "status": "modified",
+        "additions": 19,
+        "deletions": 3,
+        "changes": 22,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/b69583cc0db44603c7d05ca99261c7f41cd5bca6/src%2Fjs%2Fgh_file_grass%2Foperator.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/b69583cc0db44603c7d05ca99261c7f41cd5bca6/src%2Fjs%2Fgh_file_grass%2Foperator.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Foperator.js?ref=b69583cc0db44603c7d05ca99261c7f41cd5bca6",
+        "patch": "@@ -77,24 +77,40 @@ export default class GHFileGrassOperator extends GHFileGrassBuilder {\n     return Object.keys(barData).map(key => barStr(key, barData[key])).join('')\n   }\n \n+  _insStr(value) {\n+    return `<span class=\"ins\">${value}</span>`\n+  }\n+\n+  _delStr(value) {\n+    return `<span class=\"del\">${value}</span>`\n+  }\n+\n   _liStr(key, value) {\n     return `<li><span class=\"key\">${key}:</span> ${value}</li>`\n   }\n \n+  _typeStr(value) {\n+    if (value === 'new') {\n+      return this._insStr(value)\n+    } else if (value === 'deleted') {\n+      return this._delStr(value)\n+    } else {\n+      return value\n+    }\n+  }\n   _statTooltipHtml(stat) {\n     const sp = stat.stat_path // alias\n     const movedPath = sp.src !== sp.dst ? this._liStr('Renamed', sp.path) : ''\n     const modifiedIndicator = `\n-      <li><span class=\"ins\">+${stat.insertions}</span>,\n-          <span class=\"del\">-${stat.deletions}</span>\n+      <li>+${this._insStr(stat.insertions)},-${this._delStr(stat.deletions)}\n           : ${this._statModifiedLinesBar(stat.insertions, stat.deletions)}\n       </li>`\n \n     return [\n       '<ul>',\n       this._liStr('Commit', stat.sha_short),\n       this._liStr('File', stat.path),\n-      this._liStr('Type', stat.type),\n+      this._liStr('Type', this._typeStr(stat.type)),\n       this._liStr('Index', `${stat.src}..${stat.dst} ${stat.mode}`),\n       movedPath,\n       modifiedIndicator,"
+      }
+    ]
+  }
+}

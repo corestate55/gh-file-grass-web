@@ -1,0 +1,200 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/b9955bcb98810e50013dc90057a77599cf367762",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"79e0d9a7927b21142be0439a199c9e90d26012165a5d6b6433cf802d02191eb4\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4939",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "61",
+    "x-ratelimit-resource": "core"
+  },
+  "body": {
+    "sha": "b9955bcb98810e50013dc90057a77599cf367762",
+    "node_id": "MDY6Q29tbWl0MjE5NTAwOTU5OmI5OTU1YmNiOTg4MTBlNTAwMTNkYzkwMDU3YTc3NTk5Y2YzNjc3NjI=",
+    "commit": {
+      "author": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-01T07:05:57Z"
+      },
+      "committer": {
+        "name": "corestate55",
+        "email": "manabu.hagiwara@okinawaopenlabs.org",
+        "date": "2019-12-01T07:05:57Z"
+      },
+      "message": "Add commit histogram and Fix a bug.",
+      "tree": {
+        "sha": "dd05a0b49b4034130308230346e72d46021a698d",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/trees/dd05a0b49b4034130308230346e72d46021a698d"
+      },
+      "url": "https://api.github.com/repos/corestate55/gh-file-grass/git/commits/b9955bcb98810e50013dc90057a77599cf367762",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/b9955bcb98810e50013dc90057a77599cf367762",
+    "html_url": "https://github.com/corestate55/gh-file-grass/commit/b9955bcb98810e50013dc90057a77599cf367762",
+    "comments_url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/b9955bcb98810e50013dc90057a77599cf367762/comments",
+    "author": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "corestate55",
+      "id": 20035048,
+      "node_id": "MDQ6VXNlcjIwMDM1MDQ4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20035048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/corestate55",
+      "html_url": "https://github.com/corestate55",
+      "followers_url": "https://api.github.com/users/corestate55/followers",
+      "following_url": "https://api.github.com/users/corestate55/following{/other_user}",
+      "gists_url": "https://api.github.com/users/corestate55/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/corestate55/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/corestate55/subscriptions",
+      "organizations_url": "https://api.github.com/users/corestate55/orgs",
+      "repos_url": "https://api.github.com/users/corestate55/repos",
+      "events_url": "https://api.github.com/users/corestate55/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/corestate55/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1",
+        "html_url": "https://github.com/corestate55/gh-file-grass/commit/6e3c285b79db4e26e4d32df804d75e47a6f4e0a1"
+      }
+    ],
+    "stats": {
+      "total": 88,
+      "additions": 84,
+      "deletions": 4
+    },
+    "files": [
+      {
+        "sha": "e03ea155d1a60374ff443ae3368834040cee1173",
+        "filename": "lib/git_log.rb",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 1,
+        "changes": 2,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/b9955bcb98810e50013dc90057a77599cf367762/lib%2Fgit_log.rb",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/b9955bcb98810e50013dc90057a77599cf367762/lib%2Fgit_log.rb",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/lib%2Fgit_log.rb?ref=b9955bcb98810e50013dc90057a77599cf367762",
+        "patch": "@@ -54,7 +54,7 @@ def merge_files_data(data, merger)\n       end\n     end\n     data[:files]\n-      .sort { |a, b| a[:name] <=> b[:name] }\n+      .sort! { |a, b| a[:name] <=> b[:name] }\n       .each_with_index { |f, i| f[:index] = i + 1 }\n   end\n "
+      },
+      {
+        "sha": "9dc9a0bccff6cf6f368aeccd50fd05fb2d04289c",
+        "filename": "package-lock.json",
+        "status": "modified",
+        "additions": 48,
+        "deletions": 0,
+        "changes": 48,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/b9955bcb98810e50013dc90057a77599cf367762/package-lock.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/b9955bcb98810e50013dc90057a77599cf367762/package-lock.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package-lock.json?ref=b9955bcb98810e50013dc90057a77599cf367762",
+        "patch": "@@ -3566,6 +3566,16 @@\n       \"integrity\": \"sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=\",\n       \"dev\": true\n     },\n+    \"d3-array\": {\n+      \"version\": \"2.4.0\",\n+      \"resolved\": \"https://registry.npmjs.org/d3-array/-/d3-array-2.4.0.tgz\",\n+      \"integrity\": \"sha512-KQ41bAF2BMakf/HdKT865ALd4cgND6VcIztVQZUTt0+BH3RWy6ZYnHghVXf6NFjt2ritLr8H1T8LreAAlfiNcw==\"\n+    },\n+    \"d3-color\": {\n+      \"version\": \"1.4.0\",\n+      \"resolved\": \"https://registry.npmjs.org/d3-color/-/d3-color-1.4.0.tgz\",\n+      \"integrity\": \"sha512-TzNPeJy2+iEepfiL92LAAB7fvnp/dV2YwANPVHdDWmYMm23qIJBYww3qT8I8C1wXrmrg4UWs7BKc2tKIgyjzHg==\"\n+    },\n     \"d3-dispatch\": {\n       \"version\": \"1.0.6\",\n       \"resolved\": \"https://registry.npmjs.org/d3-dispatch/-/d3-dispatch-1.0.6.tgz\",\n@@ -3598,11 +3608,36 @@\n         \"d3-dsv\": \"1\"\n       }\n     },\n+    \"d3-format\": {\n+      \"version\": \"1.4.2\",\n+      \"resolved\": \"https://registry.npmjs.org/d3-format/-/d3-format-1.4.2.tgz\",\n+      \"integrity\": \"sha512-gco1Ih54PgMsyIXgttLxEhNy/mXxq8+rLnCb5shQk+P5TsiySrwWU5gpB4zen626J4LIwBxHvDChyA8qDm57ww==\"\n+    },\n+    \"d3-interpolate\": {\n+      \"version\": \"1.4.0\",\n+      \"resolved\": \"https://registry.npmjs.org/d3-interpolate/-/d3-interpolate-1.4.0.tgz\",\n+      \"integrity\": \"sha512-V9znK0zc3jOPV4VD2zZn0sDhZU3WAE2bmlxdIwwQPPzPjvyLkd8B3JUVdS1IDUFDkWZ72c9qnv1GK2ZagTZ8EA==\",\n+      \"requires\": {\n+        \"d3-color\": \"1\"\n+      }\n+    },\n     \"d3-path\": {\n       \"version\": \"1.0.9\",\n       \"resolved\": \"https://registry.npmjs.org/d3-path/-/d3-path-1.0.9.tgz\",\n       \"integrity\": \"sha512-VLaYcn81dtHVTjEHd8B+pbe9yHWpXKZUC87PzoFmsFrJqgFwDe/qxfp5MlfsfM1V5E/iVt0MmEbWQ7FVIXh/bg==\"\n     },\n+    \"d3-scale\": {\n+      \"version\": \"3.2.1\",\n+      \"resolved\": \"https://registry.npmjs.org/d3-scale/-/d3-scale-3.2.1.tgz\",\n+      \"integrity\": \"sha512-huz5byJO/6MPpz6Q8d4lg7GgSpTjIZW/l+1MQkzKfu2u8P6hjaXaStOpmyrD6ymKoW87d2QVFCKvSjLwjzx/rA==\",\n+      \"requires\": {\n+        \"d3-array\": \"1.2.0 - 2\",\n+        \"d3-format\": \"1\",\n+        \"d3-interpolate\": \"^1.2.0\",\n+        \"d3-time\": \"1\",\n+        \"d3-time-format\": \"2\"\n+      }\n+    },\n     \"d3-selection\": {\n       \"version\": \"1.4.1\",\n       \"resolved\": \"https://registry.npmjs.org/d3-selection/-/d3-selection-1.4.1.tgz\",\n@@ -3616,6 +3651,19 @@\n         \"d3-path\": \"1\"\n       }\n     },\n+    \"d3-time\": {\n+      \"version\": \"1.1.0\",\n+      \"resolved\": \"https://registry.npmjs.org/d3-time/-/d3-time-1.1.0.tgz\",\n+      \"integrity\": \"sha512-Xh0isrZ5rPYYdqhAVk8VLnMEidhz5aP7htAADH6MfzgmmicPkTo8LhkLxci61/lCB7n7UmE3bN0leRt+qvkLxA==\"\n+    },\n+    \"d3-time-format\": {\n+      \"version\": \"2.2.2\",\n+      \"resolved\": \"https://registry.npmjs.org/d3-time-format/-/d3-time-format-2.2.2.tgz\",\n+      \"integrity\": \"sha512-pweL2Ri2wqMY+wlW/wpkl8T3CUzKAha8S9nmiQlMABab8r5MJN0PD1V4YyRNVaKQfeh4Z0+VO70TLw6ESVOYzw==\",\n+      \"requires\": {\n+        \"d3-time\": \"1\"\n+      }\n+    },\n     \"dashdash\": {\n       \"version\": \"1.14.1\",\n       \"resolved\": \"https://registry.npmjs.org/dashdash/-/dashdash-1.14.1.tgz\","
+      },
+      {
+        "sha": "ef779f41369790b967cfeb7161f02c4fdee479d5",
+        "filename": "package.json",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 0,
+        "changes": 1,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/b9955bcb98810e50013dc90057a77599cf367762/package.json",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/b9955bcb98810e50013dc90057a77599cf367762/package.json",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/package.json?ref=b9955bcb98810e50013dc90057a77599cf367762",
+        "patch": "@@ -11,6 +11,7 @@\n     \"core-js\": \"^3.3.2\",\n     \"d3-drag\": \"^1.2.5\",\n     \"d3-fetch\": \"^1.1.2\",\n+    \"d3-scale\": \"^3.2.1\",\n     \"d3-selection\": \"^1.4.1\",\n     \"d3-shape\": \"^1.3.7\",\n     \"vue\": \"^2.6.10\""
+      },
+      {
+        "sha": "c6266ff6162c8689e9a0f9a9903af108e7a86af7",
+        "filename": "src/css/file_grass.css",
+        "status": "modified",
+        "additions": 5,
+        "deletions": 1,
+        "changes": 6,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/b9955bcb98810e50013dc90057a77599cf367762/src%2Fcss%2Ffile_grass.css",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/b9955bcb98810e50013dc90057a77599cf367762/src%2Fcss%2Ffile_grass.css",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fcss%2Ffile_grass.css?ref=b9955bcb98810e50013dc90057a77599cf367762",
+        "patch": "@@ -2,7 +2,7 @@ text {\n     font-size: 10pt;\n }\n text.file-label {\n-    text-anchor: end;\n+    text-anchor: start;\n }\n \n text.commit-label {\n@@ -13,6 +13,10 @@ rect.file-life {\n     fill: lightgrey;\n }\n \n+rect.commit-hist {\n+    fill: #B7DCB7;\n+}\n+\n path {\n     stroke: limegreen;\n     stroke-width: 2pt;"
+      },
+      {
+        "sha": "9b36b0d3268804bb7b284b504ded0947c106641c",
+        "filename": "src/js/gh_file_grass.js",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 0,
+        "changes": 1,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/b9955bcb98810e50013dc90057a77599cf367762/src%2Fjs%2Fgh_file_grass.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/b9955bcb98810e50013dc90057a77599cf367762/src%2Fjs%2Fgh_file_grass.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass.js?ref=b9955bcb98810e50013dc90057a77599cf367762",
+        "patch": "@@ -4,6 +4,7 @@ export default class GHFileGrass extends GHFileGrassOperator {\n   async draw(logUrl) {\n     await this._initialize(logUrl)\n     this._makeSVGCanvas()\n+    this._makeCommitHistogram()\n     this._makeFileLabels()\n     this._makeCommitLabels()\n     this._makeFileLifeStatsRect()"
+      },
+      {
+        "sha": "3b35c64048d828a8cd28545f89af8e2a16b1d5c5",
+        "filename": "src/js/gh_file_grass/base.js",
+        "status": "modified",
+        "additions": 2,
+        "deletions": 2,
+        "changes": 4,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/b9955bcb98810e50013dc90057a77599cf367762/src%2Fjs%2Fgh_file_grass%2Fbase.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/b9955bcb98810e50013dc90057a77599cf367762/src%2Fjs%2Fgh_file_grass%2Fbase.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fbase.js?ref=b9955bcb98810e50013dc90057a77599cf367762",
+        "patch": "@@ -51,9 +51,9 @@ export default class GHFileGrassBase {\n         }\n       },\n       {\n-        keyword: 'files', px: this.px0, py: this.py0,\n+        keyword: 'files', px: 0, py: this.py0,\n         clipPath: {\n-          x: -this.px0, y: 0, width: this.px0, height: this.height1\n+          x: 0, y: 0, width: this.px0, height: this.height1\n         }\n       },\n       {"
+      },
+      {
+        "sha": "3f929514c5f3544d505eb4f591bba435b587b36d",
+        "filename": "src/js/gh_file_grass/builder.js",
+        "status": "modified",
+        "additions": 24,
+        "deletions": 0,
+        "changes": 24,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/b9955bcb98810e50013dc90057a77599cf367762/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/b9955bcb98810e50013dc90057a77599cf367762/src%2Fjs%2Fgh_file_grass%2Fbuilder.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Fbuilder.js?ref=b9955bcb98810e50013dc90057a77599cf367762",
+        "patch": "@@ -1,4 +1,5 @@\n import { linkHorizontal } from 'd3-shape'\n+import { scaleLinear } from 'd3-scale'\n import GHFileGrassBase from './base'\n \n export default class GHFileGrassBuilder extends GHFileGrassBase {\n@@ -163,4 +164,27 @@ export default class GHFileGrassBuilder extends GHFileGrassBase {\n       .append('path')\n       .attr('d', d => this.statsLink(d))\n   }\n+\n+  _makeCommitHistogram() {\n+    const commitHist = this.files.map(d => ({\n+      index: d.index,\n+      name: d.name, // for debug\n+      hist: d.commits.length\n+    }))\n+\n+    const xScale = scaleLinear()\n+      .domain([0, Math.max(...commitHist.map(d => d.hist))])\n+      .range([this.px0, this.px0 * 0.2]) // 0.2: margin left\n+\n+    this._selectClippedGroup('files')\n+      .selectAll('rect.commit-hist')\n+      .data(commitHist)\n+      .enter()\n+      .append('rect')\n+      .attr('class', d => `file-${d.index} commit-hist`)\n+      .attr('x', d => xScale(d.hist))\n+      .attr('y', d => this._py(d.index, d))\n+      .attr('width', this.px0)\n+      .attr('height', this.lc)\n+  }\n }"
+      },
+      {
+        "sha": "2ac3b8bafabd4d384f4adb31a3cd11061c7a5b2f",
+        "filename": "src/js/gh_file_grass/operator.js",
+        "status": "modified",
+        "additions": 2,
+        "deletions": 0,
+        "changes": 2,
+        "blob_url": "https://github.com/corestate55/gh-file-grass/blob/b9955bcb98810e50013dc90057a77599cf367762/src%2Fjs%2Fgh_file_grass%2Foperator.js",
+        "raw_url": "https://github.com/corestate55/gh-file-grass/raw/b9955bcb98810e50013dc90057a77599cf367762/src%2Fjs%2Fgh_file_grass%2Foperator.js",
+        "contents_url": "https://api.github.com/repos/corestate55/gh-file-grass/contents/src%2Fjs%2Fgh_file_grass%2Foperator.js?ref=b9955bcb98810e50013dc90057a77599cf367762",
+        "patch": "@@ -19,6 +19,8 @@ export default class GHFileGrassOperator extends GHFileGrassBuilder {\n           d.target[0] += event.dx; d.target[1] += event.dy\n           return this.statsLink(d)\n       })\n+      this._selectClippedGroup('files').selectAll('rect')\n+        .attr('y', d => d.py += event.dy)\n     }\n \n     this._selectGroup('stats')"
+      }
+    ]
+  }
+}

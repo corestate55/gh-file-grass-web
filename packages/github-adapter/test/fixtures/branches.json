@@ -1,0 +1,97 @@
+{
+  "url": "https://api.github.com/repos/corestate55/gh-file-grass/branches?per_page=100",
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"c51be461a4b5b8b50a0d004c1335c627e759f4c9527219e52f83a19f15d731f8\"",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4984",
+    "x-ratelimit-reset": "1794025112",
+    "x-ratelimit-used": "16",
+    "x-ratelimit-resource": "core"
+  },
+  "body": [
+    {
+      "name": "dependabot/bundler/git-1.13.0",
+      "commit": {
+        "sha": "011b61376a04df19a36b39c4f8c97abce5dbf533",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/011b61376a04df19a36b39c4f8c97abce5dbf533"
+      },
+      "protected": false
+    },
+    {
+      "name": "dependabot/npm_and_yarn/dns-packet-5.4.0",
+      "commit": {
+        "sha": "3f27c377ccbe62a2bb26b072df6454eebcb4745a",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/3f27c377ccbe62a2bb26b072df6454eebcb4745a"
+      },
+      "protected": false
+    },
+    {
+      "name": "dependabot/npm_and_yarn/http-cache-semantics-4.1.1",
+      "commit": {
+        "sha": "136d6b822dadfc38454a02b277d7e409233b9e56",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/136d6b822dadfc38454a02b277d7e409233b9e56"
+      },
+      "protected": false
+    },
+    {
+      "name": "dependabot/npm_and_yarn/json5-1.0.2",
+      "commit": {
+        "sha": "3cab33a7efb55d537f5281ed2e2794cb8f8cbcb7",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/3cab33a7efb55d537f5281ed2e2794cb8f8cbcb7"
+      },
+      "protected": false
+    },
+    {
+      "name": "dependabot/npm_and_yarn/loader-utils-1.4.2",
+      "commit": {
+        "sha": "0e3fba8ab48239f3319357863c36dea91ac17256",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/0e3fba8ab48239f3319357863c36dea91ac17256"
+      },
+      "protected": false
+    },
+    {
+      "name": "dependabot/npm_and_yarn/sideway/formula-3.0.1",
+      "commit": {
+        "sha": "ddd15e1871719db19013144284300227ee6525df",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/ddd15e1871719db19013144284300227ee6525df"
+      },
+      "protected": false
+    },
+    {
+      "name": "dependabot/npm_and_yarn/terser-5.14.2",
+      "commit": {
+        "sha": "1fd61fff70eae706f905b3e237129e0370955d5d",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/1fd61fff70eae706f905b3e237129e0370955d5d"
+      },
+      "protected": false
+    },
+    {
+      "name": "dependabot/npm_and_yarn/webpack-5.76.1",
+      "commit": {
+        "sha": "62dac618654d97425689aae9c0c6efcc1ae66fcf",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/62dac618654d97425689aae9c0c6efcc1ae66fcf"
+      },
+      "protected": false
+    },
+    {
+      "name": "develop",
+      "commit": {
+        "sha": "d64a81b2f1682444f6e61882656739a838126fa4",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/d64a81b2f1682444f6e61882656739a838126fa4"
+      },
+      "protected": false
+    },
+    {
+      "name": "master",
+      "commit": {
+        "sha": "266cba1adc257a321b14eecd8bece79ccad4d775",
+        "url": "https://api.github.com/repos/corestate55/gh-file-grass/commits/266cba1adc257a321b14eecd8bece79ccad4d775"
+      },
+      "protected": false
+    }
+  ]
+}
