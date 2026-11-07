@@ -1,6 +1,8 @@
 import {
+  AbortedError,
   EmptyRepositoryError,
   HttpError,
+  NetworkError,
   NotFoundError,
   RateLimitError,
   SecondaryRateLimitError,
@@ -131,4 +133,71 @@ export function classifyErrorResponse(
   if (status === 422 && ctx.op === 'list') return new NotFoundError('branch', status, apiMessage)
 
   return new HttpError(status, undefined, apiMessage)
+}
+
+export interface RequestOptions {
+  fetch: typeof fetch
+  /** 末尾に / を付けない */
+  baseUrl: string
+  /** エンコード済みのパス('/repos/o/r/commits') */
+  path: string
+  query?: Record<string, string | number>
+  signal?: AbortSignal | undefined
+  op: Operation
+  now: () => number
+  /** ヘッダから残量を読めたら(成功・失敗を問わず)呼ぶ */
+  onRateLimit?: (info: RateLimitInfo) => void
+}
+
+export interface JsonResponse {
+  body: unknown
+  headers: Headers
+  rateLimit: RateLimitInfo | null
+}
+
+/**
+ * GET して JSON を返す。失敗は `GitHubError` として投げる。
+ *
+ * リクエストヘッダは `Accept` だけにする。これは CORS の「単純ヘッダ」なのでプリフライト
+ * (OPTIONS)が発生しない。`X-GitHub-Api-Version` や `If-None-Match` は単純ヘッダではなく、
+ * 詳細 API は sha ごとに URL が違うため、付けると全リクエストに OPTIONS の往復が増える。
+ * ETag の再検証はブラウザの HTTP キャッシュに任せる。Authorization も付けない(未認証のみ)。
+ */
+export async function requestJson(o: RequestOptions): Promise<JsonResponse> {
+  const url = new URL(o.baseUrl + o.path)
+  for (const [k, v] of Object.entries(o.query ?? {})) url.searchParams.set(k, String(v))
+
+  const aborted = (e: unknown) => new AbortedError(o.signal?.reason ?? e)
+
+  let res: Response
+  try {
+    res = await o.fetch(url.toString(), {
+      headers: { Accept: 'application/vnd.github+json' },
+      ...(o.signal ? { signal: o.signal } : {}),
+    })
+  } catch (e) {
+    if (o.signal?.aborted) throw aborted(e)
+    throw new NetworkError(e)
+  }
+
+  const rateLimit = parseRateLimitHeaders(res.headers, o.now())
+  if (rateLimit) o.onRateLimit?.(rateLimit)
+
+  let body: unknown
+  let parsed = true
+  try {
+    body = await res.json()
+  } catch (e) {
+    if (o.signal?.aborted) throw aborted(e)
+    parsed = false
+  }
+
+  if (!res.ok) {
+    throw classifyErrorResponse(res.status, res.headers, parsed ? body : undefined, {
+      op: o.op,
+      now: o.now(),
+    })
+  }
+  if (!parsed) throw new HttpError(res.status, 'invalid response')
+  return { body, headers: res.headers, rateLimit }
 }
