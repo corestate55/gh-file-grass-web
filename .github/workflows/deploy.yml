@@ -1,5 +1,7 @@
 name: Deploy to GitHub Pages
 
+# 公開は main の更新のときだけ。開発は develop で行い、main へのマージで公開する。
+# workflow_dispatch(手動実行)も、下の各ジョブの条件により main 以外では何もしない。
 on:
   push:
     branches: [main]
@@ -18,6 +20,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -41,6 +44,7 @@ jobs:
           path: app/dist
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:
