@@ -1,9 +1,20 @@
-import { HttpError } from './errors'
+import { AbortedError, HttpError, RateLimitError } from './errors'
 import { hasNextLink, mergeRateLimit, requestJson } from './http'
 import type { JsonResponse, Operation } from './http'
 import { LruCache, TtlCache } from './cache'
+import { assertTimeZone } from './date'
+import type { GhCommitDetail } from './github-types'
 import { Semaphore } from './semaphore'
-import type { BranchInfo, BranchList, RateLimitInfo, RepoRef } from './types'
+import { toCachedDetail } from './slim-detail'
+import { ShaShortCollisionError, toGitLogData } from './to-git-log-data'
+import type {
+  BranchInfo,
+  BranchList,
+  HistoryResult,
+  Progress,
+  RateLimitInfo,
+  RepoRef,
+} from './types'
 
 export interface GitHubClientOptions {
   /** テスト用に差し替え可。既定は globalThis.fetch */
@@ -22,6 +33,22 @@ export interface GitHubClientOptions {
   listTtlMs?: number
 }
 
+export interface FetchHistoryOptions {
+  /** 直近何件か。1〜maxCount、既定 20 */
+  count?: number
+  signal?: AbortSignal
+  /** 進捗。一覧(0/1 → 1/1)のあと、詳細は命中済みの件数から始めて 1 件ごとに増える */
+  onProgress?: (p: Progress) => void
+  /** 日付の書式に使う IANA 名。省略時は実行環境の既定。不正な値は取得前に RangeError */
+  timeZone?: string
+}
+
+interface DetailEntry {
+  detail: GhCommitDetail
+  /** files が 1 ページ目で切り詰められている(Link に rel="next" があった) */
+  truncated: boolean
+}
+
 export const DEFAULT_COUNT = 20
 const DEFAULT_MAX_COUNT = 50
 const DEFAULT_CONCURRENCY = 4
@@ -36,6 +63,38 @@ const cloneRate = (r: RateLimitInfo): RateLimitInfo => ({
 })
 
 export const repoKey = (ref: RepoRef) => `${ref.owner}/${ref.repo}`.toLowerCase()
+const detailKey = (ref: RepoRef, sha: string) => `${repoKey(ref)}@${sha}`
+// ブランチ名は大文字小文字を区別する
+const listKey = (ref: RepoRef, branch: string) => `${repoKey(ref)}#${branch}`
+
+const SHA_RE = /^[0-9a-f]{40}$/
+
+function parseShaList(body: unknown): string[] {
+  if (!Array.isArray(body)) throw new HttpError(200, 'invalid response')
+  return body.map((c: { sha?: unknown } | null) => {
+    // 一覧の応答は信頼できない入力: URL に埋め込む前に形式を確認する
+    if (typeof c?.sha !== 'string' || !SHA_RE.test(c.sha)) {
+      throw new HttpError(200, 'invalid response')
+    }
+    return c.sha
+  })
+}
+
+function assertDetail(body: unknown, sha: string): GhCommitDetail {
+  const d = body as Partial<GhCommitDetail> | null
+  if (
+    typeof d !== 'object' ||
+    d === null ||
+    d.sha !== sha ||
+    !Array.isArray(d.parents) ||
+    typeof d.commit !== 'object' ||
+    d.commit === null ||
+    (d.files !== undefined && !Array.isArray(d.files))
+  ) {
+    throw new HttpError(200, 'invalid response')
+  }
+  return d as GhCommitDetail
+}
 export const repoPath = (ref: RepoRef) =>
   `/repos/${encodeURIComponent(ref.owner)}/${encodeURIComponent(ref.repo)}`
 
@@ -56,7 +115,7 @@ export class GitHubClient {
   protected readonly baseUrl: string
   protected readonly now: () => number
   protected readonly semaphore: Semaphore
-  protected readonly detailCache: LruCache<string, unknown>
+  protected readonly detailCache: LruCache<string, DetailEntry>
   protected readonly listCache: TtlCache<string, string[]>
   protected readonly branchCache: TtlCache<string, BranchList>
   #rate: RateLimitInfo | null = null
@@ -163,6 +222,171 @@ export class GitHubClient {
     const list: BranchList = { branches, hasMore: hasNextLink(res.headers.get('link')) }
     this.branchCache.set(key, list)
     return cloneBranches(list)
+  }
+
+  /**
+   * 見積もり。一覧がキャッシュにあれば、詳細の未取得件数(厳密)。無ければ 1 + count(上限値)。
+   * 消費するのは「一覧 1 + 未取得の詳細」。
+   */
+  estimateCost(
+    ref: RepoRef,
+    branch: string,
+    count = DEFAULT_COUNT,
+  ): { requests: number; exact: boolean } {
+    positiveInt('count', count, this.maxCount)
+    const shas = this.listCache.get(listKey(ref, branch))
+    if (!shas) return { requests: 1 + count, exact: false }
+    const missing = shas.slice(0, count).filter((sha) => !this.detailCache.has(detailKey(ref, sha)))
+    return { requests: missing.length, exact: true }
+  }
+
+  /**
+   * 直近 count 件の履歴を取得して GitLogData にする。
+   *
+   * 1. 引数を検証(リクエスト前。予算を使い切った後に失敗しないように)
+   * 2. 一覧を取得(TTL キャッシュ。常に per_page=maxCount で取り、先頭 count 件を使う)
+   * 3. sha_short の衝突を事前検出
+   * 4. 未取得の詳細の件数が残量を超えるなら、取得前に RateLimitError
+   * 5. 詳細を同時実行数の上限つきで取得。最初のエラーで残りを中断(取得済みはキャッシュに残る)
+   * 6. toGitLogData で変換
+   */
+  async fetchHistory(
+    ref: RepoRef,
+    branch: string,
+    opts: FetchHistoryOptions = {},
+  ): Promise<HistoryResult> {
+    const count = opts.count ?? DEFAULT_COUNT
+    positiveInt('count', count, this.maxCount)
+    if (typeof branch !== 'string' || branch === '') {
+      throw new RangeError('branch must not be empty')
+    }
+    assertTimeZone(opts.timeZone)
+    const { signal, onProgress } = opts
+    if (signal?.aborted) throw new AbortedError(signal.reason)
+
+    // 内部の中断(最初のエラー)と、呼び出し側の中断を合成する
+    const internal = new AbortController()
+    const onUserAbort = () => internal.abort(signal?.reason)
+    signal?.addEventListener('abort', onUserAbort, { once: true })
+    let finished = false
+    const progress = (p: Progress) => {
+      if (!finished) onProgress?.(p)
+    }
+    try {
+      return await this.#history(ref, branch, count, opts.timeZone, signal, internal, progress)
+    } finally {
+      finished = true
+      signal?.removeEventListener('abort', onUserAbort)
+    }
+  }
+
+  async #history(
+    ref: RepoRef,
+    branch: string,
+    count: number,
+    timeZone: string | undefined,
+    userSignal: AbortSignal | undefined,
+    internal: AbortController,
+    progress: (p: Progress) => void,
+  ): Promise<HistoryResult> {
+    // --- 一覧 ---
+    progress({ phase: 'list', done: 0, total: 1 })
+    const lk = listKey(ref, branch)
+    let shas = this.listCache.get(lk)
+    if (!shas) {
+      const res = await this.request('list', `${repoPath(ref)}/commits`, {
+        query: { sha: branch, per_page: this.maxCount },
+        signal: internal.signal,
+      })
+      shas = parseShaList(res.body)
+      this.listCache.set(lk, shas)
+    }
+    progress({ phase: 'list', done: 1, total: 1 })
+    const use = shas.slice(0, count)
+
+    // --- sha_short の衝突は、詳細を取得する前に検出する ---
+    const seen = new Set<string>()
+    for (const sha of use) {
+      const short = sha.slice(0, 7)
+      if (seen.has(short)) throw new ShaShortCollisionError(short)
+      seen.add(short)
+    }
+
+    // --- キャッシュ命中と未取得 ---
+    const entries = new Map<string, DetailEntry>()
+    for (const sha of use) {
+      const hit = this.detailCache.get(detailKey(ref, sha))
+      if (hit) entries.set(sha, hit)
+    }
+    const missing = use.filter((sha) => !entries.has(sha))
+
+    // --- 残量の事前チェック(needed === remaining は通す) ---
+    if (missing.length > 0) {
+      let rate = this.rateSnapshot()
+      if (!rate || this.now() >= rate.resetAt.getTime()) {
+        await this.fetchRateLimit({ signal: internal.signal }) // 枠を消費しない
+        rate = this.rateSnapshot()
+      }
+      if (rate && missing.length > rate.remaining) {
+        throw new RateLimitError({
+          reason: 'insufficient',
+          limit: rate.limit,
+          remaining: rate.remaining,
+          resetAt: new Date(rate.resetAt),
+          needed: missing.length,
+        })
+      }
+    }
+
+    // --- 詳細(並列。最初のエラーで残りを中断) ---
+    let done = use.length - missing.length
+    progress({ phase: 'detail', done, total: use.length })
+
+    let firstError: unknown
+    const fail = (e: unknown) => {
+      if (firstError === undefined) {
+        firstError = e
+        internal.abort(e)
+      }
+    }
+    const fetchOne = async (sha: string) => {
+      let release: (() => void) | undefined
+      try {
+        release = await this.semaphore.acquire(internal.signal)
+        const res = await this.request('detail', `${repoPath(ref)}/commits/${sha}`, {
+          signal: internal.signal,
+        })
+        const detail = assertDetail(res.body, sha)
+        const entry: DetailEntry = {
+          detail: toCachedDetail(detail),
+          truncated: hasNextLink(res.headers.get('link')),
+        }
+        this.detailCache.set(detailKey(ref, sha), entry)
+        entries.set(sha, entry)
+        done++
+        progress({ phase: 'detail', done, total: use.length })
+      } catch (e) {
+        fail(e) // 2 件目以降(兄弟の中断を含む)は捨てられる
+      } finally {
+        release?.()
+      }
+    }
+    await Promise.allSettled(missing.map(fetchOne))
+
+    if (userSignal?.aborted) throw new AbortedError(userSignal.reason)
+    if (firstError !== undefined) throw firstError
+
+    // --- 変換 ---
+    const commits = use.map((sha) => entries.get(sha)!.detail)
+    const truncatedShas = new Set(use.filter((sha) => entries.get(sha)!.truncated))
+    const { data, warnings } = toGitLogData({
+      ref,
+      branch,
+      commits,
+      ...(timeZone === undefined ? {} : { timeZone }),
+      truncatedShas,
+    })
+    return { data, warnings, rateLimit: this.lastRateLimit }
   }
 }
 
