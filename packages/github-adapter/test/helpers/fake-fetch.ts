@@ -49,7 +49,13 @@ const kindOf = (path: string): Call['kind'] => {
  */
 export function createFakeFetch(options: FakeFetchOptions = {}) {
   const limit = options.limit ?? 60
-  const server = { remaining: options.remaining ?? limit, hold: options.hold ?? false, limit }
+  // reset: 現在の窓の終了時刻(epoch 秒)。新しい窓を再現するときはテストで進める
+  const server = {
+    remaining: options.remaining ?? limit,
+    hold: options.hold ?? false,
+    limit,
+    reset: RESET_EPOCH,
+  }
   const details = new Map((options.details ?? loadDetails()).map((d) => [d.sha, d]))
   const list = fixtureBody('commits-list.json') as { sha: string }[]
   const branches = fixtureBody('branches.json')
@@ -63,7 +69,7 @@ export function createFakeFetch(options: FakeFetchOptions = {}) {
   const rateHeaders = (): Record<string, string> => ({
     'x-ratelimit-limit': String(limit),
     'x-ratelimit-remaining': String(server.remaining),
-    'x-ratelimit-reset': String(RESET_EPOCH),
+    'x-ratelimit-reset': String(server.reset),
     'x-ratelimit-used': String(limit - server.remaining),
     'x-ratelimit-resource': 'core',
   })
@@ -78,11 +84,11 @@ export function createFakeFetch(options: FakeFetchOptions = {}) {
       const core = {
         limit,
         remaining: server.remaining,
-        reset: RESET_EPOCH,
+        reset: server.reset,
         used: limit - server.remaining,
       }
       return json({
-        resources: { core, search: { limit: 10, remaining: 10, reset: RESET_EPOCH } },
+        resources: { core, search: { limit: 10, remaining: 10, reset: server.reset } },
         rate: core,
       })
     }
