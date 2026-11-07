@@ -23,6 +23,8 @@
 - **Step 0 完了(2026-11-07)**: トークン(fine-grained PAT、`(a local file)`、期限 2026-11-07 15:00 UTC)をローカルでのみ使用して録画。結果は `packages/github-adapter/test/fixtures/NOTES.md`。DESIGN.md に反映済み(④のみ設計訂正、未決 1・2 確定)。
 - トークンは用途終了。**ユーザーが GitHub 上で Revoke する**こと。リポジトリには一切含めていない。
 - `git init` 済み。
+- **Step 1 完了**(モノレポ雛形・CI)、**Step 2 完了**(`packages/core/src/schema.ts` に型と `assertInvariants`、`packages/core/test/fixtures/logs.json` を基準に検証)。
+- トークンはユーザーが Revoke 済み。
 
 ## 未確定
 
@@ -31,7 +33,7 @@
 
 ## 次にやること
 
-1. Step 1(モノレポ雛形と CI)→ Step 2 → … → Step 8 を小さな単位で進める(DESIGN.md 5 章)。
+1. Step 3(core を TS へ移植、挙動不変)→ … → Step 8 を小さな単位で進める(DESIGN.md 5 章)。
 
 ## 参照資料(元リポジトリ。読み取り専用で扱うこと。書き換えない)
 
