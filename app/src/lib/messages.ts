@@ -104,3 +104,23 @@ export const statusMessages = {
     `For ${n} ${n === 1 ? 'commit' : 'commits'}, the source of some changes is outside the fetched range, so some arrows are not drawn.`,
   showCommits: (n: number) => `Show ${n === 1 ? 'commit' : 'commits'}`,
 } as const
+
+export const appMessages = {
+  title: 'gh-file-grass',
+  tagline: "See which files changed in a public GitHub repository's latest commits.",
+  intro:
+    'Everything runs in your browser with the unauthenticated GitHub API (60 requests per hour). ' +
+    'Loading the branches uses 1 request. Showing N commits uses up to N + 1 more; commits fetched before are reused.',
+  show: 'Show',
+  cancel: 'Cancel',
+  resultHeading: (repo: string, branch: string, commits: number) =>
+    `${repo} @ ${branch} — ${commits} ${commits === 1 ? 'commit' : 'commits'}`,
+  estimateUpTo: (requests: number, remaining: number | null) =>
+    remaining === null
+      ? `Uses up to ${requests} requests`
+      : `Uses up to ${requests} requests (${remaining} left)`,
+  estimateExact: (requests: number) =>
+    `Uses ${requests} ${requests === 1 ? 'request' : 'requests'}`,
+  estimateCached: 'Already fetched: uses no requests',
+  updating: 'Updating…',
+} as const
