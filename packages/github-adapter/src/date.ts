@@ -1,7 +1,8 @@
 const formatters = new Map<string, Intl.DateTimeFormat>()
 
 function formatterFor(timeZone: string | undefined): Intl.DateTimeFormat {
-  const key = timeZone ?? ''
+  // undefined(実行環境の既定)と空文字を区別する
+  const key = timeZone === undefined ? 'default' : `tz:${timeZone}`
   let f = formatters.get(key)
   if (!f) {
     // 不正な timeZone は RangeError をそのまま投げる(呼び出し側のバグ)
@@ -48,4 +49,9 @@ export function formatGitDate(iso: string, timeZone?: string): string {
     `${pad(year, 4)}-${pad(month)}-${pad(day)} ${pad(hour)}:${pad(minute)}:${pad(second)} ` +
     `${sign}${pad(Math.floor(abs / 60))}${pad(abs % 60)}`
   )
+}
+
+/** timeZone が不正なら RangeError。リクエストを送る前に呼び出し側のバグを検出するために使う */
+export function assertTimeZone(timeZone?: string): void {
+  formatterFor(timeZone)
 }
