@@ -12,9 +12,11 @@ import { useHistoryLoader } from './composables/useHistoryLoader'
 import { pickDefaultBranch } from './lib/branches'
 import { HISTORY_CLIENT } from './lib/client'
 import { appMessages as t } from './lib/messages'
+import { formatClock } from './lib/format'
 import { resolveTimeZone } from './lib/timezone'
 
 const DEFAULT_COUNT = 20
+const MAX_COUNT = 50
 const CLOCK_INTERVAL_MS = 30_000
 
 const client = inject(HISTORY_CLIENT)
@@ -50,6 +52,19 @@ const estimateText = computed(() => {
   if (!e) return ''
   if (!e.exact) return t.estimateUpTo(e.requests, rateLimit.value?.remaining ?? null)
   return e.requests === 0 ? t.estimateCached : t.estimateExact(e.requests)
+})
+
+// いまの残量で取得できる最大件数(分からないときは null)。警告とエラー文言に使う
+const affordable = computed(() =>
+  branch.value === null ? null : loader.maxAffordableCount(branch.value, now.value, MAX_COUNT),
+)
+// 押す前の警告: 見積もりが残量を超えている(見積もりは上限値なので、押せなくはしない)
+const quotaWarning = computed(() => {
+  const e = estimate.value
+  const rl = rateLimit.value
+  const a = affordable.value
+  if (!e || !rl || a === null || count.value === null || e.requests <= rl.remaining) return ''
+  return t.quotaShort(count.value, e.requests, e.exact, rl.remaining, a, formatClock(rl.resetAt))
 })
 
 // 枠が尽きていて、まだリセットされず、新しい取得が必要なら押せない。
@@ -122,12 +137,18 @@ watch(result, () => {
           {{ t.cancel }}
         </button>
         <p v-if="estimateText" class="estimate">{{ estimateText }}</p>
+        <p v-if="quotaWarning" class="quota-warning" role="status">{{ quotaWarning }}</p>
       </form>
 
       <ProgressBar :active="loadingHistory" :progress="progress" />
     </section>
 
-    <ErrorBanner :error="displayedError" :rate-limit="rateLimit" :now="now" />
+    <ErrorBanner
+      :error="displayedError"
+      :rate-limit="rateLimit"
+      :now="now"
+      :affordable-count="affordable"
+    />
 
     <main class="result-area" :aria-busy="loadingHistory">
       <template v-if="result">
@@ -201,6 +222,15 @@ body {
   align-self: center;
   font-size: 0.9rem;
   color: #57606a;
+}
+.quota-warning {
+  flex-basis: 100%;
+  margin: 0;
+  padding: 0.4rem 0.75rem;
+  border-left: 4px solid #e8c766;
+  background: #fffbea;
+  color: #5b4300;
+  font-size: 0.9rem;
 }
 .result-area {
   display: flex;

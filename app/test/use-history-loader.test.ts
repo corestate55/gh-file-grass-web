@@ -413,3 +413,72 @@ describe('estimate', () => {
     expect(loader.estimate('main', 20)).toEqual({ requests: 21, exact: false })
   })
 })
+
+describe('maxAffordableCount', () => {
+  const NOW = Date.UTC(2026, 10, 7, 12, 0, 0)
+  const RESET = Date.UTC(2026, 10, 7, 13, 0, 0)
+
+  async function withQuota(remaining: number | null) {
+    const ctx = setup()
+    await ready(ctx.fake, ctx.loader)
+    if (remaining !== null) {
+      ctx.fake.state.rate = rateInfo(remaining, RESET)
+      await ctx.loader.refreshRateLimit()
+    }
+    return ctx
+  }
+
+  test('null while the quota has never been observed', async () => {
+    const { loader } = await withQuota(null)
+    expect(loader.maxAffordableCount('main', NOW, 50)).toBeNull()
+  })
+
+  test('null once the window has reset (the old number says nothing)', async () => {
+    const { loader } = await withQuota(3)
+    expect(loader.maxAffordableCount('main', RESET, 50)).toBeNull()
+    expect(loader.maxAffordableCount('main', RESET + 1, 50)).toBeNull()
+  })
+
+  test('with an upper-bound estimate (1 + count) the list request is counted', async () => {
+    const { loader } = await withQuota(10)
+    expect(loader.maxAffordableCount('main', NOW, 50)).toBe(9)
+  })
+
+  test('with exact estimates (list already cached) it is the remaining quota', async () => {
+    const { fake, loader } = await withQuota(10)
+    fake.state.estimate = (_r, _b, count) => ({ requests: count, exact: true })
+    // the estimate is read through cacheVersion; a load bumps it
+    const p = loader.loadHistory('main', 5)
+    fake.historyCalls[0]!.resolve(historyResult())
+    await p
+    expect(loader.maxAffordableCount('main', NOW, 50)).toBe(10)
+  })
+
+  test('cached commits do not cost anything', async () => {
+    const { fake, loader } = await withQuota(4)
+    // the newest 30 are cached: only commits beyond them cost a request each
+    fake.state.estimate = (_r, _b, count) => ({ requests: Math.max(0, count - 30), exact: true })
+    const p = loader.loadHistory('main', 5)
+    fake.historyCalls[0]!.resolve(historyResult())
+    await p
+    expect(loader.maxAffordableCount('main', NOW, 50)).toBe(34)
+  })
+
+  test('everything is affordable: the maximum', async () => {
+    const { loader } = await withQuota(60)
+    expect(loader.maxAffordableCount('main', NOW, 50)).toBe(50)
+  })
+
+  test('zero: not even one commit can be fetched', async () => {
+    const { loader } = await withQuota(1) // list (1) + 1 commit = 2 > 1
+    expect(loader.maxAffordableCount('main', NOW, 50)).toBe(0)
+  })
+
+  test('null when the client cannot estimate', async () => {
+    const { fake, loader } = await withQuota(10)
+    fake.state.estimate = () => {
+      throw new RangeError('bad')
+    }
+    expect(loader.maxAffordableCount('main', NOW, 50)).toBeNull()
+  })
+})

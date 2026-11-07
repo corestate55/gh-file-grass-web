@@ -10,6 +10,7 @@ const props = defineProps<{
   rateLimit: RateLimitInfo | null
   now: number
   formatTime?: (d: Date) => string
+  affordableCount?: number | null
 }>()
 
 const described = computed(() =>
@@ -19,6 +20,7 @@ const described = computed(() =>
         rateLimit: props.rateLimit,
         now: props.now,
         ...(props.formatTime ? { formatTime: props.formatTime } : {}),
+        affordableCount: props.affordableCount ?? null,
       }),
 )
 </script>

@@ -27,6 +27,8 @@ export interface DescribeContext {
   now: number
   /** 時刻の表示。省略時はブラウザのロケール */
   formatTime?: (d: Date) => string
+  /** いまの残量で取得できる最大件数(分かるとき)。残量不足の文言に添える */
+  affordableCount?: number | null
 }
 
 /**
@@ -60,7 +62,12 @@ export function describeError(err: unknown, ctx: DescribeContext): DescribedErro
   if (err instanceof RateLimitError) {
     return withApi(
       err.reason === 'insufficient'
-        ? m.quotaInsufficient(err.needed ?? 0, err.remaining, time(err.resetAt))
+        ? m.quotaInsufficient(
+            err.needed ?? 0,
+            err.remaining,
+            time(err.resetAt),
+            ctx.affordableCount,
+          )
         : m.rateLimited(time(err.resetAt)),
     )
   }

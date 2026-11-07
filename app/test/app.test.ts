@@ -271,6 +271,76 @@ describe('estimate and the Show button', () => {
   })
 })
 
+describe('quota warning before pressing Show', () => {
+  async function withQuota(remaining: number) {
+    const fake = createFakeClient()
+    fake.state.rateLimitResult = rateInfo(remaining, RESET)
+    const w = mountApp(fake)
+    await flushPromises()
+    await loadBranches(w, fake)
+    return { fake, w }
+  }
+  const warning = (w: VueWrapper) => w.find('.quota-warning')
+
+  test('shows how many commits can be fetched now when the estimate exceeds the quota', async () => {
+    const { w } = await withQuota(10) // 20 commits: up to 21 requests
+    expect(warning(w).text()).toMatch(
+      /^Not enough quota for 20 commits: it needs up to 21 requests but 10 are left\. You can fetch up to 9 now, or wait until .+\.$/,
+    )
+    expect(warning(w).attributes('role')).toBe('status')
+    // advisory: the button is still usable (the estimate is only an upper bound)
+    expect(isDisabled(showButton(w))).toBe(false)
+  })
+
+  test('disappears as soon as the count fits', async () => {
+    const { w } = await withQuota(10)
+    expect(warning(w).exists()).toBe(true)
+    await typeCount(w, '9')
+    expect(warning(w).exists()).toBe(false)
+    await typeCount(w, '10')
+    expect(warning(w).exists()).toBe(true)
+  })
+
+  test('no warning when the quota is plentiful', async () => {
+    const { w } = await withQuota(60)
+    expect(warning(w).exists()).toBe(false)
+  })
+
+  test('no warning while the quota is unknown', async () => {
+    const fake = createFakeClient()
+    const w = mountApp(fake)
+    await loadBranches(w, fake)
+    expect(warning(w).exists()).toBe(false)
+  })
+
+  test('nothing can be fetched: says to wait', async () => {
+    const { w } = await withQuota(1)
+    expect(warning(w).text()).toMatch(
+      /^Not enough quota to fetch anything new \(1 left\)\. Wait until .+\.$/,
+    )
+  })
+
+  test('an exact estimate is worded without "up to"', async () => {
+    const fake = createFakeClient()
+    fake.state.rateLimitResult = rateInfo(3, RESET)
+    fake.state.estimate = (_r, _b, count) => ({ requests: count, exact: true })
+    const w = mountApp(fake)
+    await flushPromises()
+    await loadBranches(w, fake)
+    expect(warning(w).text()).toContain('it needs 20 requests but 3 are left')
+    expect(warning(w).text()).toContain('You can fetch up to 3 now')
+  })
+
+  test('after the window resets the warning is gone (the old quota is stale)', async () => {
+    const { w } = await withQuota(10)
+    expect(warning(w).exists()).toBe(true)
+    vi.setSystemTime(RESET + 1)
+    vi.advanceTimersByTime(30_000)
+    await flushPromises()
+    expect(warning(w).exists()).toBe(false)
+  })
+})
+
 describe('showing a history', () => {
   test('runs the fetch with the chosen branch and count, shows progress, then the result', async () => {
     const fake = createFakeClient()
@@ -480,6 +550,28 @@ describe('error messages', () => {
     )
     expect(alertText(w)).toContain('Not enough API quota left.')
     expect(alertText(w)).toContain('20 requests are needed but 9 remain')
+  })
+
+  test('not enough quota names the largest count that works now', async () => {
+    const fake = createFakeClient()
+    fake.state.estimate = (_r, _b, count) => ({ requests: count, exact: true })
+    const w = mountApp(fake)
+    await loadBranches(w, fake)
+    await show(w)
+    fake.state.rate = rateInfo(10, RESET) // observed after the list request
+    fake.historyCalls[0]!.reject(
+      new RateLimitError({
+        reason: 'insufficient',
+        limit: 60,
+        remaining: 10,
+        resetAt: new Date(RESET),
+        needed: 20,
+      }),
+    )
+    await flushPromises()
+    expect(alertText(w)).toContain('About 20 requests are needed but 10 remain.')
+    expect(alertText(w)).toContain('Up to 10 commits can be fetched now, or wait until')
+    expect(alertText(w)).not.toContain('Reduce the number')
   })
 
   test('rate limit reached', async () => {

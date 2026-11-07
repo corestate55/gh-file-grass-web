@@ -38,6 +38,11 @@ export interface HistoryLoader {
   loadHistory(branch: string, count: number): Promise<void>
   cancel(): void
   estimate(branch: string, count: number): { requests: number; exact: boolean } | null
+  /**
+   * いまの残量で取得できる最大件数(1〜maxCount)。0 は「新しい取得は 1 件もできない」。
+   * 残量が未観測、または窓がリセット済み(now >= resetAt)のときは null(判断できない)。
+   */
+  maxAffordableCount(branch: string, now: number, maxCount: number): number | null
   refreshRateLimit(): Promise<void>
 }
 
@@ -178,6 +183,18 @@ export function useHistoryLoader(
     }
   }
 
+  function maxAffordableCount(branch: string, now: number, maxCount: number): number | null {
+    const rl = rateLimit.value
+    if (!rl || now >= rl.resetAt.getTime()) return null
+    // 見積もりは件数に対して単調に増えるので、大きい方から探す
+    for (let count = maxCount; count >= 1; count--) {
+      const e = estimate(branch, count)
+      if (e === null) return null
+      if (e.requests <= rl.remaining) return count
+    }
+    return 0
+  }
+
   async function refreshRateLimit(): Promise<void> {
     try {
       await client.fetchRateLimit()
@@ -204,6 +221,7 @@ export function useHistoryLoader(
     loadHistory,
     cancel,
     estimate,
+    maxAffordableCount,
     refreshRateLimit,
   }
 }

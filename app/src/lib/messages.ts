@@ -39,9 +39,21 @@ export const errorMessages = {
     title: 'GitHub API rate limit reached.',
     detail: `Unauthenticated requests are limited to 60 per hour. The limit resets at ${resetAt}.`,
   }),
-  quotaInsufficient: (needed: number, remaining: number, resetAt: string): ErrorText => ({
+  quotaInsufficient: (
+    needed: number,
+    remaining: number,
+    resetAt: string,
+    // いま取得できる最大件数(分かるときだけ)
+    affordable?: number | null,
+  ): ErrorText => ({
     title: 'Not enough API quota left.',
-    detail: `About ${needed} requests are needed but ${remaining} remain. Reduce the number of commits, or wait until ${resetAt}.`,
+    detail:
+      `About ${needed} requests are needed but ${remaining} remain. ` +
+      (affordable == null
+        ? `Reduce the number of commits, or wait until ${resetAt}.`
+        : affordable > 0
+          ? `Up to ${affordable} ${affordable === 1 ? 'commit' : 'commits'} can be fetched now, or wait until ${resetAt}.`
+          : `Wait until ${resetAt}.`),
   }),
   secondaryRateLimited: (retryAt: string, seconds: number): ErrorText => ({
     title: 'Too many requests in a short time.',
@@ -122,5 +134,17 @@ export const appMessages = {
   estimateExact: (requests: number) =>
     `Uses ${requests} ${requests === 1 ? 'request' : 'requests'}`,
   estimateCached: 'Already fetched: uses no requests',
+  quotaShort: (
+    count: number,
+    requests: number,
+    exact: boolean,
+    remaining: number,
+    affordable: number,
+    resetAt: string,
+  ) =>
+    affordable > 0
+      ? `Not enough quota for ${count} ${count === 1 ? 'commit' : 'commits'}: it needs ${exact ? '' : 'up to '}${requests} requests but ${remaining} are left. ` +
+        `You can fetch up to ${affordable} now, or wait until ${resetAt}.`
+      : `Not enough quota to fetch anything new (${remaining} left). Wait until ${resetAt}.`,
   updating: 'Updating…',
 } as const

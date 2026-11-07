@@ -102,6 +102,42 @@ describe('describeError: rate limits', () => {
     expect(e.detail).toContain(`T${30 * 60_000}`)
   })
 
+  describe('insufficient quota with the number of commits that can still be fetched', () => {
+    const insufficient = () =>
+      new RateLimitError({
+        reason: 'insufficient',
+        limit: 60,
+        remaining: 10,
+        resetAt: RESET,
+        needed: 20,
+      })
+    const detailWith = (affordableCount?: number | null) =>
+      describeError(insufficient(), { rateLimit: null, now: NOW, formatTime, affordableCount })!
+        .detail!
+
+    test('tells how many commits can be fetched now', () => {
+      expect(detailWith(10)).toBe(
+        `About 20 requests are needed but 10 remain. Up to 10 commits can be fetched now, or wait until T${30 * 60_000}.`,
+      )
+    })
+
+    test('singular', () => {
+      expect(detailWith(1)).toContain('Up to 1 commit can be fetched now')
+    })
+
+    test('nothing can be fetched: only waiting helps', () => {
+      expect(detailWith(0)).toBe(
+        `About 20 requests are needed but 10 remain. Wait until T${30 * 60_000}.`,
+      )
+    })
+
+    test('unknown: the generic advice', () => {
+      for (const unknown of [null, undefined]) {
+        expect(detailWith(unknown)).toContain('Reduce the number of commits, or wait until')
+      }
+    })
+  })
+
   test('secondary rate limit shows when to retry', () => {
     const retryAt = new Date(NOW + 45_000)
     const e = describe_(new SecondaryRateLimitError(45, retryAt, 403))!
