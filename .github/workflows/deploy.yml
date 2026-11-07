@@ -1,0 +1,51 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# GitHub Pages へのデプロイに必要な最小限の権限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時に 1 つだけデプロイする。進行中のデプロイは中断しない
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # 公開前に最低限の検査をする(PR 用の ci.yml と同じ内容)
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - uses: actions/configure-pages@v5
+        id: pages
+      - run: npm run build
+        env:
+          # リポジトリ名や独自ドメインに合わせた公開パス(例: /gh-file-grass-web/)
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

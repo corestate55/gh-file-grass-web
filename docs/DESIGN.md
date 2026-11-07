@@ -382,7 +382,15 @@ export function toGitLogData(input: {
 - プリフライト(OPTIONS)に対し GitHub は 204 で `access-control-allow-headers` に `X-GitHub-Api-Version` を含め、`access-control-max-age: 86400` を返す。つまり `X-GitHub-Api-Version` を付けても動くが、`Accept` のみなら OPTIONS 自体が不要。
 - 応答は `cache-control: public, max-age=60` と `etag` を持つ → ブラウザキャッシュ由来の応答は古い `X-RateLimit-*` を持ち得る(畳み込み規則で対処済み)。
 
-**【未確認】ブラウザ(DevTools)での確認が必要**: ①プリフライトが出ないこと(Network で `api.github.com` に OPTIONS が無い)、③ 403(レート制限)・5xx 応答に CORS ヘッダが付くか(付かない場合は `NetworkError` に見える。直前の残量が 0 ならレート制限として表示する対処は `describeError` に実装済み。403 の再現には 60 回を使い切る必要があり、利用者の IP の 1 時間分の枠を消費するため未実施)、④ 300 ファイル超の実コミットでの警告表示(仕組みは確認済み)。手順は HANDOVER.md。
+**実ブラウザ(ヘッドレス Chrome 155、ビルド成果物を `vite preview` で配信)で確認(2026-11-07)**:
+
+- ① **プリフライトは出ない**: `api.github.com` へのリクエストは GET のみ(`/rate_limit`、`/branches`、`/commits`)。OPTIONS は 0 件。送信ヘッダは `Accept` とブラウザ管理のもののみ。
+- ③ **403(レート制限)も読める**: 枠が尽きた状態の 403 で `status`、`x-ratelimit-remaining: 0`、`x-ratelimit-reset`、本文を JS から読めた(`access-control-allow-origin: *`)。NetworkError には見えない。`describeError` の「network かつ残量 0 ならレート制限として表示」は保険として残す。5xx は確認できていない。
+- 通しの動作(API は録画 fixture でモック): ブランチ読み込み → 選択 → 件数 40 → Enter で実行 → グラフ・警告・見出し・キャプション、ページエラー 0。
+- ツールチップ(実レイアウト、実マウス): 下端のセルでは上に開き(`above`)コンテナ内に収まる / 右端でも収まる / 400 文字超のメッセージは省略され 28rem で折り返す / どの場合も縦横のスクロールバーなし / 隠した後も 0,0 に戻りスクロール領域に影響しない。
+- 残量が尽きている状態(実 API): 押す前の警告「Not enough quota to fetch anything new (0 left). Wait until …」が出て Show が無効になる。
+
+**【未確認】**: 300 ファイル超の実コミットでの警告表示(仕組みは curl で確認済み)、5xx の CORS、見た目の最終確認(利用者の目)。
 
 ## 8. 未決事項(状況は HANDOVER.md 参照)
 
