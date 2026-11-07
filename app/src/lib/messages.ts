@@ -65,3 +65,9 @@ export const errorMessages = {
     detail: message,
   }),
 } as const
+
+export const viewMessages = {
+  noChanges: 'No file changes in the selected range.',
+  caption: (repo: string, branch: string, commits: number, files: number) =>
+    `${repo} @ ${branch}: ${commits} ${commits === 1 ? 'commit' : 'commits'}, ${files} ${files === 1 ? 'file' : 'files'}. Hover over cells for details.`,
+} as const
