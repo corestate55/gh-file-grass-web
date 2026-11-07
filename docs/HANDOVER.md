@@ -31,6 +31,10 @@
 - **Step 6 完了**: `parseRepoInput`(https のみ)、`GitHubClient`(`fetchBranches` / `fetchHistory` / `fetchRateLimit` / `estimateCost` / `lastRateLimit`)、`GitHubError` 階層、セマフォ・LRU/TTL キャッシュ。architect の計画に従い、判断事項は推奨どおり(`ssh`/`git@`/`http` は不可に変更)。fake fetch(fixture 再生。残量を消費し、0 で 403)で N+1 / 同時 ≤4 / キャッシュ / 残量不足 / 中断 / 最初のエラー等を検証し、64 件の統合テストで `toGitLogData` の結果と一致を確認。詳細は DESIGN 4.5・7.7。
   - Step 7 への引き継ぎ: app は 1 ページにつき `GitHubClient` を 1 インスタンス作る。`timeZone` は `Intl.DateTimeFormat().resolvedOptions().timeZone`(または省略)を渡す。default ブランチは main → master → 先頭。`fetchBranches` の `hasMore` で「100 件超は表示されない」旨を出す。入力変更で前の取得を `AbortController` で中断(`aborted` は表示しない)。`apiMessage` は v-html 禁止。
   - **Step 7 の手動確認項目(ブラウザ)**: DevTools でプリフライト(OPTIONS)が出ないこと、未認証でも必要なフィールドが揃うこと、403/5xx 応答の CORS、300 ファイル超コミットの `Link`(DESIGN 7.7)。
+- **Step 7 完了(実装)**: `app/` に Vite + Vue 3 + vue-tsc の SPA。`App.vue`、コンポーネント 8 つ(`WarningList` を追加)、`useHistoryLoader`、`describeError` ほか。architect の計画に従い、判断事項は推奨どおり(英語 UI、`vue-tsc -b`、`prebuild` で `style.css`、CI に `build`)。curl で確認できた GitHub の挙動は DESIGN 7.8。
+  - 実装中に見つけて直したもの: 実行中にブランチを変えられない UI(select を無効化していた)、リアクティブな Proxy を core に渡すと `DataCloneError`(`toRaw` で解決)、テンプレート先頭のコメントでルートがフラグメントになり属性が落ちる。
+  - 開発: `npm run dev -w @gh-file-grass/app`(`predev` が core の CSS を生成)、`npm run build && npm run preview -w @gh-file-grass/app` → http://localhost:4173/gh-file-grass-web/
+  - **ブラウザでの確認(ユーザーに依頼)**: 1) DevTools の Network を開き `api.github.com` で絞り込む。公開リポジトリ(例 `corestate55/gh-file-grass`)を Load branches → Show して、**OPTIONS(preflight)が出ていない**こと。2) 表示されること(グラフ、ホバーのツールチップがスクロール時もずれない)。3) 実行中にブランチを変えると該当リクエストが canceled になり、エラーが出ないこと。4) 右上の残量バッジが減ること。5) 存在しないリポジトリ・ブランチでエラー文言が出ること。6) 大きなコミット(300 ファイル超)があるリポジトリで警告が出るか(任意)。結果によって直す場所は `describeError`(DESIGN 7.8)。
 - **Step 4 完了**(4a: XSS エスケープ・`-Infinity`/NaN 対策・`console.log` 削除・URL エンコード/http(s) 限定、4b: `draw(data,{container})`/`destroy()`・ID 接頭辞 `gfgN-`・入力複製・コンテナ内ツールチップ(位置はコンテナ相対)、4c: SCSS を `.gh-file-grass` 配下にスコープ化、`npm run build:css -w @gh-file-grass/core` で `dist/style.css`)。core の公開 API は `draw` / `FileGrassHandle` / `DrawOptions` / スキーマ型 / `assertInvariants`。
 
 ## 未確定
@@ -40,7 +44,7 @@
 
 ## 次にやること
 
-1. Step 7(app)→ Step 8(Pages デプロイ) を小さな単位で進める(DESIGN.md 5 章)。
+1. ユーザーによるブラウザ確認(下記)→ Step 8(Pages デプロイ) を小さな単位で進める(DESIGN.md 5 章)。
 
 ## 参照資料(元リポジトリ。読み取り専用で扱うこと。書き換えない)
 

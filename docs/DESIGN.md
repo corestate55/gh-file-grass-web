@@ -291,10 +291,13 @@ export function toGitLogData(input: {
 
 ### 4.6 app
 
-- コンポーネント: `RepoForm`, `BranchSelect`, `CountInput`(1〜50、既定 20), `ProgressBar`, `RateLimitBadge`(残り回数/リセット時刻), `ErrorBanner`, `FileGrassView`。
-- `FileGrassView`: `onMounted` と `watch(data)` で `destroy → draw`、`onBeforeUnmount` で `destroy`。
-- 状態: composable `useHistoryLoader`(AbortController 保持、入力変更で前の取得を中断)。Pinia 不使用。
-- Vite `base: '/gh-file-grass-web/'`(リポジトリ名に合わせる)。
+- コンポーネント: `RepoForm`, `BranchSelect`, `CountInput`(1〜50、既定 20), `ProgressBar`, `RateLimitBadge`(残り回数/リセット時刻), `ErrorBanner`, `FileGrassView`, `WarningList`(truncated / unknown-src の警告。Step 7 で追加)。UI の言語は英語(文言は `app/src/lib/messages.ts` に集約)。
+- `FileGrassView`: `onMounted` と `watch(data)` で `destroy → draw`、`onBeforeUnmount` で `destroy`。core には `toRaw(data)` を渡す(リアクティブな Proxy は `structuredClone` できない)。変更行が 0 のデータは描画せずメッセージを出す。
+- 状態: composable `useHistoryLoader`(取得は常に 1 つ。新しい取得で前のものを中断し、世代番号で古い結果を捨てる。結果は `shallowRef`)。Pinia 不使用。`GitHubClient` は ref / reactive に入れない(`#private` があり Proxy 越しだと失敗する)。
+- 実行の契機: ブランチ取得も履歴表示も明示的な submit のみ(blur・debounce での自動取得はしない。60 req/h の予算を入力途中の値に使わない)。ブランチ・件数が確定したら実行中の取得を中断する(件数は blur / Enter で確定。入力中は中断しない)。取得済みの詳細は client のキャッシュに残る。
+- 前の結果: 同じリポジトリなら再実行中も残して薄く表示(「Updating…」)、別のリポジトリなら消す。失敗しても前の結果は残る。
+- 残量: 起動時に `/rate_limit`(非消費)を 1 回呼び、以後は成功・失敗・中断のどの後でも `lastRateLimit` を反映。枠が尽きていて新しい取得が必要な見積もりのときだけ Show を無効化(それ以外の不足は client の事前チェックに任せる)。
+- Vite `base: '/gh-file-grass-web/'`(リポジトリ名に合わせる)。core の `style.css` は `dist/style.css`(`prebuild` / `predev` で生成)を `main.ts` で import。型検査は `vue-tsc -b`(app は composite のまま、outDir を `node_modules/.tmp/tsc` に移して Vite の出力先と分ける)。
 
 ## 5. 実装計画(1 ステップ ≒ 1 PR)
 
@@ -364,7 +367,22 @@ export function toGitLogData(input: {
 
 `parseRepoInput` / `GitHubClient` / エラー階層を実装。決定事項: 一覧は常に `per_page=maxCount` / `fetchBranches` は `{branches, hasMore}` / `estimateCost(ref, branch, count)` / default ブランチは app 側で main → master → 先頭 / 呼び出しをまたぐ in-flight 重複排除はしない / ssh・git@・http の入力は受理しない(https のみ) / 詳細キャッシュは patch 本文を捨てた射影 / リクエストヘッダは Accept のみ。
 
-**【未確認】ブラウザでの実測(Step 7 の手動確認項目)**: ①プリフライトが出ないこと(DevTools の Network で OPTIONS が無い)、②ヘッダ省略時の既定 API バージョンで必要なフィールドが揃うこと、③403/5xx 応答に CORS ヘッダが付くか(付かないと `NetworkError` に見える。直前の `lastRateLimit.remaining` が 0 ならレート制限として表示する案)、④300 ファイル超のコミットで `Link: rel="next"` が付くこと、⑤存在しないブランチが 404 と 422 のどちらになるか(どちらも not_found に分類済み)。Step 0 の録画は Node の fetch・トークン付き(limit 5000)なので、これらは fixture からは分からない。
+**Step 0 の録画は Node の fetch・トークン付き(limit 5000)なので、次の項目は fixture からは分からず、Step 7 で curl(未認証)により確認した(7.8)。**
+
+## 7.8 Step 7 の結果(2026-11-07 完了)
+
+`app`(Vite + Vue 3 + vue-tsc)を実装。決定事項: UI は英語 / 型検査は `vue-tsc -b`(案 A) / `style.css` は `dist/style.css` を `prebuild` で生成 / CI に `build` を追加 / URL クエリ共有・ブランチ手入力欄は入れない / 実行は明示的な submit のみ / 初期表示は使い方と予算の説明 / 同じリポジトリなら再実行中も前の結果を残す。
+
+**curl(未認証、2026-11-07)で確認した GitHub の挙動**(`X-GitHub-Api-Version` を付けずに `Accept` のみ):
+
+- ② 既定の API バージョンは `x-github-api-version-selected: 2022-11-28`。詳細 API の `files`(`sha / filename / status / additions / deletions / changes / patch の有無 / previous_filename`)・`stats`・`parents`・`commit.author/committer.date` は、録画(認証付き・バージョン指定)と**完全に一致**した(12 ファイルのコミット)。
+- ⑤ 存在しないブランチを `sha` に指定すると **404**(422 ではない。本文は `Not Found`)。→ 一覧 API の 404 は `branch_or_repository` に分類され、"Branch not found" と表示される。
+- ③(一部)404 の応答にも `access-control-allow-origin: *`、`access-control-expose-headers`(`X-RateLimit-*`、`Retry-After`、`Link` を含む)、`x-ratelimit-*` が付く。
+- ④(仕組み)詳細 API は `files` をページ分割し、`Link: <…?page=2>; rel="next", <…?page=3>; rel="last"` を返す(`per_page=5` で確認)。`hasNextLink` が想定する形式そのもの。
+- プリフライト(OPTIONS)に対し GitHub は 204 で `access-control-allow-headers` に `X-GitHub-Api-Version` を含め、`access-control-max-age: 86400` を返す。つまり `X-GitHub-Api-Version` を付けても動くが、`Accept` のみなら OPTIONS 自体が不要。
+- 応答は `cache-control: public, max-age=60` と `etag` を持つ → ブラウザキャッシュ由来の応答は古い `X-RateLimit-*` を持ち得る(畳み込み規則で対処済み)。
+
+**【未確認】ブラウザ(DevTools)での確認が必要**: ①プリフライトが出ないこと(Network で `api.github.com` に OPTIONS が無い)、③ 403(レート制限)・5xx 応答に CORS ヘッダが付くか(付かない場合は `NetworkError` に見える。直前の残量が 0 ならレート制限として表示する対処は `describeError` に実装済み。403 の再現には 60 回を使い切る必要があり、利用者の IP の 1 時間分の枠を消費するため未実施)、④ 300 ファイル超の実コミットでの警告表示(仕組みは確認済み)。手順は HANDOVER.md。
 
 ## 8. 未決事項(状況は HANDOVER.md 参照)
 
